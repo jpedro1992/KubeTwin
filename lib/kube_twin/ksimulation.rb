@@ -14,6 +14,11 @@ require_relative './pod'
 require_relative './latency_manager'
 require_relative './kube_dns'
 require_relative './kube_scheduler'
+require_relative './scheduling_plugins/filter/cpu_filter'
+require_relative './scheduling_plugins/filter/mem_filter'
+require_relative './scheduling_plugins/score/node_affinity_score'
+require_relative './scheduling_plugins/score/resource_availability_score'
+require_relative './scheduling_plugins/score/least_requested_score'
 require_relative './node'
 
 require 'json'
@@ -378,6 +383,15 @@ module KUBETWIN
       # the KubeScheduler decides on which nodes schedule
       # the pods
       @kube_scheduler = KubeScheduler.new(@cluster_repository)
+
+      # Register filtering and scoring plugins
+      # TODO: make this configurable from the configuration file
+      @kube_scheduler.register_filter_plugin(KUBETWIN::CPUFilter.method(:run))
+      @kube_scheduler.register_filter_plugin(KUBETWIN::MEMFilter.method(:run))
+
+      @kube_scheduler.register_score_plugin(KUBETWIN::NodeAffinityScore.method(:run))
+      @kube_scheduler.register_score_plugin(KUBETWIN::ResourceAvailabilityScore.method(:run))
+      @kube_scheduler.register_score_plugin(KUBETWIN::LeastRequestedScore.method(:run))
 
       pod_id = 0
       ms_id = 0

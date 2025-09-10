@@ -6,19 +6,32 @@ module KUBETWIN
     def initialize(clusters)
       @clusters = clusters
       @filtered_nodes = []
+      @filter_plugins = []
+      @score_plugins = []
     end
 
-    # information regarding requirements are available usin the pod class
-    def get_node(requirements_cpu, requirements_mem, node_affinity)
+    # Register filtering plugins
+    def register_filter_plugin(plugin_proc)
+      @filter_plugins << plugin_proc
+    end
+
+    # Register scoring plugins
+    def register_score_plugin(plugin_proc)
+      @score_plugins << plugin_proc
+    end
+
+    # information regarding requirements are available using the pod class
+    def get_node(req_cpu, req_mem, node_affinity)
       # get the requirements (we should specify at least a requirement here,
       # CPU percentage)
       # filter available nodes
       # this should return a candidate node
-      filter_and_score(requirements_cpu, requirements_mem, node_affinity)
+      filter(req_cpu, req_mem)
+      score(node_affinity)
     end
 
-    def get_node_from_cluster(requirements_cpu, requirements_mem, cluster_id)
-      filter(requirements_cpu, requirements_mem)
+    def get_node_from_cluster(req_cpu, req_mem, cluster_id)
+      filter(req_cpu, req_mem)
       # puts "Filtered nodes: #{@filtered_nodes.length} for cluster_id: #{cluster_id}"
       # filter the nodes by cluster_id
       if cluster_id == :none
@@ -39,79 +52,92 @@ module KUBETWIN
 
     private
 
-    # then we need to implement
-    # 1) filtering (a lot of policies that can be implemented in external classes
-    #    or via a lambda function)
-    # 2) scoring the nodes where to allocate the pods
-    # when do we need to run these procedures?
-
-    # do we need to call filter every time we need to assign a pod?
-    # maybe we do
-    def filter_and_score(requirements_cpu, requirements_mem, node_affinity)
-      filter(requirements_cpu, requirements_mem)
-      score(node_affinity)
-    end
-
-    # filtering here is an expensive operation
+    # Main filter function
     def filter(req_cpu, req_mem)
       # reset filtered nodes --- do we need to call delete here?
-      @filtered_nodes = []
+      nodes = []
       # here we could implement different policies
       # puts "Clusters: #{@clusters}"
       @clusters.values.each do |c|
         raise 'Ranking nodes from a nil cluster' if c.nil?
-
         c.nodes.values.each do |node|
-          # debug node information here
-          # filter only those nodes capable to execute the pods
-          available_resources_cpu = node.available_resources_cpu
-          next unless available_resources_cpu >= req_cpu && node.available_resources_memory >= req_mem
-
-          @filtered_nodes << { node: node, cluster_id: c.cluster_id,
-                               tier: c.tier,
-                               price: c.fixed_hourly_cost_cpu,
-                               available_resources_cpu: available_resources_cpu,
-                               requested_resources: node.requested_resources[:cpu],
-                               deployed_pods: node.pod_id_list.length }
+          nodes << {node: node, cluster_id: c.cluster_id,
+                    tier: c.tier,
+                    price: c.fixed_hourly_cost_cpu,
+                    available_resources_cpu: node.available_resources_cpu,
+                    requested_resources: node.requested_resources[:cpu],
+                    deployed_pods: node.pod_id_list.length}
         end
       end
+
+      # Apply all registered filter plugins in sequence
+      @filter_plugins.each do |plugin|
+        nodes = plugin.call(nodes, req_cpu, req_mem)
+      end
+
+      filtered_info = @filtered_nodes.map do |entry|
+        node = entry[:node]
+        {
+          node_id: node.node_id,
+          cluster_id: entry[:cluster_id],
+          tier: entry[:tier],
+          price: entry[:price],
+          available_resources_cpu: entry[:available_resources_cpu],
+          requested_resources_cpu: node.requested_resources[:cpu],
+          requested_resources_memory: node.requested_resources[:memory],
+          deployed_pods: entry[:deployed_pods],
+          pod_ids: node.pod_id_list
+        }
+      end
+
+      puts "[Scheduler] FilteredNodes: #{JSON.pretty_generate(filtered_info)}"
+
+      @filtered_nodes = nodes
     end
 
-    # the following is a simple implementation that returns
-    # just the node
+    # Main scoring function
     def score(node_affinity)
-      # here we need to implement something complex using external or specific classes
-      # sorting operations are computionally heavy
-      # implementing a sorting algorithm here
-      # {|n| (n[requested_resources] + n[:deployed_pods])}
+      # Run all score plugins; collect array of node scores from each plugin
+      all_plugin_scores = @score_plugins.map { |plugin| plugin.call(@filtered_nodes, node_affinity) }
 
-      if @filtered_nodes.empty?
-        puts 'Resource saturation'
-        return nil
-      end
-      node = nil
-      # check also for node affinity here
-      unless node_affinity.nil?
-        node_with_affinity = @filtered_nodes.select { |n| n[:tier] == node_affinity }
+      # Initialize combined scores map: node => total score
+      combined_scores = Hash.new(0)
 
-        node = if node_with_affinity.empty?
-                 nil
-               else
-                 node_with_affinity.sort_by { |n| -n[:available_resources_cpu] }[0][:node]
-               end
+      all_plugin_scores.each do |plugin_scores|
+        plugin_scores.each do |entry|
+          combined_scores[entry[:node]] += entry[:score]
+        end
       end
 
-      # distribute the application load among clusters
-      # available_resources_cpu prefers powerful nodes
-      # select mec first
-      if node.nil?
-        # node = @filtered_nodes.sort_by { |n| -n[:available_resources_cpu] }[0][:node]
-        # puts "#{@filtered_nodes.sort_by { |n| n[:price] }}"
-        # abort
-        node = @filtered_nodes.sort_by { |n| n[:node].pod_id_list.length }[0][:node]
+      # Normalize combined scores to 0-100
+      min_score = combined_scores.values.min || 0
+      max_score = combined_scores.values.max || 1  # avoid division by zero
+
+      normalized_scores = combined_scores.map do |node, score|
+        normalized = if max_score == min_score
+                       100
+                     else
+                       ((score - min_score).to_f / (max_score - min_score)) * 100
+                     end
+        puts "[Scheduler] Node: #{node.node_id} - Raw Score: #{score.round(2)} - Normalized Score: #{normalized.round(2)}"
+        { node: node, score: normalized }
       end
-      node
+
+      # Sort nodes descending by normalized score
+      sorted = normalized_scores.sort_by { |e| -e[:score] }
+
+      # Create a readable string with node IDs and scores
+      score_summary = sorted.map do |entry|
+        node_id = entry[:node].node_id
+        score = entry[:score].round(2)
+        "Node ID: #{node_id}, Score: #{score}"
+      end.join(" | ")
+      puts "[Scheduler] Normalized Scores: #{score_summary}"
+
+      # Return best node or nil if none
+      sorted.empty? ? nil : sorted.first[:node]
     end
   end
 end
+
 
