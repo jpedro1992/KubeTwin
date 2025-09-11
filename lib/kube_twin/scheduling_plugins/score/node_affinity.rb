@@ -1,4 +1,6 @@
 module KUBETWIN
+  # NodeAffinityScore plugin
+  # Scores nodes based on whether they match the specified node affinity (tier)
   class NodeAffinityScore
     def self.run(nodes, node_affinity)
       # Compute scores based on node tier matching affinity

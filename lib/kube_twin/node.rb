@@ -8,7 +8,7 @@ module KUBETWIN
 
     # :type [:mec, cloud] depends on the cluster 
     attr_reader :resources_cpu, :resources_memory, :requested_resources, :node_id, 
-     :pod_id_list, :cluster_id, :type
+     :pod_id_list, :pod_name_list, :cluster_id, :type
     # cluster_id should not be here
     # this is a programming error that i introduce to speed-up
     # the development process
@@ -24,12 +24,14 @@ module KUBETWIN
       @requested_resources = {cpu: 0.to_f, memory: 0.to_f}
       @cluster_id = cluster_id
       @pod_id_list = []
+      @pod_name_list = []
       @type = type
     end
 
     def assign_resources(pod, resources_cpu, resources_memory)
       raise 'Unfeasible resource assignement!' if (@requested_resources[:cpu] + resources_cpu > @resources_cpu) && (@requested_resources[:memory] + resources_memory > @resources_memory)
       @pod_id_list << pod.pod_id
+      @pod_name_list << pod.podName
       @requested_resources[:cpu] += resources_cpu
       @requested_resources[:memory] += resources_memory
     end
@@ -42,6 +44,7 @@ module KUBETWIN
 
       # remove pod from the list of associated pods 
       @pod_id_list.delete(pod.pod_id)
+      @pod_name_list.delete(pod.podName)
     end
 
     def available_resources_cpu

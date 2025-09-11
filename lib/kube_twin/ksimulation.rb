@@ -14,11 +14,16 @@ require_relative './pod'
 require_relative './latency_manager'
 require_relative './kube_dns'
 require_relative './kube_scheduler'
-require_relative './scheduling_plugins/filter/cpu_filter'
-require_relative './scheduling_plugins/filter/mem_filter'
-require_relative './scheduling_plugins/score/node_affinity_score'
-require_relative './scheduling_plugins/score/resource_availability_score'
-require_relative './scheduling_plugins/score/least_requested_score'
+require_relative './scheduling_plugins/strategies/deployment_strategies'
+require_relative './scheduling_plugins/filter/cpu_resources'
+require_relative './scheduling_plugins/filter/mem_resources'
+require_relative './scheduling_plugins/score/node_affinity'
+require_relative './scheduling_plugins/score/resource_availability'
+require_relative './scheduling_plugins/score/node_resources_least_allocatable'
+require_relative './scheduling_plugins/score/node_resources_most_allocatable'
+require_relative './scheduling_plugins/score/trimaran_low_risk_over_commitment'
+require_relative './scheduling_plugins/score/topology_cluster'
+require_relative './scheduling_plugins/filter/pod_topology_constraint'
 require_relative './node'
 
 require 'json'
@@ -386,12 +391,26 @@ module KUBETWIN
 
       # Register filtering and scoring plugins
       # TODO: make this configurable from the configuration file
-      @kube_scheduler.register_filter_plugin(KUBETWIN::CPUFilter.method(:run))
-      @kube_scheduler.register_filter_plugin(KUBETWIN::MEMFilter.method(:run))
+      # Available strategies:
+      # TRIMARAN_LOW_RISK,
+      # LEAST_ALLOCATABLE,
+      # MOST_ALLOCATABLE,
+      # RESOURCE_AVAILABILITY
+      # TOPOLOGY_AWARE
+      # NODE_AFFINITY
+      # BALANCED
+      strategy_name = :RESOURCE_AVAILABILITY
+      strategy = KUBE_SCHEDULER_STRATEGIES[strategy_name]
+      raise "Unknown strategy #{strategy_name}" unless strategy
+      puts "Register Scheduler strategy: #{strategy_name}"
 
-      @kube_scheduler.register_score_plugin(KUBETWIN::NodeAffinityScore.method(:run))
-      @kube_scheduler.register_score_plugin(KUBETWIN::ResourceAvailabilityScore.method(:run))
-      @kube_scheduler.register_score_plugin(KUBETWIN::LeastRequestedScore.method(:run))
+      strategy[:filters].each do |filter_plugin|
+        @kube_scheduler.register_filter_plugin(filter_plugin)
+      end
+
+      strategy[:scores].each do |score_plugin|
+        @kube_scheduler.register_score_plugin(score_plugin)
+      end
 
       pod_id = 0
       ms_id = 0
@@ -410,10 +429,10 @@ module KUBETWIN
           node_affinity = sct[:node_affinity]
           if @mapping
             @logger.debug "Mapping: #{@mapping}"
-            node = @kube_scheduler.get_node_from_cluster(reqs_c, reqs_m, @mapping[ms_id])
+            node = @kube_scheduler.get_node_from_cluster(reqs_c, reqs_m, @mapping[ms_id], selector)
             @logger.debug "Node: #{node} for selector: #{selector} with requirements: #{reqs_c} #{reqs_m}"
           else
-            node = @kube_scheduler.get_node(reqs_c, reqs_m, node_affinity)
+            node = @kube_scheduler.get_node(reqs_c, reqs_m, node_affinity, selector)
           end
           next if node.nil?
 
