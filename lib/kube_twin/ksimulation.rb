@@ -399,15 +399,17 @@ module KUBETWIN
       # TOPOLOGY_AWARE
       # NODE_AFFINITY
       # BALANCED
-      strategy_name = :RESOURCE_AVAILABILITY
+      strategy_name = :TOPOLOGY_AWARE
       strategy = KUBE_SCHEDULER_STRATEGIES[strategy_name]
       raise "Unknown strategy #{strategy_name}" unless strategy
       puts "Register Scheduler strategy: #{strategy_name}"
 
+      puts "Register Filtering Plugins..."
       strategy[:filters].each do |filter_plugin|
         @kube_scheduler.register_filter_plugin(filter_plugin)
       end
 
+      puts "Register Scoring Plugins..."
       strategy[:scores].each do |score_plugin|
         @kube_scheduler.register_score_plugin(score_plugin)
       end

@@ -1,0 +1,1367 @@
+D, [2025-09-15T16:43:09.558322 #1282] DEBUG -- : Cluster: one {:name=>"eu-south-1 - Local DC", :location_id=>1, :type=>:mec, :tier=>"local", :node_number=>5, :node_resources_cpu=>50, :node_resources_memory=>50}
+D, [2025-09-15T16:43:09.558407 #1282] DEBUG -- : Cluster: two {:name=>"eu-central-1 Tier 1 Regional Edge", :location_id=>2, :type=>:mec, :node_number=>5, :tier=>"t1", :node_resources_cpu=>100, :node_resources_memory=>100}
+D, [2025-09-15T16:43:09.558437 #1282] DEBUG -- : Cluster: three {:name=>"eu-west-3 Tier 1", :location_id=>3, :type=>:mec, :node_number=>5, :tier=>"t1", :node_resources_cpu=>100, :node_resources_memory=>100}
+D, [2025-09-15T16:43:09.558462 #1282] DEBUG -- : Cluster: four {:name=>"eu-west-2 Tier 2", :location_id=>4, :type=>:mec, :node_number=>5, :tier=>"t2", :node_resources_cpu=>100, :node_resources_memory=>100}
+D, [2025-09-15T16:43:09.558487 #1282] DEBUG -- : Cluster: five {:name=>"eu-north-1 - Tier 2", :location_id=>5, :type=>:mec, :node_number=>5, :tier=>"t2", :node_resources_cpu=>100, :node_resources_memory=>100}
+D, [2025-09-15T16:43:09.558512 #1282] DEBUG -- : Cluster: six {:name=>"ca-central-1 - Remote DC", :location_id=>6, :type=>:cloud, :node_number=>5, :tier=>"rdc", :node_resources_cpu=>200, :node_resources_memory=>200}
+D, [2025-09-15T16:43:09.558554 #1282] DEBUG -- : Cluster: seven {:name=>"us-east-1 - Remote DC", :location_id=>7, :type=>:cloud, :node_number=>5, :tier=>"rdc", :node_resources_cpu=>200, :node_resources_memory=>200}
+D, [2025-09-15T16:43:09.558588 #1282] DEBUG -- : Creating node 0 cluster: one with resources: 50 50
+D, [2025-09-15T16:43:09.558611 #1282] DEBUG -- : Creating node 1 cluster: one with resources: 50 50
+D, [2025-09-15T16:43:09.558630 #1282] DEBUG -- : Creating node 2 cluster: one with resources: 50 50
+D, [2025-09-15T16:43:09.558650 #1282] DEBUG -- : Creating node 3 cluster: one with resources: 50 50
+D, [2025-09-15T16:43:09.558670 #1282] DEBUG -- : Creating node 4 cluster: one with resources: 50 50
+D, [2025-09-15T16:43:09.558691 #1282] DEBUG -- : Creating node 5 cluster: two with resources: 100 100
+D, [2025-09-15T16:43:09.558711 #1282] DEBUG -- : Creating node 6 cluster: two with resources: 100 100
+D, [2025-09-15T16:43:09.558731 #1282] DEBUG -- : Creating node 7 cluster: two with resources: 100 100
+D, [2025-09-15T16:43:09.558739 #1282] DEBUG -- : Creating node 8 cluster: two with resources: 100 100
+D, [2025-09-15T16:43:09.558758 #1282] DEBUG -- : Creating node 9 cluster: two with resources: 100 100
+D, [2025-09-15T16:43:09.558851 #1282] DEBUG -- : Creating node 10 cluster: three with resources: 100 100
+D, [2025-09-15T16:43:09.558892 #1282] DEBUG -- : Creating node 11 cluster: three with resources: 100 100
+D, [2025-09-15T16:43:09.558900 #1282] DEBUG -- : Creating node 12 cluster: three with resources: 100 100
+D, [2025-09-15T16:43:09.558918 #1282] DEBUG -- : Creating node 13 cluster: three with resources: 100 100
+D, [2025-09-15T16:43:09.558938 #1282] DEBUG -- : Creating node 14 cluster: three with resources: 100 100
+D, [2025-09-15T16:43:09.558958 #1282] DEBUG -- : Creating node 15 cluster: four with resources: 100 100
+D, [2025-09-15T16:43:09.558978 #1282] DEBUG -- : Creating node 16 cluster: four with resources: 100 100
+D, [2025-09-15T16:43:09.558997 #1282] DEBUG -- : Creating node 17 cluster: four with resources: 100 100
+D, [2025-09-15T16:43:09.559017 #1282] DEBUG -- : Creating node 18 cluster: four with resources: 100 100
+D, [2025-09-15T16:43:09.559037 #1282] DEBUG -- : Creating node 19 cluster: four with resources: 100 100
+D, [2025-09-15T16:43:09.559057 #1282] DEBUG -- : Creating node 20 cluster: five with resources: 100 100
+D, [2025-09-15T16:43:09.559077 #1282] DEBUG -- : Creating node 21 cluster: five with resources: 100 100
+D, [2025-09-15T16:43:09.559085 #1282] DEBUG -- : Creating node 22 cluster: five with resources: 100 100
+D, [2025-09-15T16:43:09.559090 #1282] DEBUG -- : Creating node 23 cluster: five with resources: 100 100
+D, [2025-09-15T16:43:09.559107 #1282] DEBUG -- : Creating node 24 cluster: five with resources: 100 100
+D, [2025-09-15T16:43:09.559127 #1282] DEBUG -- : Creating node 25 cluster: six with resources: 200 200
+D, [2025-09-15T16:43:09.559148 #1282] DEBUG -- : Creating node 26 cluster: six with resources: 200 200
+D, [2025-09-15T16:43:09.559168 #1282] DEBUG -- : Creating node 27 cluster: six with resources: 200 200
+D, [2025-09-15T16:43:09.559189 #1282] DEBUG -- : Creating node 28 cluster: six with resources: 200 200
+D, [2025-09-15T16:43:09.559209 #1282] DEBUG -- : Creating node 29 cluster: six with resources: 200 200
+D, [2025-09-15T16:43:09.559229 #1282] DEBUG -- : Creating node 30 cluster: seven with resources: 200 200
+D, [2025-09-15T16:43:09.559249 #1282] DEBUG -- : Creating node 31 cluster: seven with resources: 200 200
+D, [2025-09-15T16:43:09.559258 #1282] DEBUG -- : Creating node 32 cluster: seven with resources: 200 200
+D, [2025-09-15T16:43:09.559275 #1282] DEBUG -- : Creating node 33 cluster: seven with resources: 200 200
+D, [2025-09-15T16:43:09.559285 #1282] DEBUG -- : Creating node 34 cluster: seven with resources: 200 200
+D, [2025-09-15T16:43:09.561086 #1282] DEBUG -- : {"MS1"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.01143607, :sd=>0.00301789, :seed=>12345}},
+ :cloud=>{:distribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>50, :resources_requirements_memory=>30, :node_affinity=>"
+local", :rps=>1, :wait_for=>["MS2"]}, "MS2"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.0289486, :sd=>0.004604541, :seed=>12345}}, :cloud=>{:d
+istribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>35, :resources_requirements_memory=>25, :node_affinity=>"local"}} false
+D, [2025-09-15T16:43:09.561155 #1282] DEBUG -- : Microservice type: MS1
+D, [2025-09-15T16:43:09.561179 #1282] DEBUG -- : Microservice type: MS2
+Register Scheduler strategy: TOPOLOGY_AWARE
+Register Filtering Plugins...
+Register Scoring Plugins...
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=MS1
+[Scheduler] Total existing pods gathered: 0
+[Scheduler] Initial pod counts per domain: {}
+[Scheduler] Node 0 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 1 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 2 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 3 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 4 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 5 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 6 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 7 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 8 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 9 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 10 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 11 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 12 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 13 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 14 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 15 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 16 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 17 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 18 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 19 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 20 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 21 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 22 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 23 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 24 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 25 domain=6 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 26 domain=6 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 27 domain=6 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 28 domain=6 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 29 domain=6 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 30 domain=7 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 31 domain=7 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 32 domain=7 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 33 domain=7 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 34 domain=7 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=MS1
+[Scheduler] Node 25 in cluster 6 has deployed pods ["MS1_0"]
+[Scheduler] Total existing pods gathered: 1
+[Scheduler] Initial pod counts per domain: {6=>1}
+[Scheduler] Node 0 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 1 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 2 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 3 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 4 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 5 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 6 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 7 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 8 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 9 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 10 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 11 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 12 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 13 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 14 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 15 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 16 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 17 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 18 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 19 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 20 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 21 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 22 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 23 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 24 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 25 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 26 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 27 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 28 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 29 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 30 domain=7 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 31 domain=7 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 32 domain=7 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 33 domain=7 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 34 domain=7 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 30, 31, 32, 33, 34]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=MS1
+[Scheduler] Node 25 in cluster 6 has deployed pods ["MS1_0"]
+[Scheduler] Node 30 in cluster 7 has deployed pods ["MS1_1"]
+[Scheduler] Total existing pods gathered: 2
+[Scheduler] Initial pod counts per domain: {6=>1, 7=>1}
+[Scheduler] Node 0 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 1 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 2 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 3 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 4 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 5 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 6 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 7 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 8 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 9 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 10 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 11 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 12 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 13 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 14 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 15 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 16 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 17 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 18 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 19 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 20 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 21 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 22 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 23 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 24 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 25 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 26 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 27 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 28 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 29 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 30 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 31 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 32 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 33 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 34 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=MS1
+[Scheduler] Node 5 in cluster 2 has deployed pods ["MS1_2"]
+[Scheduler] Node 25 in cluster 6 has deployed pods ["MS1_0"]
+[Scheduler] Node 30 in cluster 7 has deployed pods ["MS1_1"]
+[Scheduler] Total existing pods gathered: 3
+[Scheduler] Initial pod counts per domain: {2=>1, 6=>1, 7=>1}
+[Scheduler] Node 0 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 1 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 2 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 3 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 4 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 5 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 6 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 7 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 8 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 9 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 10 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 11 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 12 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 13 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 14 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 15 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 16 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 17 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 18 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 19 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 20 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 21 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 22 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 23 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 24 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 25 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 26 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 27 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 28 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 29 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 30 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 31 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 32 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 33 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 34 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [0, 1, 2, 3, 4, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=MS1
+[Scheduler] Node 5 in cluster 2 has deployed pods ["MS1_2"]
+[Scheduler] Node 10 in cluster 3 has deployed pods ["MS1_3"]
+[Scheduler] Node 25 in cluster 6 has deployed pods ["MS1_0"]
+[Scheduler] Node 30 in cluster 7 has deployed pods ["MS1_1"]
+[Scheduler] Total existing pods gathered: 4
+[Scheduler] Initial pod counts per domain: {2=>1, 3=>1, 6=>1, 7=>1}
+[Scheduler] Node 0 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 1 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 2 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 3 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 4 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 5 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 6 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 7 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 8 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 9 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 10 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 11 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 12 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 13 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 14 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 15 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 16 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 17 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 18 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 19 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 20 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 21 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 22 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 23 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 24 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 25 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 26 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 27 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 28 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 29 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 30 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 31 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 32 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 33 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 34 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [0, 1, 2, 3, 4, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=MS1
+[Scheduler] Node 5 in cluster 2 has deployed pods ["MS1_2"]
+[Scheduler] Node 10 in cluster 3 has deployed pods ["MS1_3"]
+[Scheduler] Node 15 in cluster 4 has deployed pods ["MS1_4"]
+[Scheduler] Node 25 in cluster 6 has deployed pods ["MS1_0"]
+[Scheduler] Node 30 in cluster 7 has deployed pods ["MS1_1"]
+[Scheduler] Total existing pods gathered: 5
+[Scheduler] Initial pod counts per domain: {2=>1, 3=>1, 4=>1, 6=>1, 7=>1}
+[Scheduler] Node 0 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 1 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 2 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 3 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 4 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 5 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 6 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 7 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 8 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 9 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 10 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 11 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 12 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 13 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 14 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 15 domain=4 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 16 domain=4 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 17 domain=4 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 18 domain=4 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 19 domain=4 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 20 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 21 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 22 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 23 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 24 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 25 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 26 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 27 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 28 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 29 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 30 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 31 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 32 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 33 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 34 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [0, 1, 2, 3, 4, 20, 21, 22, 23, 24]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=MS1
+[Scheduler] Node 5 in cluster 2 has deployed pods ["MS1_2"]
+[Scheduler] Node 10 in cluster 3 has deployed pods ["MS1_3"]
+[Scheduler] Node 15 in cluster 4 has deployed pods ["MS1_4"]
+[Scheduler] Node 20 in cluster 5 has deployed pods ["MS1_5"]
+[Scheduler] Node 25 in cluster 6 has deployed pods ["MS1_0"]
+[Scheduler] Node 30 in cluster 7 has deployed pods ["MS1_1"]
+[Scheduler] Total existing pods gathered: 6
+[Scheduler] Initial pod counts per domain: {2=>1, 3=>1, 4=>1, 5=>1, 6=>1, 7=>1}
+[Scheduler] Node 0 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 1 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 2 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 3 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 4 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 5 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 6 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 7 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 8 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 9 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 10 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 11 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 12 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 13 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 14 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 15 domain=4 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 16 domain=4 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 17 domain=4 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 18 domain=4 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 19 domain=4 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 20 domain=5 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 21 domain=5 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 22 domain=5 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 23 domain=5 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 24 domain=5 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 25 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 26 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 27 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 28 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 29 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 30 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 31 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 32 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 33 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 34 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [0, 1, 2, 3, 4]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=MS1
+[Scheduler] Node 5 in cluster 2 has deployed pods ["MS1_2"]
+[Scheduler] Node 10 in cluster 3 has deployed pods ["MS1_3"]
+[Scheduler] Node 15 in cluster 4 has deployed pods ["MS1_4"]
+[Scheduler] Node 20 in cluster 5 has deployed pods ["MS1_5"]
+[Scheduler] Node 25 in cluster 6 has deployed pods ["MS1_0"]
+[Scheduler] Node 30 in cluster 7 has deployed pods ["MS1_1"]
+[Scheduler] Total existing pods gathered: 6
+[Scheduler] Initial pod counts per domain: {2=>1, 3=>1, 4=>1, 5=>1, 6=>1, 7=>1}
+[Scheduler] Node 1 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 2 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 3 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 4 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 5 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 6 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 7 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 8 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 9 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 10 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 11 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 12 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 13 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 14 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 15 domain=4 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 16 domain=4 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 17 domain=4 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 18 domain=4 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 19 domain=4 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 20 domain=5 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 21 domain=5 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 22 domain=5 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 23 domain=5 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 24 domain=5 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 25 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 26 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 27 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 28 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 29 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 30 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 31 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 32 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 33 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 34 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [1, 2, 3, 4]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=MS2
+[Scheduler] Node 5 in cluster 2 has deployed pods ["MS1_2"]
+[Scheduler] Node 10 in cluster 3 has deployed pods ["MS1_3"]
+[Scheduler] Node 15 in cluster 4 has deployed pods ["MS1_4"]
+[Scheduler] Node 20 in cluster 5 has deployed pods ["MS1_5"]
+[Scheduler] Node 25 in cluster 6 has deployed pods ["MS1_0"]
+[Scheduler] Node 30 in cluster 7 has deployed pods ["MS1_1"]
+[Scheduler] Total existing pods gathered: 6
+[Scheduler] Initial pod counts per domain: {}
+[Scheduler] Node 2 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 3 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 4 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 5 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 6 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 7 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 8 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 9 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 10 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 11 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 12 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 13 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 14 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 15 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 16 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 17 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 18 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 19 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 20 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 21 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 22 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 23 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 24 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 25 domain=6 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 26 domain=6 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 27 domain=6 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 28 domain=6 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 29 domain=6 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 30 domain=7 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 31 domain=7 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 32 domain=7 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 33 domain=7 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 34 domain=7 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=MS2
+[Scheduler] Node 5 in cluster 2 has deployed pods ["MS1_2"]
+[Scheduler] Node 10 in cluster 3 has deployed pods ["MS1_3"]
+[Scheduler] Node 15 in cluster 4 has deployed pods ["MS1_4"]
+[Scheduler] Node 20 in cluster 5 has deployed pods ["MS1_5"]
+[Scheduler] Node 25 in cluster 6 has deployed pods ["MS1_0", "MS2_8"]
+[Scheduler] Node 30 in cluster 7 has deployed pods ["MS1_1"]
+[Scheduler] Total existing pods gathered: 7
+[Scheduler] Initial pod counts per domain: {6=>1}
+[Scheduler] Node 2 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 3 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 4 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 5 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 6 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 7 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 8 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 9 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 10 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 11 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 12 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 13 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 14 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 15 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 16 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 17 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 18 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 19 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 20 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 21 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 22 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 23 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 24 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 25 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 26 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 27 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 28 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 29 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 30 domain=7 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 31 domain=7 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 32 domain=7 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 33 domain=7 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 34 domain=7 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 30, 31, 32, 33, 34]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=MS2
+[Scheduler] Node 5 in cluster 2 has deployed pods ["MS1_2"]
+[Scheduler] Node 10 in cluster 3 has deployed pods ["MS1_3"]
+[Scheduler] Node 15 in cluster 4 has deployed pods ["MS1_4"]
+[Scheduler] Node 20 in cluster 5 has deployed pods ["MS1_5"]
+[Scheduler] Node 25 in cluster 6 has deployed pods ["MS1_0", "MS2_8"]
+[Scheduler] Node 30 in cluster 7 has deployed pods ["MS1_1", "MS2_9"]
+[Scheduler] Total existing pods gathered: 8
+[Scheduler] Initial pod counts per domain: {6=>1, 7=>1}
+[Scheduler] Node 2 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 3 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 4 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 5 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 6 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 7 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 8 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 9 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 10 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 11 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 12 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 13 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 14 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 15 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 16 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 17 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 18 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 19 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 20 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 21 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 22 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 23 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 24 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 25 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 26 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 27 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 28 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 29 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 30 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 31 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 32 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 33 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 34 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=MS2
+[Scheduler] Node 10 in cluster 3 has deployed pods ["MS1_3"]
+[Scheduler] Node 15 in cluster 4 has deployed pods ["MS1_4"]
+[Scheduler] Node 20 in cluster 5 has deployed pods ["MS1_5"]
+[Scheduler] Node 25 in cluster 6 has deployed pods ["MS1_0", "MS2_8"]
+[Scheduler] Node 30 in cluster 7 has deployed pods ["MS1_1", "MS2_9"]
+[Scheduler] Total existing pods gathered: 7
+[Scheduler] Initial pod counts per domain: {6=>1, 7=>1}
+[Scheduler] Node 2 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 3 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 4 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 6 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 7 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 8 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 9 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 10 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 11 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 12 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 13 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 14 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 15 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 16 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 17 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 18 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 19 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 20 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 21 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 22 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 23 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 24 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 25 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 26 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 27 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 28 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 29 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 30 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 31 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 32 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 33 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 34 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=MS2
+[Scheduler] Node 6 in cluster 2 has deployed pods ["MS2_11"]
+[Scheduler] Node 10 in cluster 3 has deployed pods ["MS1_3"]
+[Scheduler] Node 15 in cluster 4 has deployed pods ["MS1_4"]
+[Scheduler] Node 20 in cluster 5 has deployed pods ["MS1_5"]
+[Scheduler] Node 25 in cluster 6 has deployed pods ["MS1_0", "MS2_8"]
+[Scheduler] Node 30 in cluster 7 has deployed pods ["MS1_1", "MS2_9"]
+[Scheduler] Total existing pods gathered: 8
+[Scheduler] Initial pod counts per domain: {2=>1, 6=>1, 7=>1}
+[Scheduler] Node 2 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 3 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 4 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 6 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 7 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 8 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 9 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 10 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 11 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 12 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 13 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 14 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 15 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 16 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 17 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 18 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 19 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 20 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 21 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 22 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 23 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 24 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 25 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 26 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 27 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 28 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 29 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 30 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 31 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 32 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 33 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 34 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [2, 3, 4, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=MS2
+[Scheduler] Node 6 in cluster 2 has deployed pods ["MS2_11"]
+[Scheduler] Node 15 in cluster 4 has deployed pods ["MS1_4"]
+[Scheduler] Node 20 in cluster 5 has deployed pods ["MS1_5"]
+[Scheduler] Node 25 in cluster 6 has deployed pods ["MS1_0", "MS2_8"]
+[Scheduler] Node 30 in cluster 7 has deployed pods ["MS1_1", "MS2_9"]
+[Scheduler] Total existing pods gathered: 7
+[Scheduler] Initial pod counts per domain: {2=>1, 6=>1, 7=>1}
+[Scheduler] Node 2 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 3 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 4 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 6 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 7 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 8 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 9 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 11 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 12 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 13 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 14 domain=3 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 15 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 16 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 17 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 18 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 19 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 20 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 21 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 22 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 23 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 24 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 25 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 26 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 27 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 28 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 29 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 30 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 31 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 32 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 33 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 34 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [2, 3, 4, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=MS2
+[Scheduler] Node 6 in cluster 2 has deployed pods ["MS2_11"]
+[Scheduler] Node 11 in cluster 3 has deployed pods ["MS2_13"]
+[Scheduler] Node 15 in cluster 4 has deployed pods ["MS1_4"]
+[Scheduler] Node 20 in cluster 5 has deployed pods ["MS1_5"]
+[Scheduler] Node 25 in cluster 6 has deployed pods ["MS1_0", "MS2_8"]
+[Scheduler] Node 30 in cluster 7 has deployed pods ["MS1_1", "MS2_9"]
+[Scheduler] Total existing pods gathered: 8
+[Scheduler] Initial pod counts per domain: {2=>1, 3=>1, 6=>1, 7=>1}
+[Scheduler] Node 2 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 3 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 4 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 6 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 7 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 8 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 9 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 11 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 12 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 13 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 14 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 15 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 16 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 17 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 18 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 19 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 20 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 21 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 22 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 23 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 24 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 25 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 26 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 27 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 28 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 29 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 30 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 31 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 32 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 33 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 34 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [2, 3, 4, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=MS2
+[Scheduler] Node 6 in cluster 2 has deployed pods ["MS2_11"]
+[Scheduler] Node 11 in cluster 3 has deployed pods ["MS2_13"]
+[Scheduler] Node 20 in cluster 5 has deployed pods ["MS1_5"]
+[Scheduler] Node 25 in cluster 6 has deployed pods ["MS1_0", "MS2_8"]
+[Scheduler] Node 30 in cluster 7 has deployed pods ["MS1_1", "MS2_9"]
+[Scheduler] Total existing pods gathered: 7
+[Scheduler] Initial pod counts per domain: {2=>1, 3=>1, 6=>1, 7=>1}
+[Scheduler] Node 2 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 3 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 4 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 6 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 7 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 8 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 9 domain=2 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 11 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 12 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 13 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 14 domain=3 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 16 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 17 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 18 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 19 domain=4 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 20 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 21 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 22 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 23 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 24 domain=5 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 25 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 26 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 27 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 28 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 29 domain=6 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 30 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 31 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 32 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 33 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 34 domain=7 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [2, 3, 4, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] --------------------------------
+====== Evaluating new allocation ======
+stats: received: 8992, closed: 8992
+TTR: (mean: 13.651739527852504, variance: 528.4359503027439, longer_than: {}) shorter_than: {}
+QTIME: (mean: 13.511455519343619, variance: 527.8251137213186)
+component_stats: {"MS1"=>#<KUBETWIN::ComponentStatistics:0x00007fd893ecfb58 @n=8992, @mean=13.531683333907468, @m_2=4746304.051454341, @q_mean=13.509899682448214, @q_m_2=4743280.0
+17583837, @longer_than={}, @shorter_than={}, @received=8992, @variance=527.8950118401002, @q_variance=527.5586717366074>, "MS2"=>#<KUBETWIN::ComponentStatistics:0x00007fd893ecfab8 @n=8992, @mean=0.03644654046067991, @m_2=1.8590487559963624, @q_mean=0.001555836895394581, @q_m_2=0.5401883441828457, @longer_than={}, @shorter_than={}, @received=8992, @variance=0.00020676774062911382, @q_variance=6.0081008139566864e-05>}
+allocation_map: {"eu-south-1 - Local DC"=>{:tier=>"local", :pods=>2}, "eu-central-1 Tier 1 Regional Edge"=>{:tier=>"t1", :pods=>3}, "eu-west-3 Tier 1"=>{:tier=>"t1", :pods=>3}, "eu-west-2 Tier 2"=>{:tier=>"t2", :pods=>3}, "eu-north-1 - Tier 2"=>{:tier=>"t2", :pods=>1}, "ca-central-1 - Remote DC"=>{:tier=>"rdc", :pods=>2}, "us-east-1 - Remote DC"=>{:tier=>"rdc", :pods=>2}}
+node_utilization: {"eu-south-1 - Local DC"=>2, "eu-central-1 Tier 1 Regional Edge"=>2, "eu-west-3 Tier 1"=>2, "eu-west-2 Tier 2"=>2, "eu-north-1 - Tier 2"=>1, "ca-central-1 - Remote DC"=>1, "us-east-1 - Remote DC"=>1}
+costs: 98.4 per day
+=======================================
+D, [2025-09-15T16:43:09.913007 #1282] DEBUG -- : Current spreading for MS1: [2, 1, 1, 1, 1, 1, 1] penalties: 0
+D, [2025-09-15T16:43:09.913051 #1282] DEBUG -- : Current spreading for MS2: [0, 2, 2, 2, 0, 1, 1] penalties: 10
+BMAP: {"MS1"=>{"eu-south-1 - Local DC"=>2, "eu-central-1 Tier 1 Regional Edge"=>1, "eu-west-3 Tier 1"=>1, "eu-west-2 Tier 2"=>1, "eu-north-1 - Tier 2"=>1, "ca-central-1 - Remote DC"=>1, "us-east-1 - Remote DC"=>1}, "MS2"=>{"eu-south-1 - Local DC"=>0, "eu-central-1 Tier 1 Regional Edge"=>2, "eu-west-3 Tier 1"=>2, "eu-west-2 Tier 2"=>2, "eu-north-1 - Tier 2"=>0, "ca-central-1 - Remote DC"=>1, "us-east-1 - Remote DC"=>1}}
+Weighted sum: 23.651739527852506
+Result:
+-23.651739527852506

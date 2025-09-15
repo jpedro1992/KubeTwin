@@ -1,6 +1,7 @@
 module KUBETWIN
   class ResourceAvailabilityScore
     def self.run(nodes, _node_affinity)
+      puts "[Scheduler] Starting ResourceAvailabilityScore...'"
       # Score nodes by available CPU and Memory combined (weighted average)
       max_cpu = nodes.map { |n| n[:available_resources_cpu] }.max.to_f
       max_mem = nodes.map { |n| n[:available_resources_memory] }.max.to_f
@@ -13,7 +14,7 @@ module KUBETWIN
         # weighted average (equal weight)
         combined_score = (cpu_score + mem_score) / 2.0
 
-        puts "[Scheduler] ResourceAvailabilityScore: Node #{entry[:node].node_id} score: #{combined_score.round(2)}"
+        # puts "[Scheduler] ResourceAvailabilityScore: Node #{entry[:node].node_id} score: #{combined_score.round(2)}"
 
         { node: entry[:node], score: combined_score }
       end

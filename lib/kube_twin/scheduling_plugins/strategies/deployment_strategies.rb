@@ -16,7 +16,6 @@ KUBE_SCHEDULER_STRATEGIES = {
       KUBETWIN::MEMFilter.method(:run),
     ],
     scores: [
-      KUBETWIN::NodeAffinityScore.method(:run),
       KUBETWIN::ResourceAvailabilityScore.method(:run),
     ]
   },
@@ -70,7 +69,6 @@ KUBE_SCHEDULER_STRATEGIES = {
     filters: [
       KUBETWIN::CPUFilter.method(:run),
       KUBETWIN::MEMFilter.method(:run),
-      KUBETWIN::PodTopologySpreadConstraint.method(:run)
     ],
     scores: [
       KUBETWIN::LowRiskOverCommitment.method(:run),
@@ -78,7 +76,6 @@ KUBE_SCHEDULER_STRATEGIES = {
       KUBETWIN::ResourceAvailabilityScore.method(:run),
       KUBETWIN::NodeResourcesLeastAllocatable.method(:run),
       KUBETWIN::NodeResourcesMostAllocatable.method(:run),
-      KUBETWIN::NodeAffinityScore.method(:run),
     ]
   },
 }

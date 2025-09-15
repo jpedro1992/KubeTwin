@@ -3,6 +3,7 @@ module KUBETWIN
   # Priority param "Least": nodes with least allocatable resources score highest
   class NodeResourcesLeastAllocatable
     def self.run(nodes, _node_affinity)
+      puts "[Scheduler] Starting NodeResourcesLeastAllocatable...'"
       max_cpu = nodes.map { |n| n[:available_resources_cpu].to_f }.max
       max_mem = nodes.map { |n| n[:node].available_resources_memory.to_f }.max
 
@@ -19,7 +20,7 @@ module KUBETWIN
 
         combined_score = (cpu_score + mem_score) / 2.0
 
-        puts "[Scheduler] NodeResourcesLeastAllocatable: Node #{entry[:node].node_id} score: #{combined_score.round(2)}"
+        # puts "[Scheduler] NodeResourcesLeastAllocatable: Node #{entry[:node].node_id} score: #{combined_score.round(2)}"
 
         { node: entry[:node], score: combined_score }
       end

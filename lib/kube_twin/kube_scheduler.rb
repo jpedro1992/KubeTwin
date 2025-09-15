@@ -155,7 +155,7 @@ module KUBETWIN
         "n_id: #{node_id}, score: #{score}"
       end.join(" | ")
 
-      puts "[Scheduler] Normalized Scores for pod: #{score_summary}"
+      # puts "[Scheduler] Normalized Scores for pod: #{score_summary}"
       puts "[Scheduler] --------------------------------\n"
 
       # Return best node or nil if none
