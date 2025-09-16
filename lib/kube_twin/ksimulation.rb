@@ -399,7 +399,8 @@ module KUBETWIN
       # TOPOLOGY_AWARE
       # NODE_AFFINITY
       # BALANCED
-      strategy_name = :TOPOLOGY_AWARE
+      # COST
+      strategy_name = :COST
       strategy = KUBE_SCHEDULER_STRATEGIES[strategy_name]
       raise "Unknown strategy #{strategy_name}" unless strategy
       puts "Register Scheduler strategy: #{strategy_name}"

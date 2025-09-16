@@ -6,10 +6,21 @@ require_relative './../score/node_resources_least_allocatable'
 require_relative './../score/node_resources_most_allocatable'
 require_relative './../score/trimaran_low_risk_over_commitment'
 require_relative './../score/topology_cluster'
+require_relative './../score/cost_aware'
 require_relative './../filter/pod_topology_constraint'
+
 module KUBETWIN
 
 KUBE_SCHEDULER_STRATEGIES = {
+  COST: {
+    filters: [
+      KUBETWIN::CPUFilter.method(:run),
+      KUBETWIN::MEMFilter.method(:run),
+    ],
+    scores: [
+      KUBETWIN::CostAware.method(:run),
+    ]
+  },
   RESOURCE_AVAILABILITY: {
     filters: [
       KUBETWIN::CPUFilter.method(:run),
