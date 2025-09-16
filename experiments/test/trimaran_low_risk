@@ -1,91 +1,141 @@
-D, [2025-09-11T15:54:06.093515 #6236] DEBUG -- : Creating node 0 cluster: rome with resources: 4000 8000
-D, [2025-09-11T15:54:06.093582 #6236] DEBUG -- : Creating node 1 cluster: milan with resources: 4000 8000
-D, [2025-09-11T15:54:06.093616 #6236] DEBUG -- : Creating node 2 cluster: paris with resources: 4000 8000
-D, [2025-09-11T15:54:06.093741 #6236] DEBUG -- : {"my_solver"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.01143607, :sd=>0.00301789, :seed=>12345}}, :cloud=>{:distribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>200, :resources_requirements_memory=>40, :node_affinity=>"local", :rps=>100}, "georef_module"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.01143607, :sd=>0.00301789, :seed=>12345}}, :cloud=>{:distribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>1000, :resources_requirements_memory=>500, :node_affinity=>"local", :rps=>100, :wait_for=>["my_solver"]}} false
-D, [2025-09-11T15:54:06.093801 #6236] DEBUG -- : Microservice type: my_solver
-D, [2025-09-11T15:54:06.093822 #6236] DEBUG -- : Microservice type: georef_module
+D, [2025-09-16T12:32:38.370003 #1734] DEBUG -- : Creating node 0 cluster: rome with resources: 4000 8000
+D, [2025-09-16T12:32:38.370102 #1734] DEBUG -- : Creating node 1 cluster: milan with resources: 4000 8000
+D, [2025-09-16T12:32:38.370113 #1734] DEBUG -- : Creating node 2 cluster: paris with resources: 4000 8000
+D, [2025-09-16T12:32:38.370242 #1734] DEBUG -- : {"my_solver"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.01143607, :sd=>0.00301789, :seed=>12345}}, :cloud=>{:distribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>200, :resources_requirements_memory=>40, :node_affinity=>"local", :rps=>100}, "georef_module"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.01143607, :sd=>0.00301789, :seed=>12345}}, :cloud=>{:distribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>1000, :resources_requirements_memory=>500, :node_affinity=>"local", :rps=>100, :wait_for=>["my_solver"]}} false
+D, [2025-09-16T12:32:38.370298 #1734] DEBUG -- : Microservice type: my_solver
+D, [2025-09-16T12:32:38.370306 #1734] DEBUG -- : Microservice type: georef_module
 Register Scheduler strategy: TRIMARAN_LOW_RISK
+Register Filtering Plugins...
+Register Scoring Plugins...
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 200, MEM: 40, NodeAffinity: local, Selector: my_solver
-[Scheduler] LowRiskOverCommitment: Node 0 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] LowRiskOverCommitment: Node 1 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] LowRiskOverCommitment: Node 2 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] Normalized Scores for pod: n_id: 0, score: 100 | n_id: 1, score: 100 | n_id: 2, score: 100
-[Scheduler] --------------------------------
-[Scheduler] ---- Pod Scheduling Decision ----
-[Scheduler] Pod requirements - CPU: 200, MEM: 40, NodeAffinity: local, Selector: my_solver
-[Scheduler] LowRiskOverCommitment: Node 0 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] LowRiskOverCommitment: Node 1 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] LowRiskOverCommitment: Node 2 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] Normalized Scores for pod: n_id: 0, score: 100 | n_id: 1, score: 100 | n_id: 2, score: 100
-[Scheduler] --------------------------------
-[Scheduler] ---- Pod Scheduling Decision ----
-[Scheduler] Pod requirements - CPU: 200, MEM: 40, NodeAffinity: local, Selector: my_solver
-[Scheduler] LowRiskOverCommitment: Node 0 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] LowRiskOverCommitment: Node 1 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] LowRiskOverCommitment: Node 2 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] Normalized Scores for pod: n_id: 0, score: 100 | n_id: 1, score: 100 | n_id: 2, score: 100
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 0 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 1 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 2 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 0 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 1 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 2 - Raw Score: 80.0 - Normalized Score: 100
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 200, MEM: 40, NodeAffinity: local, Selector: my_solver
-[Scheduler] LowRiskOverCommitment: Node 0 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] LowRiskOverCommitment: Node 1 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] LowRiskOverCommitment: Node 2 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] Normalized Scores for pod: n_id: 0, score: 100 | n_id: 1, score: 100 | n_id: 2, score: 100
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 0 cpu_score: 81.25, mem_score: 80.13, score: 80.69
+[Scheduler] LowRiskOverCommitment: Node 1 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 2 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 0 - Raw Score: 80.69 - Normalized Score: 100.0
+[Scheduler] Node: 1 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 2 - Raw Score: 80.0 - Normalized Score: 0.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 200, MEM: 40, NodeAffinity: local, Selector: my_solver
-[Scheduler] LowRiskOverCommitment: Node 0 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] LowRiskOverCommitment: Node 1 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] LowRiskOverCommitment: Node 2 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] Normalized Scores for pod: n_id: 0, score: 100 | n_id: 1, score: 100 | n_id: 2, score: 100
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 0 cpu_score: 82.5, mem_score: 80.25, score: 81.38
+[Scheduler] LowRiskOverCommitment: Node 1 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 2 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 0 - Raw Score: 81.38 - Normalized Score: 100.0
+[Scheduler] Node: 1 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 2 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 200, MEM: 40, NodeAffinity: local, Selector: my_solver
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 0 cpu_score: 83.75, mem_score: 80.38, score: 82.06
+[Scheduler] LowRiskOverCommitment: Node 1 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 2 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 0 - Raw Score: 82.06 - Normalized Score: 100.0
+[Scheduler] Node: 1 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 2 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 200, MEM: 40, NodeAffinity: local, Selector: my_solver
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 0 cpu_score: 85.0, mem_score: 80.5, score: 82.75
+[Scheduler] LowRiskOverCommitment: Node 1 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 2 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 0 - Raw Score: 82.75 - Normalized Score: 100.0
+[Scheduler] Node: 1 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 2 - Raw Score: 80.0 - Normalized Score: 0.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 1000, MEM: 500, NodeAffinity: local, Selector: georef_module
-[Scheduler] LowRiskOverCommitment: Node 0 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] LowRiskOverCommitment: Node 1 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] LowRiskOverCommitment: Node 2 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] Normalized Scores for pod: n_id: 0, score: 100 | n_id: 1, score: 100 | n_id: 2, score: 100
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 0 cpu_score: 86.25, mem_score: 80.63, score: 83.44
+[Scheduler] LowRiskOverCommitment: Node 1 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 2 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 0 - Raw Score: 83.44 - Normalized Score: 100.0
+[Scheduler] Node: 1 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 2 - Raw Score: 80.0 - Normalized Score: 0.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 1000, MEM: 500, NodeAffinity: local, Selector: georef_module
-[Scheduler] LowRiskOverCommitment: Node 0 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] LowRiskOverCommitment: Node 1 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] LowRiskOverCommitment: Node 2 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] Normalized Scores for pod: n_id: 0, score: 100 | n_id: 1, score: 100 | n_id: 2, score: 100
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 0 cpu_score: 92.5, mem_score: 82.19, score: 87.34
+[Scheduler] LowRiskOverCommitment: Node 1 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 2 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 0 - Raw Score: 87.34 - Normalized Score: 100.0
+[Scheduler] Node: 1 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 2 - Raw Score: 80.0 - Normalized Score: 0.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 1000, MEM: 500, NodeAffinity: local, Selector: georef_module
-[Scheduler] LowRiskOverCommitment: Node 0 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] LowRiskOverCommitment: Node 1 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] LowRiskOverCommitment: Node 2 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] Normalized Scores for pod: n_id: 0, score: 100 | n_id: 1, score: 100 | n_id: 2, score: 100
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 0 cpu_score: 98.75, mem_score: 83.75, score: 91.25
+[Scheduler] LowRiskOverCommitment: Node 1 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 2 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 0 - Raw Score: 91.25 - Normalized Score: 100.0
+[Scheduler] Node: 1 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 2 - Raw Score: 80.0 - Normalized Score: 0.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 1000, MEM: 500, NodeAffinity: local, Selector: georef_module
-[Scheduler] LowRiskOverCommitment: Node 1 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] LowRiskOverCommitment: Node 2 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] Normalized Scores for pod: n_id: 1, score: 100 | n_id: 2, score: 100
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 1 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 2 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 1 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 2 - Raw Score: 80.0 - Normalized Score: 100
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 1000, MEM: 500, NodeAffinity: local, Selector: georef_module
-[Scheduler] LowRiskOverCommitment: Node 1 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] LowRiskOverCommitment: Node 2 cpu_score: 100, mem_score: 100, score: 100.0
-[Scheduler] Normalized Scores for pod: n_id: 1, score: 100 | n_id: 2, score: 100
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 1 cpu_score: 86.25, mem_score: 81.56, score: 83.91
+[Scheduler] LowRiskOverCommitment: Node 2 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 1 - Raw Score: 83.91 - Normalized Score: 100.0
+[Scheduler] Node: 2 - Raw Score: 80.0 - Normalized Score: 0.0
 [Scheduler] --------------------------------
 ====== Evaluating new allocation ======
 stats: received: 884, closed: 884
 TTR: (mean: 0.03788958226933198, variance: 8.941792108316937e-05, longer_than: {}) shorter_than: {}
 QTIME: (mean: 0.0, variance: 0.0)
-component_stats: {"my_solver"=>#<KUBETWIN::ComponentStatistics:0x00007f2bf5ee3ae0 @n=884, @mean=0.011309181672954983, @m_2=0.007689644984348853, @q_mean=0.0, @q_m_2=0.0, @longer_th
-an={}, @shorter_than={}, @received=884, @variance=8.708544716136867e-06, @q_variance=0.0>, "georef_module"=>#<KUBETWIN::ComponentStatistics:0x00007f2bf5ee3a40 @n=884, @mean=0.011309181672954987, @m_2=0.007689644984348855, @q_mean=0.0, @q_m_2=0.0, @longer_than={}, @shorter_than={}, @received=884, @variance=8.708544716136868e-06, @q_variance=0.0>}
+component_stats: {"my_solver"=>#<KUBETWIN::ComponentStatistics:0x00007f7ec86657d0 @n=884, @mean=0.011309181672954983, @m_2=0.007689644984348853, @q_mean=0.0, @q_m_2=0.0, @longer_th
+an={}, @shorter_than={}, @received=884, @variance=8.708544716136867e-06, @q_variance=0.0>, "georef_module"=>#<KUBETWIN::ComponentStatistics:0x00007f7ec86656e0 @n=884, @mean=0.011309181672954987, @m_2=0.007689644984348855, @q_mean=0.0, @q_m_2=0.0, @longer_than={}, @shorter_than={}, @received=884, @variance=8.708544716136868e-06, @q_variance=0.0>}
 allocation_map: {:rome=>{:tier=>"local", :pods=>8}, :milan=>{:tier=>"local", :pods=>2}, :paris=>{:tier=>"local", :pods=>0}}
 node_utilization: {:rome=>1, :milan=>1, :paris=>0}
 costs: 9.6 per day
 =======================================
-D, [2025-09-11T15:54:06.175419 #6236] DEBUG -- : Current spreading for my_solver: [5, 0, 0] penalties: 10
-D, [2025-09-11T15:54:06.175463 #6236] DEBUG -- : Current spreading for georef_module: [3, 2, 0] penalties: 20
+D, [2025-09-16T12:32:38.457001 #1734] DEBUG -- : Current spreading for my_solver: [5, 0, 0] penalties: 10
+D, [2025-09-16T12:32:38.457030 #1734] DEBUG -- : Current spreading for georef_module: [3, 2, 0] penalties: 20
 BMAP: {"my_solver"=>{:rome=>5, :milan=>0, :paris=>0}, "georef_module"=>{:rome=>3, :milan=>2, :paris=>0}}
 Weighted sum: 20.037889582269333
 Result:
--20.03788958226933
+-20.037889582269333

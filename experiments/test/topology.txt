@@ -1,0 +1,231 @@
+D, [2025-09-16T15:37:37.978587 #603] DEBUG -- : Creating node 0 cluster: rome with resources: 4000 8000
+D, [2025-09-16T15:37:37.978657 #603] DEBUG -- : Creating node 1 cluster: milan with resources: 4000 8000
+D, [2025-09-16T15:37:37.978683 #603] DEBUG -- : Creating node 2 cluster: paris with resources: 4000 8000
+D, [2025-09-16T15:37:37.978786 #603] DEBUG -- : {"my_solver"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.01143607, :sd=>0.00301789, :seed=>12345}}, :cloud=>{:distribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>200, :resources_requirements_memory=>40, :node_affinity=>"local", :rps=>100}, "georef_module"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.01143607, :sd=>0.00301789, :seed=>12345}}, :cloud=>{:distribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>1000, :resources_requirements_memory=>500, :node_affinity=>"local", :rps=>100, :wait_for=>["my_solver"]}} false
+D, [2025-09-16T15:37:37.978839 #603] DEBUG -- : Microservice type: my_solver
+D, [2025-09-16T15:37:37.978859 #603] DEBUG -- : Microservice type: georef_module
+Register Scheduler strategy: TOPOLOGY_AWARE
+Register Filtering Plugins...
+Register Scoring Plugins...
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 200, MEM: 40, NodeAffinity: local, Selector: my_solver
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=my_solver
+[Scheduler] Total existing pods gathered: 0
+[Scheduler] Initial pod counts per domain: {}
+[Scheduler] Node 0 domain=0 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 1 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 2 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [0, 1, 2]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] Node: 0 - Raw Score: 100.0 - Normalized Score: 100
+[Scheduler] Node: 1 - Raw Score: 100.0 - Normalized Score: 100
+[Scheduler] Node: 2 - Raw Score: 100.0 - Normalized Score: 100
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 200, MEM: 40, NodeAffinity: local, Selector: my_solver
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=my_solver
+[Scheduler] Node 0 in cluster 0 has deployed pods ["my_solver_0"]
+[Scheduler] Total existing pods gathered: 1
+[Scheduler] Initial pod counts per domain: {0=>1}
+[Scheduler] Node 0 domain=0 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 1 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 2 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [1, 2]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] Node: 1 - Raw Score: 100.0 - Normalized Score: 100
+[Scheduler] Node: 2 - Raw Score: 100.0 - Normalized Score: 100
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 200, MEM: 40, NodeAffinity: local, Selector: my_solver
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=my_solver
+[Scheduler] Node 0 in cluster 0 has deployed pods ["my_solver_0"]
+[Scheduler] Node 1 in cluster 1 has deployed pods ["my_solver_1"]
+[Scheduler] Total existing pods gathered: 2
+[Scheduler] Initial pod counts per domain: {0=>1, 1=>1}
+[Scheduler] Node 0 domain=0 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 1 domain=1 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 2 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [2]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] Node: 2 - Raw Score: 100.0 - Normalized Score: 100
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 200, MEM: 40, NodeAffinity: local, Selector: my_solver
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=my_solver
+[Scheduler] Node 0 in cluster 0 has deployed pods ["my_solver_0"]
+[Scheduler] Node 1 in cluster 1 has deployed pods ["my_solver_1"]
+[Scheduler] Node 2 in cluster 2 has deployed pods ["my_solver_2"]
+[Scheduler] Total existing pods gathered: 3
+[Scheduler] Initial pod counts per domain: {0=>1, 1=>1, 2=>1}
+[Scheduler] Node 0 domain=0 count=1 projected=2 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 1 domain=1 count=1 projected=2 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 2 domain=2 count=1 projected=2 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [0, 1, 2]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] Node: 0 - Raw Score: 100.0 - Normalized Score: 100
+[Scheduler] Node: 1 - Raw Score: 100.0 - Normalized Score: 100
+[Scheduler] Node: 2 - Raw Score: 100.0 - Normalized Score: 100
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 200, MEM: 40, NodeAffinity: local, Selector: my_solver
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=my_solver
+[Scheduler] Node 0 in cluster 0 has deployed pods ["my_solver_0", "my_solver_3"]
+[Scheduler] Node 1 in cluster 1 has deployed pods ["my_solver_1"]
+[Scheduler] Node 2 in cluster 2 has deployed pods ["my_solver_2"]
+[Scheduler] Total existing pods gathered: 4
+[Scheduler] Initial pod counts per domain: {0=>2, 1=>1, 2=>1}
+[Scheduler] Node 0 domain=0 count=2 projected=3 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 1 domain=1 count=1 projected=2 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 2 domain=2 count=1 projected=2 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [1, 2]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] Node: 1 - Raw Score: 100.0 - Normalized Score: 100
+[Scheduler] Node: 2 - Raw Score: 100.0 - Normalized Score: 100
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 1000, MEM: 500, NodeAffinity: local, Selector: georef_module
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=georef_module
+[Scheduler] Node 0 in cluster 0 has deployed pods ["my_solver_0", "my_solver_3"]
+[Scheduler] Node 1 in cluster 1 has deployed pods ["my_solver_1", "my_solver_4"]
+[Scheduler] Node 2 in cluster 2 has deployed pods ["my_solver_2"]
+[Scheduler] Total existing pods gathered: 5
+[Scheduler] Initial pod counts per domain: {}
+[Scheduler] Node 0 domain=0 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 1 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 2 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [0, 1, 2]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] Node: 0 - Raw Score: 100.0 - Normalized Score: 100
+[Scheduler] Node: 1 - Raw Score: 100.0 - Normalized Score: 100
+[Scheduler] Node: 2 - Raw Score: 100.0 - Normalized Score: 100
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 1000, MEM: 500, NodeAffinity: local, Selector: georef_module
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=georef_module
+[Scheduler] Node 0 in cluster 0 has deployed pods ["my_solver_0", "my_solver_3", "georef_module_5"]
+[Scheduler] Node 1 in cluster 1 has deployed pods ["my_solver_1", "my_solver_4"]
+[Scheduler] Node 2 in cluster 2 has deployed pods ["my_solver_2"]
+[Scheduler] Total existing pods gathered: 6
+[Scheduler] Initial pod counts per domain: {0=>1}
+[Scheduler] Node 0 domain=0 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 1 domain=1 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 2 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [1, 2]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] Node: 1 - Raw Score: 100.0 - Normalized Score: 100
+[Scheduler] Node: 2 - Raw Score: 100.0 - Normalized Score: 100
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 1000, MEM: 500, NodeAffinity: local, Selector: georef_module
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=georef_module
+[Scheduler] Node 0 in cluster 0 has deployed pods ["my_solver_0", "my_solver_3", "georef_module_5"]
+[Scheduler] Node 1 in cluster 1 has deployed pods ["my_solver_1", "my_solver_4", "georef_module_6"]
+[Scheduler] Node 2 in cluster 2 has deployed pods ["my_solver_2"]
+[Scheduler] Total existing pods gathered: 7
+[Scheduler] Initial pod counts per domain: {0=>1, 1=>1}
+[Scheduler] Node 0 domain=0 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 1 domain=1 count=1 projected=2 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 2 domain=2 count=0 projected=1 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [2]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] Node: 2 - Raw Score: 100.0 - Normalized Score: 100
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 1000, MEM: 500, NodeAffinity: local, Selector: georef_module
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=georef_module
+[Scheduler] Node 0 in cluster 0 has deployed pods ["my_solver_0", "my_solver_3", "georef_module_5"]
+[Scheduler] Node 1 in cluster 1 has deployed pods ["my_solver_1", "my_solver_4", "georef_module_6"]
+[Scheduler] Node 2 in cluster 2 has deployed pods ["my_solver_2", "georef_module_7"]
+[Scheduler] Total existing pods gathered: 8
+[Scheduler] Initial pod counts per domain: {0=>1, 1=>1, 2=>1}
+[Scheduler] Node 0 domain=0 count=1 projected=2 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 1 domain=1 count=1 projected=2 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 2 domain=2 count=1 projected=2 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [0, 1, 2]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] Node: 0 - Raw Score: 100.0 - Normalized Score: 100
+[Scheduler] Node: 1 - Raw Score: 100.0 - Normalized Score: 100
+[Scheduler] Node: 2 - Raw Score: 100.0 - Normalized Score: 100
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 1000, MEM: 500, NodeAffinity: local, Selector: georef_module
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=1, topologyKey=location_id, whenUnsatisfiable=DoNotSchedule, replicaSelector=georef_module
+[Scheduler] Node 0 in cluster 0 has deployed pods ["my_solver_0", "my_solver_3", "georef_module_5", "georef_module_8"]
+[Scheduler] Node 1 in cluster 1 has deployed pods ["my_solver_1", "my_solver_4", "georef_module_6"]
+[Scheduler] Node 2 in cluster 2 has deployed pods ["my_solver_2", "georef_module_7"]
+[Scheduler] Total existing pods gathered: 9
+[Scheduler] Initial pod counts per domain: {0=>2, 1=>1, 2=>1}
+[Scheduler] Node 0 domain=0 count=2 projected=3 skew=2
+[Scheduler] Skew 2 above maxSkew 1, filtering out
+[Scheduler] Node 1 domain=1 count=1 projected=2 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] Node 2 domain=2 count=1 projected=2 skew=1
+[Scheduler] Skew 1 within maxSkew 1, allowing
+[Scheduler] PodTopologySpreadConstraint filtered nodes: [1, 2]
+[Scheduler] Starting TopologyClusterAggregate...'
+[Scheduler] Node: 1 - Raw Score: 100.0 - Normalized Score: 100
+[Scheduler] Node: 2 - Raw Score: 100.0 - Normalized Score: 100
+[Scheduler] --------------------------------
+====== Evaluating new allocation ======
+stats: received: 884, closed: 884
+TTR: (mean: 0.05966150706709783, variance: 0.00030272305581407837, longer_than: {}) shorter_than: {}
+QTIME: (mean: 0.0, variance: 0.0)
+component_stats: {"my_solver"=>#<KUBETWIN::ComponentStatistics:0x00007fc46f7413b0 @n=884, @mean=0.011309181672954985, @m_2=0.007689644984348854, @q_mean=0.0, @q_m_2=0.0, @longer_th
+an={}, @shorter_than={}, @received=884, @variance=8.708544716136867e-06, @q_variance=0.0>, "georef_module"=>#<KUBETWIN::ComponentStatistics:0x00007fc46f741310 @n=884, @mean=0.011309181672954985, @m_2=0.007689644984348854, @q_mean=0.0, @q_m_2=0.0, @longer_than={}, @shorter_than={}, @received=884, @variance=8.708544716136867e-06, @q_variance=0.0>}
+allocation_map: {:rome=>{:tier=>"local", :pods=>4}, :milan=>{:tier=>"local", :pods=>4}, :paris=>{:tier=>"local", :pods=>2}}
+node_utilization: {:rome=>1, :milan=>1, :paris=>1}
+costs: 16.799999999999997 per day
+=======================================
+D, [2025-09-16T15:37:38.067682 #603] DEBUG -- : Current spreading for my_solver: [2, 2, 1] penalties: 0
+D, [2025-09-16T15:37:38.067726 #603] DEBUG -- : Current spreading for georef_module: [2, 2, 1] penalties: 0
+BMAP: {"my_solver"=>{:rome=>2, :milan=>2, :paris=>1}, "georef_module"=>{:rome=>2, :milan=>2, :paris=>1}}
+Weighted sum: 0.05966150706709783
+Result:
+-0.05966150706709783

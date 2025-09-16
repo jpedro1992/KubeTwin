@@ -1,89 +1,111 @@
-D, [2025-09-11T15:50:21.060156 #6203] DEBUG -- : Creating node 0 cluster: rome with resources: 4000 8000
-D, [2025-09-11T15:50:21.060221 #6203] DEBUG -- : Creating node 1 cluster: milan with resources: 4000 8000
-D, [2025-09-11T15:50:21.060253 #6203] DEBUG -- : Creating node 2 cluster: paris with resources: 4000 8000
-D, [2025-09-11T15:50:21.060370 #6203] DEBUG -- : {"my_solver"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.01143607, :sd=>0.00301789, :seed=>12345}}, :cloud=>{:distribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>200, :resources_requirements_memory=>40, :node_affinity=>"local", :rps=>100}, "georef_module"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.01143607, :sd=>0.00301789, :seed=>12345}}, :cloud=>{:distribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>1000, :resources_requirements_memory=>500, :node_affinity=>"local", :rps=>100, :wait_for=>["my_solver"]}} false
-D, [2025-09-11T15:50:21.060424 #6203] DEBUG -- : Microservice type: my_solver
-D, [2025-09-11T15:50:21.060445 #6203] DEBUG -- : Microservice type: georef_module
+D, [2025-09-16T15:32:24.469669 #551] DEBUG -- : Creating node 0 cluster: rome with resources: 4000 8000
+D, [2025-09-16T15:32:24.469757 #551] DEBUG -- : Creating node 1 cluster: milan with resources: 4000 8000
+D, [2025-09-16T15:32:24.469782 #551] DEBUG -- : Creating node 2 cluster: paris with resources: 4000 8000
+D, [2025-09-16T15:32:24.469936 #551] DEBUG -- : {"my_solver"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.01143607, :sd=>0.00301789, :seed=>12345}}, :cloud=>{:distribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>200, :resources_requirements_memory=>40, :node_affinity=>"local", :rps=>100}, "georef_module"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.01143607, :sd=>0.00301789, :seed=>12345}}, :cloud=>{:distribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>1000, :resources_requirements_memory=>500, :node_affinity=>"local", :rps=>100, :wait_for=>["my_solver"]}} false
+D, [2025-09-16T15:32:24.470030 #551] DEBUG -- : Microservice type: my_solver
+D, [2025-09-16T15:32:24.470056 #551] DEBUG -- : Microservice type: georef_module
 Register Scheduler strategy: LEAST_ALLOCATABLE
+Register Filtering Plugins...
+Register Scoring Plugins...
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 200, MEM: 40, NodeAffinity: local, Selector: my_solver
-[Scheduler] NodeResourcesLeastAllocatable: Node 0 score: 0.0
-[Scheduler] NodeResourcesLeastAllocatable: Node 1 score: 0.0
-[Scheduler] NodeResourcesLeastAllocatable: Node 2 score: 0.0
-[Scheduler] Normalized Scores for pod: n_id: 0, score: 100 | n_id: 1, score: 100 | n_id: 2, score: 100
-[Scheduler] --------------------------------
-[Scheduler] ---- Pod Scheduling Decision ----
-[Scheduler] Pod requirements - CPU: 200, MEM: 40, NodeAffinity: local, Selector: my_solver
-[Scheduler] NodeResourcesLeastAllocatable: Node 0 score: 2.75
-[Scheduler] NodeResourcesLeastAllocatable: Node 1 score: 0.0
-[Scheduler] NodeResourcesLeastAllocatable: Node 2 score: 0.0
-[Scheduler] Normalized Scores for pod: n_id: 0, score: 100.0 | n_id: 1, score: 0.0 | n_id: 2, score: 0.0
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting NodeResourcesLeastAllocatable...'
+[Scheduler] Node: 0 - Raw Score: 0.0 - Normalized Score: 100
+[Scheduler] Node: 1 - Raw Score: 0.0 - Normalized Score: 100
+[Scheduler] Node: 2 - Raw Score: 0.0 - Normalized Score: 100
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 200, MEM: 40, NodeAffinity: local, Selector: my_solver
-[Scheduler] NodeResourcesLeastAllocatable: Node 0 score: 5.5
-[Scheduler] NodeResourcesLeastAllocatable: Node 1 score: 0.0
-[Scheduler] NodeResourcesLeastAllocatable: Node 2 score: 0.0
-[Scheduler] Normalized Scores for pod: n_id: 0, score: 100.0 | n_id: 1, score: 0.0 | n_id: 2, score: 0.0
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting NodeResourcesLeastAllocatable...'
+[Scheduler] Node: 0 - Raw Score: 2.75 - Normalized Score: 100.0
+[Scheduler] Node: 1 - Raw Score: 0.0 - Normalized Score: 0.0
+[Scheduler] Node: 2 - Raw Score: 0.0 - Normalized Score: 0.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 200, MEM: 40, NodeAffinity: local, Selector: my_solver
-[Scheduler] NodeResourcesLeastAllocatable: Node 0 score: 8.25
-[Scheduler] NodeResourcesLeastAllocatable: Node 1 score: 0.0
-[Scheduler] NodeResourcesLeastAllocatable: Node 2 score: 0.0
-[Scheduler] Normalized Scores for pod: n_id: 0, score: 100.0 | n_id: 1, score: 0.0 | n_id: 2, score: 0.0
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting NodeResourcesLeastAllocatable...'
+[Scheduler] Node: 0 - Raw Score: 5.5 - Normalized Score: 100.0
+[Scheduler] Node: 1 - Raw Score: 0.0 - Normalized Score: 0.0
+[Scheduler] Node: 2 - Raw Score: 0.0 - Normalized Score: 0.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 200, MEM: 40, NodeAffinity: local, Selector: my_solver
-[Scheduler] NodeResourcesLeastAllocatable: Node 0 score: 11.0
-[Scheduler] NodeResourcesLeastAllocatable: Node 1 score: 0.0
-[Scheduler] NodeResourcesLeastAllocatable: Node 2 score: 0.0
-[Scheduler] Normalized Scores for pod: n_id: 0, score: 100.0 | n_id: 1, score: 0.0 | n_id: 2, score: 0.0
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting NodeResourcesLeastAllocatable...'
+[Scheduler] Node: 0 - Raw Score: 8.25 - Normalized Score: 100.0
+[Scheduler] Node: 1 - Raw Score: 0.0 - Normalized Score: 0.0
+[Scheduler] Node: 2 - Raw Score: 0.0 - Normalized Score: 0.0
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 200, MEM: 40, NodeAffinity: local, Selector: my_solver
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting NodeResourcesLeastAllocatable...'
+[Scheduler] Node: 0 - Raw Score: 11.0 - Normalized Score: 100.0
+[Scheduler] Node: 1 - Raw Score: 0.0 - Normalized Score: 0.0
+[Scheduler] Node: 2 - Raw Score: 0.0 - Normalized Score: 0.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 1000, MEM: 500, NodeAffinity: local, Selector: georef_module
-[Scheduler] NodeResourcesLeastAllocatable: Node 0 score: 13.75
-[Scheduler] NodeResourcesLeastAllocatable: Node 1 score: 0.0
-[Scheduler] NodeResourcesLeastAllocatable: Node 2 score: 0.0
-[Scheduler] Normalized Scores for pod: n_id: 0, score: 100.0 | n_id: 1, score: 0.0 | n_id: 2, score: 0.0
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting NodeResourcesLeastAllocatable...'
+[Scheduler] Node: 0 - Raw Score: 13.75 - Normalized Score: 100.0
+[Scheduler] Node: 1 - Raw Score: 0.0 - Normalized Score: 0.0
+[Scheduler] Node: 2 - Raw Score: 0.0 - Normalized Score: 0.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 1000, MEM: 500, NodeAffinity: local, Selector: georef_module
-[Scheduler] NodeResourcesLeastAllocatable: Node 0 score: 29.38
-[Scheduler] NodeResourcesLeastAllocatable: Node 1 score: 0.0
-[Scheduler] NodeResourcesLeastAllocatable: Node 2 score: 0.0
-[Scheduler] Normalized Scores for pod: n_id: 0, score: 100.0 | n_id: 1, score: 0.0 | n_id: 2, score: 0.0
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting NodeResourcesLeastAllocatable...'
+[Scheduler] Node: 0 - Raw Score: 29.38 - Normalized Score: 100.0
+[Scheduler] Node: 1 - Raw Score: 0.0 - Normalized Score: 0.0
+[Scheduler] Node: 2 - Raw Score: 0.0 - Normalized Score: 0.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 1000, MEM: 500, NodeAffinity: local, Selector: georef_module
-[Scheduler] NodeResourcesLeastAllocatable: Node 0 score: 45.0
-[Scheduler] NodeResourcesLeastAllocatable: Node 1 score: 0.0
-[Scheduler] NodeResourcesLeastAllocatable: Node 2 score: 0.0
-[Scheduler] Normalized Scores for pod: n_id: 0, score: 100.0 | n_id: 1, score: 0.0 | n_id: 2, score: 0.0
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting NodeResourcesLeastAllocatable...'
+[Scheduler] Node: 0 - Raw Score: 45.0 - Normalized Score: 100.0
+[Scheduler] Node: 1 - Raw Score: 0.0 - Normalized Score: 0.0
+[Scheduler] Node: 2 - Raw Score: 0.0 - Normalized Score: 0.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 1000, MEM: 500, NodeAffinity: local, Selector: georef_module
-[Scheduler] NodeResourcesLeastAllocatable: Node 1 score: 0.0
-[Scheduler] NodeResourcesLeastAllocatable: Node 2 score: 0.0
-[Scheduler] Normalized Scores for pod: n_id: 1, score: 100 | n_id: 2, score: 100
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting NodeResourcesLeastAllocatable...'
+[Scheduler] Node: 1 - Raw Score: 0.0 - Normalized Score: 100
+[Scheduler] Node: 2 - Raw Score: 0.0 - Normalized Score: 100
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 1000, MEM: 500, NodeAffinity: local, Selector: georef_module
-[Scheduler] NodeResourcesLeastAllocatable: Node 1 score: 15.63
-[Scheduler] NodeResourcesLeastAllocatable: Node 2 score: 0.0
-[Scheduler] Normalized Scores for pod: n_id: 1, score: 100.0 | n_id: 2, score: 0.0
+[Scheduler] Starting CPUFilter...'
+[Scheduler] Starting MEMFilter...'
+[Scheduler] Starting NodeResourcesLeastAllocatable...'
+[Scheduler] Node: 1 - Raw Score: 15.63 - Normalized Score: 100.0
+[Scheduler] Node: 2 - Raw Score: 0.0 - Normalized Score: 0.0
 [Scheduler] --------------------------------
 ====== Evaluating new allocation ======
 stats: received: 884, closed: 884
 TTR: (mean: 0.03788958226933198, variance: 8.941792108316937e-05, longer_than: {}) shorter_than: {}
 QTIME: (mean: 0.0, variance: 0.0)
-component_stats: {"my_solver"=>#<KUBETWIN::ComponentStatistics:0x00007f655c6d3e90 @n=884, @mean=0.011309181672954983, @m_2=0.007689644984348853, @q_mean=0.0, @q_m_2=0.0, @longer_than={}, @shorter_than={}, @received=884, @variance=8.708544716136867e-06, @q_variance=0.0>, "georef_module"=>#<KUBETWIN::ComponentStatistics:0x00007f655c6d3df0 @n=884, @mean=0.011309181672954987, @m_2=0.007689644984348855, @q_mean=0.0, @q_m_2=0.0, @longer_than={}, @shorter_than={}, @received=884, @variance=8.708544716136868e-06, @q_variance=0.0>}
+component_stats: {"my_solver"=>#<KUBETWIN::ComponentStatistics:0x00007f338d8c14b0 @n=884, @mean=0.011309181672954983, @m_2=0.007689644984348853, @q_mean=0.0, @q_m_2=0.0, @longer_than={}, @shorter_than={}, @received=884, @variance=8.708544716136867e-06, @q_variance=0.0>, "georef_module"=>#<KUBETWIN::ComponentStatistics:0x00007f338d8c13c0 @n=884, @mean=0.011309181672954987, @m_2=0.007689644984348855, @q_mean=0.0, @q_m_2=0.0, @longer_than={}, @shorter_than={}, @received=884, @variance=8.708544716136868e-06, @q_variance=0.0>}
 allocation_map: {:rome=>{:tier=>"local", :pods=>8}, :milan=>{:tier=>"local", :pods=>2}, :paris=>{:tier=>"local", :pods=>0}}
 node_utilization: {:rome=>1, :milan=>1, :paris=>0}
 costs: 9.6 per day
 =======================================
-D, [2025-09-11T15:50:21.142978 #6203] DEBUG -- : Current spreading for my_solver: [5, 0, 0] penalties: 10
-D, [2025-09-11T15:50:21.143008 #6203] DEBUG -- : Current spreading for georef_module: [3, 2, 0] penalties: 20
+D, [2025-09-16T15:32:24.555873 #551] DEBUG -- : Current spreading for my_solver: [5, 0, 0] penalties: 10
+D, [2025-09-16T15:32:24.555905 #551] DEBUG -- : Current spreading for georef_module: [3, 2, 0] penalties: 20
 BMAP: {"my_solver"=>{:rome=>5, :milan=>0, :paris=>0}, "georef_module"=>{:rome=>3, :milan=>2, :paris=>0}}
 Weighted sum: 20.037889582269333
 Result:
