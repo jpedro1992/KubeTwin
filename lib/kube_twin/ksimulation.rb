@@ -400,7 +400,7 @@ module KUBETWIN
       # NODE_AFFINITY
       # BALANCED
       # COST
-      strategy_name = :COST
+      strategy_name = :TRIMARAN_LOW_RISK
       strategy = KUBE_SCHEDULER_STRATEGIES[strategy_name]
       raise "Unknown strategy #{strategy_name}" unless strategy
       puts "Register Scheduler strategy: #{strategy_name}"

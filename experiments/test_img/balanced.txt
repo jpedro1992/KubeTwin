@@ -1,51 +1,50 @@
-D, [2025-09-15T15:07:13.151057 #694] DEBUG -- : Cluster: one {:name=>"eu-south-1 - Local DC", :location_id=>1, :type=>:mec, :tier=>"local", :node_number=>5, :node_resources_cpu=>50, :node_resources_memory=>50}
-D, [2025-09-15T15:07:13.151134 #694] DEBUG -- : Cluster: two {:name=>"eu-central-1 Tier 1 Regional Edge", :location_id=>2, :type=>:mec, :node_number=>5, :tier=>"t1", :node_resources_cpu=>100, :node_resources_memory=>100}
-D, [2025-09-15T15:07:13.151151 #694] DEBUG -- : Cluster: three {:name=>"eu-west-3 Tier 1", :location_id=>3, :type=>:mec, :node_number=>5, :tier=>"t1", :node_resources_cpu=>100, :node_resources_memory=>100}
-D, [2025-09-15T15:07:13.151176 #694] DEBUG -- : Cluster: four {:name=>"eu-west-2 Tier 2", :location_id=>4, :type=>:mec, :node_number=>5, :tier=>"t2", :node_resources_cpu=>100, :node_resources_memory=>100}
-D, [2025-09-15T15:07:13.151187 #694] DEBUG -- : Cluster: five {:name=>"eu-north-1 - Tier 2", :location_id=>5, :type=>:mec, :node_number=>5, :tier=>"t2", :node_resources_cpu=>100, :node_resources_memory=>100}
-D, [2025-09-15T15:07:13.151213 #694] DEBUG -- : Cluster: six {:name=>"ca-central-1 - Remote DC", :location_id=>6, :type=>:cloud, :node_number=>5, :tier=>"rdc", :node_resources_cpu=>200, :node_resources_memory=>200}
-D, [2025-09-15T15:07:13.151238 #694] DEBUG -- : Cluster: seven {:name=>"us-east-1 - Remote DC", :location_id=>7, :type=>:cloud, :node_number=>5, :tier=>"rdc", :node_resources_cpu=>200, :node_resources_memory=>200}
-D, [2025-09-15T15:07:13.151271 #694] DEBUG -- : Creating node 0 cluster: one with resources: 50 50
-D, [2025-09-15T15:07:13.151292 #694] DEBUG -- : Creating node 1 cluster: one with resources: 50 50
-D, [2025-09-15T15:07:13.151313 #694] DEBUG -- : Creating node 2 cluster: one with resources: 50 50
-D, [2025-09-15T15:07:13.151332 #694] DEBUG -- : Creating node 3 cluster: one with resources: 50 50
-D, [2025-09-15T15:07:13.151340 #694] DEBUG -- : Creating node 4 cluster: one with resources: 50 50
-D, [2025-09-15T15:07:13.151345 #694] DEBUG -- : Creating node 5 cluster: two with resources: 100 100
-D, [2025-09-15T15:07:13.151349 #694] DEBUG -- : Creating node 6 cluster: two with resources: 100 100
-D, [2025-09-15T15:07:13.151353 #694] DEBUG -- : Creating node 7 cluster: two with resources: 100 100
-D, [2025-09-15T15:07:13.151357 #694] DEBUG -- : Creating node 8 cluster: two with resources: 100 100
-D, [2025-09-15T15:07:13.151362 #694] DEBUG -- : Creating node 9 cluster: two with resources: 100 100
-D, [2025-09-15T15:07:13.151366 #694] DEBUG -- : Creating node 10 cluster: three with resources: 100 100
-D, [2025-09-15T15:07:13.151382 #694] DEBUG -- : Creating node 11 cluster: three with resources: 100 100
-D, [2025-09-15T15:07:13.151391 #694] DEBUG -- : Creating node 12 cluster: three with resources: 100 100
-D, [2025-09-15T15:07:13.151413 #694] DEBUG -- : Creating node 13 cluster: three with resources: 100 100
-D, [2025-09-15T15:07:13.151418 #694] DEBUG -- : Creating node 14 cluster: three with resources: 100 100
-D, [2025-09-15T15:07:13.151424 #694] DEBUG -- : Creating node 15 cluster: four with resources: 100 100
-D, [2025-09-15T15:07:13.151428 #694] DEBUG -- : Creating node 16 cluster: four with resources: 100 100
-D, [2025-09-15T15:07:13.151433 #694] DEBUG -- : Creating node 17 cluster: four with resources: 100 100
-D, [2025-09-15T15:07:13.151438 #694] DEBUG -- : Creating node 18 cluster: four with resources: 100 100
-D, [2025-09-15T15:07:13.151442 #694] DEBUG -- : Creating node 19 cluster: four with resources: 100 100
-D, [2025-09-15T15:07:13.151460 #694] DEBUG -- : Creating node 20 cluster: five with resources: 100 100
-D, [2025-09-15T15:07:13.151469 #694] DEBUG -- : Creating node 21 cluster: five with resources: 100 100
-D, [2025-09-15T15:07:13.151474 #694] DEBUG -- : Creating node 22 cluster: five with resources: 100 100
-D, [2025-09-15T15:07:13.151482 #694] DEBUG -- : Creating node 23 cluster: five with resources: 100 100
-D, [2025-09-15T15:07:13.151487 #694] DEBUG -- : Creating node 24 cluster: five with resources: 100 100
-D, [2025-09-15T15:07:13.151492 #694] DEBUG -- : Creating node 25 cluster: six with resources: 200 200
-D, [2025-09-15T15:07:13.151497 #694] DEBUG -- : Creating node 26 cluster: six with resources: 200 200
-D, [2025-09-15T15:07:13.151515 #694] DEBUG -- : Creating node 27 cluster: six with resources: 200 200
-D, [2025-09-15T15:07:13.151526 #694] DEBUG -- : Creating node 28 cluster: six with resources: 200 200
-D, [2025-09-15T15:07:13.151545 #694] DEBUG -- : Creating node 29 cluster: six with resources: 200 200
-D, [2025-09-15T15:07:13.151555 #694] DEBUG -- : Creating node 30 cluster: seven with resources: 200 200
-D, [2025-09-15T15:07:13.151560 #694] DEBUG -- : Creating node 31 cluster: seven with resources: 200 200
-D, [2025-09-15T15:07:13.151566 #694] DEBUG -- : Creating node 32 cluster: seven with resources: 200 200
-D, [2025-09-15T15:07:13.151571 #694] DEBUG -- : Creating node 33 cluster: seven with resources: 200 200
-D, [2025-09-15T15:07:13.151575 #694] DEBUG -- : Creating node 34 cluster: seven with resources: 200 200
-D, [2025-09-15T15:07:13.153776 #694] DEBUG -- : {"MS1"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.01143607, :sd=>0.00301789, :seed=>12345}},
-:cloud=>{:distribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>50, :resources_requirements_memory=>30, :node_affinity=>"l
-ocal", :rps=>1, :wait_for=>["MS2"]}, "MS2"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.0289486, :sd=>0.004604541, :seed=>12345}}, :cloud=>{:di
-stribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>35, :resources_requirements_memory=>25, :node_affinity=>"local"}} false
-D, [2025-09-15T15:07:13.153844 #694] DEBUG -- : Microservice type: MS1
-D, [2025-09-15T15:07:13.153854 #694] DEBUG -- : Microservice type: MS2
+D, [2025-09-16T11:04:27.117435 #1153] DEBUG -- : Cluster: one {:name=>"eu-south-1 - Local DC", :location_id=>1, :type=>:mec, :tier=>"local", :node_number=>5, :node_resources_cpu=>50, :node_resources_memory=>50}
+D, [2025-09-16T11:04:27.117544 #1153] DEBUG -- : Cluster: two {:name=>"eu-central-1 Tier 1 Regional Edge", :location_id=>2, :type=>:mec, :node_number=>5, :tier=>"t1", :node_resources_cpu=>100, :node_resources_memory=>100}
+D, [2025-09-16T11:04:27.117561 #1153] DEBUG -- : Cluster: three {:name=>"eu-west-3 Tier 1", :location_id=>3, :type=>:mec, :node_number=>5, :tier=>"t1", :node_resources_cpu=>100, :node_resources_memory=>100}
+D, [2025-09-16T11:04:27.117571 #1153] DEBUG -- : Cluster: four {:name=>"eu-west-2 Tier 2", :location_id=>4, :type=>:mec, :node_number=>5, :tier=>"t2", :node_resources_cpu=>100, :node_resources_memory=>100}
+D, [2025-09-16T11:04:27.117580 #1153] DEBUG -- : Cluster: five {:name=>"eu-north-1 - Tier 2", :location_id=>5, :type=>:mec, :node_number=>5, :tier=>"t2", :node_resources_cpu=>100, :node_resources_memory=>100}
+D, [2025-09-16T11:04:27.117589 #1153] DEBUG -- : Cluster: six {:name=>"ca-central-1 - Remote DC", :location_id=>6, :type=>:cloud, :node_number=>5, :tier=>"rdc", :node_resources_cpu=>200, :node_resources_memory=>200}
+D, [2025-09-16T11:04:27.117616 #1153] DEBUG -- : Cluster: seven {:name=>"us-east-1 - Remote DC", :location_id=>7, :type=>:cloud, :node_number=>5, :tier=>"rdc", :node_resources_cpu=>200, :node_resources_memory=>200}
+D, [2025-09-16T11:04:27.117650 #1153] DEBUG -- : Creating node 0 cluster: one with resources: 50 50
+D, [2025-09-16T11:04:27.117672 #1153] DEBUG -- : Creating node 1 cluster: one with resources: 50 50
+D, [2025-09-16T11:04:27.117691 #1153] DEBUG -- : Creating node 2 cluster: one with resources: 50 50
+D, [2025-09-16T11:04:27.117710 #1153] DEBUG -- : Creating node 3 cluster: one with resources: 50 50
+D, [2025-09-16T11:04:27.117719 #1153] DEBUG -- : Creating node 4 cluster: one with resources: 50 50
+D, [2025-09-16T11:04:27.117723 #1153] DEBUG -- : Creating node 5 cluster: two with resources: 100 100
+D, [2025-09-16T11:04:27.117729 #1153] DEBUG -- : Creating node 6 cluster: two with resources: 100 100
+D, [2025-09-16T11:04:27.117749 #1153] DEBUG -- : Creating node 7 cluster: two with resources: 100 100
+D, [2025-09-16T11:04:27.117767 #1153] DEBUG -- : Creating node 8 cluster: two with resources: 100 100
+D, [2025-09-16T11:04:27.117788 #1153] DEBUG -- : Creating node 9 cluster: two with resources: 100 100
+D, [2025-09-16T11:04:27.117810 #1153] DEBUG -- : Creating node 10 cluster: three with resources: 100 100
+D, [2025-09-16T11:04:27.117821 #1153] DEBUG -- : Creating node 11 cluster: three with resources: 100 100
+D, [2025-09-16T11:04:27.117848 #1153] DEBUG -- : Creating node 12 cluster: three with resources: 100 100
+D, [2025-09-16T11:04:27.117857 #1153] DEBUG -- : Creating node 13 cluster: three with resources: 100 100
+D, [2025-09-16T11:04:27.117875 #1153] DEBUG -- : Creating node 14 cluster: three with resources: 100 100
+D, [2025-09-16T11:04:27.117896 #1153] DEBUG -- : Creating node 15 cluster: four with resources: 100 100
+D, [2025-09-16T11:04:27.117917 #1153] DEBUG -- : Creating node 16 cluster: four with resources: 100 100
+D, [2025-09-16T11:04:27.117938 #1153] DEBUG -- : Creating node 17 cluster: four with resources: 100 100
+D, [2025-09-16T11:04:27.117962 #1153] DEBUG -- : Creating node 18 cluster: four with resources: 100 100
+D, [2025-09-16T11:04:27.117990 #1153] DEBUG -- : Creating node 19 cluster: four with resources: 100 100
+D, [2025-09-16T11:04:27.117999 #1153] DEBUG -- : Creating node 20 cluster: five with resources: 100 100
+D, [2025-09-16T11:04:27.118017 #1153] DEBUG -- : Creating node 21 cluster: five with resources: 100 100
+D, [2025-09-16T11:04:27.118037 #1153] DEBUG -- : Creating node 22 cluster: five with resources: 100 100
+D, [2025-09-16T11:04:27.118078 #1153] DEBUG -- : Creating node 23 cluster: five with resources: 100 100
+D, [2025-09-16T11:04:27.118098 #1153] DEBUG -- : Creating node 24 cluster: five with resources: 100 100
+D, [2025-09-16T11:04:27.118107 #1153] DEBUG -- : Creating node 25 cluster: six with resources: 200 200
+D, [2025-09-16T11:04:27.118125 #1153] DEBUG -- : Creating node 26 cluster: six with resources: 200 200
+D, [2025-09-16T11:04:27.118135 #1153] DEBUG -- : Creating node 27 cluster: six with resources: 200 200
+D, [2025-09-16T11:04:27.118153 #1153] DEBUG -- : Creating node 28 cluster: six with resources: 200 200
+D, [2025-09-16T11:04:27.118163 #1153] DEBUG -- : Creating node 29 cluster: six with resources: 200 200
+D, [2025-09-16T11:04:27.118186 #1153] DEBUG -- : Creating node 30 cluster: seven with resources: 200 200
+D, [2025-09-16T11:04:27.118207 #1153] DEBUG -- : Creating node 31 cluster: seven with resources: 200 200
+D, [2025-09-16T11:04:27.118228 #1153] DEBUG -- : Creating node 32 cluster: seven with resources: 200 200
+D, [2025-09-16T11:04:27.118238 #1153] DEBUG -- : Creating node 33 cluster: seven with resources: 200 200
+D, [2025-09-16T11:04:27.118244 #1153] DEBUG -- : Creating node 34 cluster: seven with resources: 200 200
+D, [2025-09-16T11:04:27.120226 #1153] DEBUG -- : {"MS1"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.01143607, :sd=>0.00301789, :seed=>12345}},
+:cloud=>{:distribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>50, :resources_requirements_memory=>30, :node_affinity=>"lo
+cal", :rps=>1, :wait_for=>["MS2"]}, "MS2"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.0289486, :sd=>0.004604541, :seed=>12345}}, :cloud=>{:distribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>35, :resources_requirements_memory=>25, :node_affinity=>"local"}} false
+D, [2025-09-16T11:04:27.120308 #1153] DEBUG -- : Microservice type: MS1
+D, [2025-09-16T11:04:27.120320 #1153] DEBUG -- : Microservice type: MS2
 Register Scheduler strategy: BALANCED
 Register Filtering Plugins...
 Register Scoring Plugins...
@@ -58,6 +57,7 @@ Register Scoring Plugins...
 [Scheduler] Starting ResourceAvailabilityScore...'
 [Scheduler] Starting NodeResourcesLeastAllocatable...'
 [Scheduler] Starting NodeResourcesMostAllocatable...'
+[Scheduler] Starting CostAware plugin ...
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
@@ -68,6 +68,7 @@ Register Scoring Plugins...
 [Scheduler] Starting ResourceAvailabilityScore...'
 [Scheduler] Starting NodeResourcesLeastAllocatable...'
 [Scheduler] Starting NodeResourcesMostAllocatable...'
+[Scheduler] Starting CostAware plugin ...
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
@@ -78,6 +79,7 @@ Register Scoring Plugins...
 [Scheduler] Starting ResourceAvailabilityScore...'
 [Scheduler] Starting NodeResourcesLeastAllocatable...'
 [Scheduler] Starting NodeResourcesMostAllocatable...'
+[Scheduler] Starting CostAware plugin ...
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
@@ -88,6 +90,7 @@ Register Scoring Plugins...
 [Scheduler] Starting ResourceAvailabilityScore...'
 [Scheduler] Starting NodeResourcesLeastAllocatable...'
 [Scheduler] Starting NodeResourcesMostAllocatable...'
+[Scheduler] Starting CostAware plugin ...
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
@@ -98,6 +101,7 @@ Register Scoring Plugins...
 [Scheduler] Starting ResourceAvailabilityScore...'
 [Scheduler] Starting NodeResourcesLeastAllocatable...'
 [Scheduler] Starting NodeResourcesMostAllocatable...'
+[Scheduler] Starting CostAware plugin ...
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
@@ -108,6 +112,7 @@ Register Scoring Plugins...
 [Scheduler] Starting ResourceAvailabilityScore...'
 [Scheduler] Starting NodeResourcesLeastAllocatable...'
 [Scheduler] Starting NodeResourcesMostAllocatable...'
+[Scheduler] Starting CostAware plugin ...
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
@@ -118,6 +123,7 @@ Register Scoring Plugins...
 [Scheduler] Starting ResourceAvailabilityScore...'
 [Scheduler] Starting NodeResourcesLeastAllocatable...'
 [Scheduler] Starting NodeResourcesMostAllocatable...'
+[Scheduler] Starting CostAware plugin ...
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
@@ -128,6 +134,7 @@ Register Scoring Plugins...
 [Scheduler] Starting ResourceAvailabilityScore...'
 [Scheduler] Starting NodeResourcesLeastAllocatable...'
 [Scheduler] Starting NodeResourcesMostAllocatable...'
+[Scheduler] Starting CostAware plugin ...
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
@@ -138,6 +145,7 @@ Register Scoring Plugins...
 [Scheduler] Starting ResourceAvailabilityScore...'
 [Scheduler] Starting NodeResourcesLeastAllocatable...'
 [Scheduler] Starting NodeResourcesMostAllocatable...'
+[Scheduler] Starting CostAware plugin ...
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
@@ -148,6 +156,7 @@ Register Scoring Plugins...
 [Scheduler] Starting ResourceAvailabilityScore...'
 [Scheduler] Starting NodeResourcesLeastAllocatable...'
 [Scheduler] Starting NodeResourcesMostAllocatable...'
+[Scheduler] Starting CostAware plugin ...
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
@@ -158,6 +167,7 @@ Register Scoring Plugins...
 [Scheduler] Starting ResourceAvailabilityScore...'
 [Scheduler] Starting NodeResourcesLeastAllocatable...'
 [Scheduler] Starting NodeResourcesMostAllocatable...'
+[Scheduler] Starting CostAware plugin ...
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
@@ -168,6 +178,7 @@ Register Scoring Plugins...
 [Scheduler] Starting ResourceAvailabilityScore...'
 [Scheduler] Starting NodeResourcesLeastAllocatable...'
 [Scheduler] Starting NodeResourcesMostAllocatable...'
+[Scheduler] Starting CostAware plugin ...
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
@@ -178,6 +189,7 @@ Register Scoring Plugins...
 [Scheduler] Starting ResourceAvailabilityScore...'
 [Scheduler] Starting NodeResourcesLeastAllocatable...'
 [Scheduler] Starting NodeResourcesMostAllocatable...'
+[Scheduler] Starting CostAware plugin ...
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
@@ -188,6 +200,7 @@ Register Scoring Plugins...
 [Scheduler] Starting ResourceAvailabilityScore...'
 [Scheduler] Starting NodeResourcesLeastAllocatable...'
 [Scheduler] Starting NodeResourcesMostAllocatable...'
+[Scheduler] Starting CostAware plugin ...
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
@@ -198,6 +211,7 @@ Register Scoring Plugins...
 [Scheduler] Starting ResourceAvailabilityScore...'
 [Scheduler] Starting NodeResourcesLeastAllocatable...'
 [Scheduler] Starting NodeResourcesMostAllocatable...'
+[Scheduler] Starting CostAware plugin ...
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
@@ -208,21 +222,24 @@ Register Scoring Plugins...
 [Scheduler] Starting ResourceAvailabilityScore...'
 [Scheduler] Starting NodeResourcesLeastAllocatable...'
 [Scheduler] Starting NodeResourcesMostAllocatable...'
+[Scheduler] Starting CostAware plugin ...
 [Scheduler] --------------------------------
 ====== Evaluating new allocation ======
-stats: received: 9005, closed: 9005
-TTR: (mean: 20.30805817232867, variance: 136.17450852196433, longer_than: {}) shorter_than: {}
-QTIME: (mean: 20.090703508895, variance: 136.1737668517625)
-component_stats: {"MS1"=>#<KUBETWIN::ComponentStatistics:0x00007f823a2ef9c8 @n=9005, @mean=20.143629625146726, @m_2=1226116.64199116, @q_mean=20.090703508894943, @q_m_2=1226110.06
-12439918, @longer_than={}, @shorter_than={}, @received=9005, @variance=136.1746603721857, @q_variance=136.1739295028867>, "MS2"=>#<KUBETWIN::ComponentStatistics:0x00007f823a2ef928
-12439918, @longer_than={}, @shorter_than={}, @received=9005, @variance=136.1746603721857, @q_variance=136.1739295028867>, "MS2"=>#<KUBETWIN::ComponentStatistics:0x00007f823a2ef928 @n=9005, @mean=0.05292611625179987, @m_2=0.313057740520254, @q_mean=0.0, @q_m_2=0.0, @longer_than={}, @shorter_than={}, @received=9005, @variance=3.476874061753154e-05, @q_variance=0.0>}
-allocation_map: {"eu-south-1 - Local DC"=>{:tier=>"local", :pods=>0}, "eu-central-1 Tier 1 Regional Edge"=>{:tier=>"t1", :pods=>0}, "eu-west-3 Tier 1"=>{:tier=>"t1", :pods=>0}, "eu-west-2 Tier 2"=>{:tier=>"t2", :pods=>0}, "eu-north-1 - Tier 2"=>{:tier=>"t2", :pods=>0}, "ca-central-1 - Remote DC"=>{:tier=>"rdc", :pods=>9}, "us-east-1 - Remote DC"=>{:tier=>"rdc", :pods=>7}}
-node_utilization: {"eu-south-1 - Local DC"=>0, "eu-central-1 Tier 1 Regional Edge"=>0, "eu-west-3 Tier 1"=>0, "eu-west-2 Tier 2"=>0, "eu-north-1 - Tier 2"=>0, "ca-central-1 - Remote DC"=>5, "us-east-1 - Remote DC"=>5}
-costs: 144.0 per day
+stats: received: 8986, closed: 8986
+TTR: (mean: 0.06571303516619717, variance: 0.00020736023645980423, longer_than: {}) shorter_than: {}
+QTIME: (mean: 0.0024505653865295454, variance: 6.230703427071216e-05)
+component_stats: {"MS1"=>#<KUBETWIN::ComponentStatistics:0x00007f3d075cefb8 @n=8986, @mean=0.01382880141362032, @m_2=0.5869880898796956, @q_mean=0.0024370322799512857, @q_m_2=0.507
+224359100994, @longer_than={}, @shorter_than={}, @received=8986, @variance=6.532978184526385e-05, @q_variance=5.64523493712848e-05>, "MS2"=>#<KUBETWIN::ComponentStatistics:0x00007f
+3d075cef18 @n=8986, @mean=0.02889454343550849, @m_2=0.17521020050563105, @q_mean=1.3533106578264008e-05, @q_m_2=0.0002659192477719752, @longer_than={}, @shorter_than={}, @received=8986, @variance=1.9500300557109745e-05, @q_variance=2.9595909601777982e-08>}
+allocation_map: {"eu-south-1 - Local DC"=>{:tier=>"local", :pods=>5}, "eu-central-1 Tier 1 Regional Edge"=>{:tier=>"t1", :pods=>10}, "eu-west-3 Tier 1"=>{:tier=>"t1", :pods=>1}, "e
+u-west-2 Tier 2"=>{:tier=>"t2", :pods=>0}, "eu-north-1 - Tier 2"=>{:tier=>"t2", :pods=>0}, "ca-central-1 - Remote DC"=>{:tier=>"rdc", :pods=>0}, "us-east-1 - Remote DC"=>{:tier=>"rdc", :pods=>0}}
+node_utilization: {"eu-south-1 - Local DC"=>5, "eu-central-1 Tier 1 Regional Edge"=>5, "eu-west-3 Tier 1"=>1, "eu-west-2 Tier 2"=>0, "eu-north-1 - Tier 2"=>0, "ca-central-1 - Remote DC"=>0, "us-east-1 - Remote DC"=>0}
+costs: 55.2 per day
 =======================================
-D, [2025-09-15T15:07:13.471090 #694] DEBUG -- : Current spreading for MS1: [0, 0, 0, 0, 0, 5, 3] penalties: 10
-D, [2025-09-15T15:07:13.471145 #694] DEBUG -- : Current spreading for MS2: [0, 0, 0, 0, 0, 4, 4] penalties: 20
-BMAP: {"MS1"=>{"eu-south-1 - Local DC"=>0, "eu-central-1 Tier 1 Regional Edge"=>0, "eu-west-3 Tier 1"=>0, "eu-west-2 Tier 2"=>0, "eu-north-1 - Tier 2"=>0, "ca-central-1 - Remote DC"=>5, "us-east-1 - Remote DC"=>3}, "MS2"=>{"eu-south-1 - Local DC"=>0, "eu-central-1 Tier 1 Regional Edge"=>0, "eu-west-3 Tier 1"=>0, "eu-west-2 Tier 2"=>0, "eu-north-1 - Tier 2"=>0, "ca-central-1 - Remote DC"=>4, "us-east-1 - Remote DC"=>4}}
-Weighted sum: 40.30805817232867
+D, [2025-09-16T11:04:27.431365 #1153] DEBUG -- : Current spreading for MS1: [5, 3, 0, 0, 0, 0, 0] penalties: 10
+D, [2025-09-16T11:04:27.431452 #1153] DEBUG -- : Current spreading for MS2: [0, 7, 1, 0, 0, 0, 0] penalties: 20
+BMAP: {"MS1"=>{"eu-south-1 - Local DC"=>5, "eu-central-1 Tier 1 Regional Edge"=>3, "eu-west-3 Tier 1"=>0, "eu-west-2 Tier 2"=>0, "eu-north-1 - Tier 2"=>0, "ca-central-1 - Remote DC
+"=>0, "us-east-1 - Remote DC"=>0}, "MS2"=>{"eu-south-1 - Local DC"=>0, "eu-central-1 Tier 1 Regional Edge"=>7, "eu-west-3 Tier 1"=>1, "eu-west-2 Tier 2"=>0, "eu-north-1 - Tier 2"=>0, "ca-central-1 - Remote DC"=>0, "us-east-1 - Remote DC"=>0}}
+Weighted sum: 20.065713035166198
 Result:
--40.30805817232867
+-20.065713035166198

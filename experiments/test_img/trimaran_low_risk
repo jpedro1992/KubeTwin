@@ -1,51 +1,50 @@
-D, [2025-09-15T14:52:37.936898 #620] DEBUG -- : Cluster: one {:name=>"eu-south-1 - Local DC", :location_id=>1, :type=>:mec, :tier=>"local", :node_number=>5, :node_resources_cpu=>50, :node_resources_memory=>50}
-D, [2025-09-15T14:52:37.937031 #620] DEBUG -- : Cluster: two {:name=>"eu-central-1 Tier 1 Regional Edge", :location_id=>2, :type=>:mec, :node_number=>5, :tier=>"t1", :node_resources_cpu=>100, :node_resources_memory=>100}
-D, [2025-09-15T14:52:37.937053 #620] DEBUG -- : Cluster: three {:name=>"eu-west-3 Tier 1", :location_id=>3, :type=>:mec, :node_number=>5, :tier=>"t1", :node_resources_cpu=>100, :node_resources_memory=>100}
-D, [2025-09-15T14:52:37.937085 #620] DEBUG -- : Cluster: four {:name=>"eu-west-2 Tier 2", :location_id=>4, :type=>:mec, :node_number=>5, :tier=>"t2", :node_resources_cpu=>100, :node_resources_memory=>100}
-D, [2025-09-15T14:52:37.937123 #620] DEBUG -- : Cluster: five {:name=>"eu-north-1 - Tier 2", :location_id=>5, :type=>:mec, :node_number=>5, :tier=>"t2", :node_resources_cpu=>100, :node_resources_memory=>100}
-D, [2025-09-15T14:52:37.937133 #620] DEBUG -- : Cluster: six {:name=>"ca-central-1 - Remote DC", :location_id=>6, :type=>:cloud, :node_number=>5, :tier=>"rdc", :node_resources_cpu=>200, :node_resources_memory=>200}
-D, [2025-09-15T14:52:37.937158 #620] DEBUG -- : Cluster: seven {:name=>"us-east-1 - Remote DC", :location_id=>7, :type=>:cloud, :node_number=>5, :tier=>"rdc", :node_resources_cpu=>200, :node_resources_memory=>200}
-D, [2025-09-15T14:52:37.937207 #620] DEBUG -- : Creating node 0 cluster: one with resources: 50 50
-D, [2025-09-15T14:52:37.937219 #620] DEBUG -- : Creating node 1 cluster: one with resources: 50 50
-D, [2025-09-15T14:52:37.937226 #620] DEBUG -- : Creating node 2 cluster: one with resources: 50 50
-D, [2025-09-15T14:52:37.937230 #620] DEBUG -- : Creating node 3 cluster: one with resources: 50 50
-D, [2025-09-15T14:52:37.937234 #620] DEBUG -- : Creating node 4 cluster: one with resources: 50 50
-D, [2025-09-15T14:52:37.937256 #620] DEBUG -- : Creating node 5 cluster: two with resources: 100 100
-D, [2025-09-15T14:52:37.937277 #620] DEBUG -- : Creating node 6 cluster: two with resources: 100 100
-D, [2025-09-15T14:52:37.937297 #620] DEBUG -- : Creating node 7 cluster: two with resources: 100 100
-D, [2025-09-15T14:52:37.937317 #620] DEBUG -- : Creating node 8 cluster: two with resources: 100 100
-D, [2025-09-15T14:52:37.937338 #620] DEBUG -- : Creating node 9 cluster: two with resources: 100 100
-D, [2025-09-15T14:52:37.937346 #620] DEBUG -- : Creating node 10 cluster: three with resources: 100 100
-D, [2025-09-15T14:52:37.937351 #620] DEBUG -- : Creating node 11 cluster: three with resources: 100 100
-D, [2025-09-15T14:52:37.937355 #620] DEBUG -- : Creating node 12 cluster: three with resources: 100 100
-D, [2025-09-15T14:52:37.937359 #620] DEBUG -- : Creating node 13 cluster: three with resources: 100 100
-D, [2025-09-15T14:52:37.937362 #620] DEBUG -- : Creating node 14 cluster: three with resources: 100 100
-D, [2025-09-15T14:52:37.937367 #620] DEBUG -- : Creating node 15 cluster: four with resources: 100 100
-D, [2025-09-15T14:52:37.937371 #620] DEBUG -- : Creating node 16 cluster: four with resources: 100 100
-D, [2025-09-15T14:52:37.937375 #620] DEBUG -- : Creating node 17 cluster: four with resources: 100 100
-D, [2025-09-15T14:52:37.937379 #620] DEBUG -- : Creating node 18 cluster: four with resources: 100 100
-D, [2025-09-15T14:52:37.937395 #620] DEBUG -- : Creating node 19 cluster: four with resources: 100 100
-D, [2025-09-15T14:52:37.937417 #620] DEBUG -- : Creating node 20 cluster: five with resources: 100 100
-D, [2025-09-15T14:52:37.937426 #620] DEBUG -- : Creating node 21 cluster: five with resources: 100 100
-D, [2025-09-15T14:52:37.937430 #620] DEBUG -- : Creating node 22 cluster: five with resources: 100 100
-D, [2025-09-15T14:52:37.937436 #620] DEBUG -- : Creating node 23 cluster: five with resources: 100 100
-D, [2025-09-15T14:52:37.937453 #620] DEBUG -- : Creating node 24 cluster: five with resources: 100 100
-D, [2025-09-15T14:52:37.937474 #620] DEBUG -- : Creating node 25 cluster: six with resources: 200 200
-D, [2025-09-15T14:52:37.937494 #620] DEBUG -- : Creating node 26 cluster: six with resources: 200 200
-D, [2025-09-15T14:52:37.937514 #620] DEBUG -- : Creating node 27 cluster: six with resources: 200 200
-D, [2025-09-15T14:52:37.937533 #620] DEBUG -- : Creating node 28 cluster: six with resources: 200 200
-D, [2025-09-15T14:52:37.937542 #620] DEBUG -- : Creating node 29 cluster: six with resources: 200 200
-D, [2025-09-15T14:52:37.937560 #620] DEBUG -- : Creating node 30 cluster: seven with resources: 200 200
-D, [2025-09-15T14:52:37.937580 #620] DEBUG -- : Creating node 31 cluster: seven with resources: 200 200
-D, [2025-09-15T14:52:37.937588 #620] DEBUG -- : Creating node 32 cluster: seven with resources: 200 200
-D, [2025-09-15T14:52:37.937593 #620] DEBUG -- : Creating node 33 cluster: seven with resources: 200 200
-D, [2025-09-15T14:52:37.937597 #620] DEBUG -- : Creating node 34 cluster: seven with resources: 200 200
-D, [2025-09-15T14:52:37.940004 #620] DEBUG -- : {"MS1"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.01143607, :sd=>0.00301789, :seed=>12345}},
-:cloud=>{:distribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>50, :resources_requirements_memory=>30, :node_affinity=>"l
-ocal", :rps=>1, :wait_for=>["MS2"]}, "MS2"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.0289486, :sd=>0.004604541, :seed=>12345}}, :cloud=>{:di
-stribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>35, :resources_requirements_memory=>25, :node_affinity=>"local"}} false
-D, [2025-09-15T14:52:37.940077 #620] DEBUG -- : Microservice type: MS1
-D, [2025-09-15T14:52:37.940101 #620] DEBUG -- : Microservice type: MS2
+D, [2025-09-16T12:30:33.529967 #1717] DEBUG -- : Cluster: one {:name=>"eu-south-1 - Local DC", :location_id=>1, :type=>:mec, :tier=>"local", :node_number=>5, :node_resources_cpu=>50, :node_resources_memory=>50}
+D, [2025-09-16T12:30:33.530072 #1717] DEBUG -- : Cluster: two {:name=>"eu-central-1 Tier 1 Regional Edge", :location_id=>2, :type=>:mec, :node_number=>5, :tier=>"t1", :node_resources_cpu=>100, :node_resources_memory=>100}
+D, [2025-09-16T12:30:33.530112 #1717] DEBUG -- : Cluster: three {:name=>"eu-west-3 Tier 1", :location_id=>3, :type=>:mec, :node_number=>5, :tier=>"t1", :node_resources_cpu=>100, :node_resources_memory=>100}
+D, [2025-09-16T12:30:33.530140 #1717] DEBUG -- : Cluster: four {:name=>"eu-west-2 Tier 2", :location_id=>4, :type=>:mec, :node_number=>5, :tier=>"t2", :node_resources_cpu=>100, :node_resources_memory=>100}
+D, [2025-09-16T12:30:33.530166 #1717] DEBUG -- : Cluster: five {:name=>"eu-north-1 - Tier 2", :location_id=>5, :type=>:mec, :node_number=>5, :tier=>"t2", :node_resources_cpu=>100, :node_resources_memory=>100}
+D, [2025-09-16T12:30:33.530193 #1717] DEBUG -- : Cluster: six {:name=>"ca-central-1 - Remote DC", :location_id=>6, :type=>:cloud, :node_number=>5, :tier=>"rdc", :node_resources_cpu=>200, :node_resources_memory=>200}
+D, [2025-09-16T12:30:33.530220 #1717] DEBUG -- : Cluster: seven {:name=>"us-east-1 - Remote DC", :location_id=>7, :type=>:cloud, :node_number=>5, :tier=>"rdc", :node_resources_cpu=>200, :node_resources_memory=>200}
+D, [2025-09-16T12:30:33.530257 #1717] DEBUG -- : Creating node 0 cluster: one with resources: 50 50
+D, [2025-09-16T12:30:33.530269 #1717] DEBUG -- : Creating node 1 cluster: one with resources: 50 50
+D, [2025-09-16T12:30:33.530338 #1717] DEBUG -- : Creating node 2 cluster: one with resources: 50 50
+D, [2025-09-16T12:30:33.530364 #1717] DEBUG -- : Creating node 3 cluster: one with resources: 50 50
+D, [2025-09-16T12:30:33.530392 #1717] DEBUG -- : Creating node 4 cluster: one with resources: 50 50
+D, [2025-09-16T12:30:33.530413 #1717] DEBUG -- : Creating node 5 cluster: two with resources: 100 100
+D, [2025-09-16T12:30:33.530438 #1717] DEBUG -- : Creating node 6 cluster: two with resources: 100 100
+D, [2025-09-16T12:30:33.530474 #1717] DEBUG -- : Creating node 7 cluster: two with resources: 100 100
+D, [2025-09-16T12:30:33.530482 #1717] DEBUG -- : Creating node 8 cluster: two with resources: 100 100
+D, [2025-09-16T12:30:33.530499 #1717] DEBUG -- : Creating node 9 cluster: two with resources: 100 100
+D, [2025-09-16T12:30:33.530519 #1717] DEBUG -- : Creating node 10 cluster: three with resources: 100 100
+D, [2025-09-16T12:30:33.530539 #1717] DEBUG -- : Creating node 11 cluster: three with resources: 100 100
+D, [2025-09-16T12:30:33.530561 #1717] DEBUG -- : Creating node 12 cluster: three with resources: 100 100
+D, [2025-09-16T12:30:33.530580 #1717] DEBUG -- : Creating node 13 cluster: three with resources: 100 100
+D, [2025-09-16T12:30:33.530589 #1717] DEBUG -- : Creating node 14 cluster: three with resources: 100 100
+D, [2025-09-16T12:30:33.530594 #1717] DEBUG -- : Creating node 15 cluster: four with resources: 100 100
+D, [2025-09-16T12:30:33.530599 #1717] DEBUG -- : Creating node 16 cluster: four with resources: 100 100
+D, [2025-09-16T12:30:33.530604 #1717] DEBUG -- : Creating node 17 cluster: four with resources: 100 100
+D, [2025-09-16T12:30:33.530622 #1717] DEBUG -- : Creating node 18 cluster: four with resources: 100 100
+D, [2025-09-16T12:30:33.530632 #1717] DEBUG -- : Creating node 19 cluster: four with resources: 100 100
+D, [2025-09-16T12:30:33.530640 #1717] DEBUG -- : Creating node 20 cluster: five with resources: 100 100
+D, [2025-09-16T12:30:33.530645 #1717] DEBUG -- : Creating node 21 cluster: five with resources: 100 100
+D, [2025-09-16T12:30:33.530649 #1717] DEBUG -- : Creating node 22 cluster: five with resources: 100 100
+D, [2025-09-16T12:30:33.530653 #1717] DEBUG -- : Creating node 23 cluster: five with resources: 100 100
+D, [2025-09-16T12:30:33.530658 #1717] DEBUG -- : Creating node 24 cluster: five with resources: 100 100
+D, [2025-09-16T12:30:33.530662 #1717] DEBUG -- : Creating node 25 cluster: six with resources: 200 200
+D, [2025-09-16T12:30:33.530679 #1717] DEBUG -- : Creating node 26 cluster: six with resources: 200 200
+D, [2025-09-16T12:30:33.530699 #1717] DEBUG -- : Creating node 27 cluster: six with resources: 200 200
+D, [2025-09-16T12:30:33.530719 #1717] DEBUG -- : Creating node 28 cluster: six with resources: 200 200
+D, [2025-09-16T12:30:33.530728 #1717] DEBUG -- : Creating node 29 cluster: six with resources: 200 200
+D, [2025-09-16T12:30:33.530735 #1717] DEBUG -- : Creating node 30 cluster: seven with resources: 200 200
+D, [2025-09-16T12:30:33.530753 #1717] DEBUG -- : Creating node 31 cluster: seven with resources: 200 200
+D, [2025-09-16T12:30:33.530772 #1717] DEBUG -- : Creating node 32 cluster: seven with resources: 200 200
+D, [2025-09-16T12:30:33.530792 #1717] DEBUG -- : Creating node 33 cluster: seven with resources: 200 200
+D, [2025-09-16T12:30:33.530814 #1717] DEBUG -- : Creating node 34 cluster: seven with resources: 200 200
+D, [2025-09-16T12:30:33.531481 #1717] DEBUG -- : {"MS1"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.01143607, :sd=>0.00301789, :seed=>12345}},
+:cloud=>{:distribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>50, :resources_requirements_memory=>30, :node_affinity=>"lo
+cal", :rps=>1, :wait_for=>["MS2"]}, "MS2"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.0289486, :sd=>0.004604541, :seed=>12345}}, :cloud=>{:distribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>35, :resources_requirements_memory=>25, :node_affinity=>"local"}} false
+D, [2025-09-16T12:30:33.531542 #1717] DEBUG -- : Microservice type: MS1
+D, [2025-09-16T12:30:33.531552 #1717] DEBUG -- : Microservice type: MS2
 Register Scheduler strategy: TRIMARAN_LOW_RISK
 Register Filtering Plugins...
 Register Scoring Plugins...
@@ -54,113 +53,1053 @@ Register Scoring Plugins...
 [Scheduler] Starting CPUFilter...'
 [Scheduler] Starting MEMFilter...'
 [Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 0 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 1 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 2 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 3 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 4 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 5 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 6 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 7 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 8 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 9 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 10 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 11 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 12 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 13 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 14 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 15 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 16 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 17 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 18 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 19 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 20 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 21 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 22 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 23 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 24 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 25 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 26 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 27 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 28 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 29 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 30 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 31 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 32 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 33 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 34 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 0 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 1 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 2 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 3 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 4 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 5 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 6 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 7 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 8 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 9 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 10 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 11 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 12 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 13 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 14 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 15 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 16 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 17 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 18 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 19 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 20 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 21 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 22 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 23 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 24 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 25 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 26 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 27 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 28 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 29 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 30 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 31 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 32 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 33 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 34 - Raw Score: 80.0 - Normalized Score: 100
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
 [Scheduler] Starting CPUFilter...'
 [Scheduler] Starting MEMFilter...'
 [Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 1 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 2 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 3 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 4 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 5 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 6 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 7 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 8 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 9 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 10 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 11 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 12 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 13 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 14 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 15 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 16 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 17 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 18 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 19 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 20 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 21 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 22 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 23 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 24 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 25 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 26 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 27 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 28 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 29 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 30 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 31 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 32 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 33 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 34 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 1 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 2 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 3 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 4 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 5 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 6 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 7 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 8 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 9 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 10 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 11 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 12 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 13 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 14 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 15 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 16 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 17 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 18 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 19 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 20 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 21 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 22 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 23 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 24 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 25 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 26 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 27 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 28 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 29 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 30 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 31 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 32 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 33 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 34 - Raw Score: 80.0 - Normalized Score: 100
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
 [Scheduler] Starting CPUFilter...'
 [Scheduler] Starting MEMFilter...'
 [Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 2 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 3 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 4 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 5 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 6 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 7 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 8 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 9 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 10 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 11 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 12 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 13 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 14 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 15 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 16 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 17 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 18 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 19 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 20 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 21 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 22 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 23 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 24 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 25 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 26 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 27 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 28 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 29 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 30 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 31 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 32 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 33 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 34 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 2 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 3 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 4 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 5 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 6 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 7 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 8 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 9 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 10 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 11 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 12 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 13 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 14 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 15 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 16 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 17 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 18 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 19 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 20 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 21 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 22 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 23 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 24 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 25 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 26 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 27 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 28 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 29 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 30 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 31 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 32 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 33 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 34 - Raw Score: 80.0 - Normalized Score: 100
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
 [Scheduler] Starting CPUFilter...'
 [Scheduler] Starting MEMFilter...'
 [Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 3 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 4 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 5 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 6 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 7 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 8 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 9 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 10 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 11 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 12 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 13 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 14 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 15 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 16 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 17 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 18 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 19 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 20 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 21 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 22 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 23 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 24 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 25 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 26 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 27 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 28 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 29 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 30 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 31 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 32 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 33 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 34 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 3 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 4 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 5 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 6 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 7 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 8 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 9 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 10 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 11 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 12 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 13 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 14 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 15 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 16 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 17 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 18 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 19 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 20 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 21 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 22 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 23 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 24 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 25 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 26 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 27 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 28 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 29 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 30 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 31 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 32 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 33 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 34 - Raw Score: 80.0 - Normalized Score: 100
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
 [Scheduler] Starting CPUFilter...'
 [Scheduler] Starting MEMFilter...'
 [Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 4 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 5 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 6 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 7 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 8 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 9 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 10 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 11 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 12 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 13 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 14 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 15 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 16 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 17 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 18 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 19 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 20 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 21 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 22 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 23 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 24 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 25 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 26 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 27 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 28 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 29 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 30 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 31 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 32 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 33 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 34 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 4 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 5 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 6 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 7 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 8 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 9 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 10 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 11 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 12 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 13 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 14 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 15 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 16 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 17 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 18 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 19 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 20 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 21 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 22 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 23 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 24 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 25 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 26 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 27 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 28 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 29 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 30 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 31 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 32 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 33 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 34 - Raw Score: 80.0 - Normalized Score: 100
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
 [Scheduler] Starting CPUFilter...'
 [Scheduler] Starting MEMFilter...'
 [Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 5 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 6 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 7 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 8 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 9 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 10 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 11 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 12 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 13 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 14 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 15 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 16 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 17 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 18 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 19 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 20 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 21 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 22 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 23 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 24 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 25 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 26 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 27 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 28 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 29 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 30 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 31 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 32 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 33 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 34 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 5 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 6 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 7 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 8 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 9 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 10 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 11 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 12 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 13 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 14 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 15 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 16 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 17 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 18 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 19 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 20 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 21 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 22 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 23 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 24 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 25 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 26 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 27 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 28 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 29 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 30 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 31 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 32 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 33 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 34 - Raw Score: 80.0 - Normalized Score: 100
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
 [Scheduler] Starting CPUFilter...'
 [Scheduler] Starting MEMFilter...'
 [Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 5 cpu_score: 92.5, mem_score: 87.5, score: 90.0
+[Scheduler] LowRiskOverCommitment: Node 6 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 7 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 8 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 9 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 10 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 11 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 12 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 13 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 14 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 15 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 16 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 17 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 18 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 19 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 20 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 21 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 22 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 23 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 24 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 25 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 26 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 27 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 28 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 29 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 30 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 31 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 32 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 33 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 34 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 5 - Raw Score: 90.0 - Normalized Score: 100.0
+[Scheduler] Node: 6 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 7 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 8 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 9 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 10 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 11 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 12 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 13 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 14 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 15 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 16 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 17 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 18 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 19 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 20 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 21 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 22 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 23 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 24 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 25 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 26 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 27 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 28 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 29 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 30 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 31 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 32 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 33 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 34 - Raw Score: 80.0 - Normalized Score: 0.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
 [Scheduler] Starting CPUFilter...'
 [Scheduler] Starting MEMFilter...'
 [Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 6 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 7 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 8 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 9 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 10 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 11 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 12 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 13 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 14 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 15 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 16 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 17 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 18 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 19 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 20 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 21 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 22 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 23 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 24 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 25 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 26 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 27 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 28 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 29 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 30 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 31 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 32 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 33 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 34 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 6 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 7 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 8 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 9 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 10 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 11 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 12 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 13 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 14 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 15 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 16 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 17 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 18 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 19 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 20 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 21 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 22 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 23 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 24 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 25 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 26 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 27 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 28 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 29 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 30 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 31 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 32 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 33 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 34 - Raw Score: 80.0 - Normalized Score: 100
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
 [Scheduler] Starting CPUFilter...'
 [Scheduler] Starting MEMFilter...'
 [Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 6 cpu_score: 92.5, mem_score: 87.5, score: 90.0
+[Scheduler] LowRiskOverCommitment: Node 7 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 8 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 9 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 10 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 11 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 12 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 13 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 14 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 15 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 16 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 17 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 18 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 19 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 20 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 21 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 22 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 23 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 24 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 25 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 26 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 27 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 28 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 29 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 30 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 31 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 32 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 33 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 34 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 6 - Raw Score: 90.0 - Normalized Score: 100.0
+[Scheduler] Node: 7 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 8 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 9 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 10 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 11 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 12 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 13 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 14 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 15 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 16 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 17 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 18 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 19 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 20 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 21 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 22 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 23 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 24 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 25 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 26 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 27 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 28 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 29 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 30 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 31 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 32 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 33 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 34 - Raw Score: 80.0 - Normalized Score: 0.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
 [Scheduler] Starting CPUFilter...'
 [Scheduler] Starting MEMFilter...'
 [Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 7 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 8 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 9 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 10 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 11 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 12 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 13 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 14 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 15 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 16 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 17 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 18 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 19 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 20 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 21 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 22 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 23 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 24 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 25 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 26 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 27 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 28 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 29 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 30 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 31 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 32 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 33 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 34 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 7 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 8 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 9 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 10 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 11 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 12 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 13 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 14 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 15 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 16 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 17 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 18 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 19 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 20 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 21 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 22 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 23 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 24 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 25 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 26 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 27 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 28 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 29 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 30 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 31 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 32 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 33 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 34 - Raw Score: 80.0 - Normalized Score: 100
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
 [Scheduler] Starting CPUFilter...'
 [Scheduler] Starting MEMFilter...'
 [Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 7 cpu_score: 88.75, mem_score: 86.25, score: 87.5
+[Scheduler] LowRiskOverCommitment: Node 8 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 9 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 10 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 11 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 12 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 13 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 14 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 15 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 16 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 17 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 18 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 19 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 20 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 21 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 22 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 23 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 24 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 25 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 26 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 27 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 28 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 29 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 30 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 31 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 32 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 33 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 34 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 7 - Raw Score: 87.5 - Normalized Score: 100.0
+[Scheduler] Node: 8 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 9 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 10 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 11 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 12 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 13 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 14 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 15 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 16 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 17 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 18 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 19 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 20 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 21 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 22 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 23 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 24 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 25 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 26 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 27 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 28 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 29 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 30 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 31 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 32 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 33 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 34 - Raw Score: 80.0 - Normalized Score: 0.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
 [Scheduler] Starting CPUFilter...'
 [Scheduler] Starting MEMFilter...'
 [Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 8 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 9 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 10 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 11 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 12 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 13 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 14 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 15 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 16 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 17 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 18 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 19 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 20 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 21 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 22 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 23 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 24 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 25 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 26 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 27 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 28 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 29 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 30 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 31 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 32 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 33 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 34 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 8 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 9 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 10 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 11 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 12 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 13 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 14 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 15 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 16 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 17 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 18 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 19 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 20 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 21 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 22 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 23 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 24 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 25 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 26 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 27 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 28 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 29 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 30 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 31 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 32 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 33 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 34 - Raw Score: 80.0 - Normalized Score: 100
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
 [Scheduler] Starting CPUFilter...'
 [Scheduler] Starting MEMFilter...'
 [Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 8 cpu_score: 88.75, mem_score: 86.25, score: 87.5
+[Scheduler] LowRiskOverCommitment: Node 9 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 10 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 11 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 12 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 13 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 14 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 15 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 16 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 17 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 18 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 19 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 20 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 21 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 22 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 23 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 24 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 25 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 26 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 27 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 28 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 29 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 30 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 31 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 32 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 33 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 34 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 8 - Raw Score: 87.5 - Normalized Score: 100.0
+[Scheduler] Node: 9 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 10 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 11 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 12 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 13 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 14 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 15 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 16 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 17 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 18 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 19 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 20 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 21 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 22 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 23 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 24 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 25 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 26 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 27 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 28 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 29 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 30 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 31 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 32 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 33 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 34 - Raw Score: 80.0 - Normalized Score: 0.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
 [Scheduler] Starting CPUFilter...'
 [Scheduler] Starting MEMFilter...'
 [Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 9 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 10 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 11 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 12 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 13 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 14 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 15 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 16 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 17 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 18 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 19 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 20 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 21 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 22 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 23 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 24 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 25 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 26 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 27 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 28 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 29 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 30 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 31 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 32 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 33 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 34 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 9 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 10 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 11 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 12 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 13 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 14 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 15 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 16 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 17 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 18 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 19 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 20 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 21 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 22 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 23 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 24 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 25 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 26 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 27 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 28 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 29 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 30 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 31 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 32 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 33 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 34 - Raw Score: 80.0 - Normalized Score: 100
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
 [Scheduler] Starting CPUFilter...'
 [Scheduler] Starting MEMFilter...'
 [Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 9 cpu_score: 88.75, mem_score: 86.25, score: 87.5
+[Scheduler] LowRiskOverCommitment: Node 10 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 11 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 12 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 13 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 14 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 15 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 16 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 17 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 18 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 19 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 20 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 21 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 22 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 23 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 24 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 25 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 26 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 27 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 28 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 29 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 30 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 31 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 32 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 33 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 34 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 9 - Raw Score: 87.5 - Normalized Score: 100.0
+[Scheduler] Node: 10 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 11 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 12 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 13 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 14 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 15 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 16 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 17 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 18 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 19 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 20 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 21 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 22 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 23 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 24 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 25 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 26 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 27 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 28 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 29 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 30 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 31 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 32 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 33 - Raw Score: 80.0 - Normalized Score: 0.0
+[Scheduler] Node: 34 - Raw Score: 80.0 - Normalized Score: 0.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
 [Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
 [Scheduler] Starting CPUFilter...'
 [Scheduler] Starting MEMFilter...'
 [Scheduler] Starting LowRiskOverCommitment...'
+[Scheduler] LowRiskOverCommitment: Node 10 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 11 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 12 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 13 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 14 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 15 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 16 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 17 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 18 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 19 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 20 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 21 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 22 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 23 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 24 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 25 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 26 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 27 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 28 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 29 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 30 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 31 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 32 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 33 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] LowRiskOverCommitment: Node 34 cpu_score: 80.0, mem_score: 80.0, score: 80.0
+[Scheduler] Node: 10 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 11 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 12 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 13 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 14 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 15 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 16 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 17 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 18 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 19 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 20 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 21 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 22 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 23 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 24 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 25 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 26 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 27 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 28 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 29 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 30 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 31 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 32 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 33 - Raw Score: 80.0 - Normalized Score: 100
+[Scheduler] Node: 34 - Raw Score: 80.0 - Normalized Score: 100
 [Scheduler] --------------------------------
 ====== Evaluating new allocation ======
-stats: received: 8986, closed: 8986
-TTR: (mean: 0.0655729376391527, variance: 0.00019616827628717257, longer_than: {}) shorter_than: {}
-QTIME: (mean: 0.0023906955786916623, variance: 5.584313545802582e-05)
-component_stats: {"MS1"=>#<KUBETWIN::ComponentStatistics:0x00007f6101baf978 @n=8986, @mean=0.013772205178307252, @m_2=0.5423766534036848, @q_mean=0.0023804360446382376, @q_m_2=0.4
-628587079913153, @longer_than={}, @shorter_than={}, @received=8986, @variance=6.036468040107789e-05, @q_variance=5.151460300404177e-05>, "MS2"=>#<KUBETWIN::ComponentStatistics:0x0
-0007f6101baf888 @n=8986, @mean=0.028891269862983425, @m_2=0.17571572823257264, @q_mean=1.0259534053433075e-05, @q_m_2=0.0004268414299232634, @longer_than={}, @shorter_than={}, @received=8986, @variance=1.9556564077080984e-05, @q_variance=4.7506002217391584e-08>}
-allocation_map: {"eu-south-1 - Local DC"=>{:tier=>"local", :pods=>5}, "eu-central-1 Tier 1 Regional Edge"=>{:tier=>"t1", :pods=>10}, "eu-west-3 Tier 1"=>{:tier=>"t1", :pods=>1}, "
-eu-west-2 Tier 2"=>{:tier=>"t2", :pods=>0}, "eu-north-1 - Tier 2"=>{:tier=>"t2", :pods=>0}, "ca-central-1 - Remote DC"=>{:tier=>"rdc", :pods=>0}, "us-east-1 - Remote DC"=>{:tier=>"rdc", :pods=>0}}
-node_utilization: {"eu-south-1 - Local DC"=>5, "eu-central-1 Tier 1 Regional Edge"=>5, "eu-west-3 Tier 1"=>1, "eu-west-2 Tier 2"=>0, "eu-north-1 - Tier 2"=>0, "ca-central-1 - Remoeu-west-2 Tier 2"=>{:tier=>"t2", :pods=>0}, "eu-north-1 - Tier 2"=>{:tier=>"t2", :pods=>0}, "ca-central-1 - Remote DC"=>{:tier=>"rdc", :pods=>0}, "us-east-1 - Remote DC"=>{:tier=>"rdc", :pods=>0}}
+stats: received: 8987, closed: 8987
+TTR: (mean: 0.065479390173106, variance: 0.00025300194895815076, longer_than: {}) shorter_than: {}
+QTIME: (mean: 0.00265666546327619, variance: 7.324514953852712e-05)
+component_stats: {"MS1"=>#<KUBETWIN::ComponentStatistics:0x00007f3f6b5f8ed8 @n=8987, @mean=0.014028986821228164, @m_2=0.6345242605407825, @q_mean=0.0026372416048356597, @q_m_2=0.55
+55554277119025, @longer_than={}, @shorter_than={}, @received=8987, @variance=7.061253734039422e-05, @q_variance=6.182455238280686e-05>, "MS2"=>#<KUBETWIN::ComponentStatistics:0x000
+07f3f6b5f8de8 @n=8987, @mean=0.02890039766353454, @m_2=0.1761642528613986, @q_mean=1.9423858440531198e-05, @q_m_2=0.0010884984607252028, @longer_than={}, @shorter_than={}, @received=8987, @variance=1.9604301453527556e-05, @q_variance=1.2113270206156273e-07>}
+allocation_map: {"eu-south-1 - Local DC"=>{:tier=>"local", :pods=>5}, "eu-central-1 Tier 1 Regional Edge"=>{:tier=>"t1", :pods=>10}, "eu-west-3 Tier 1"=>{:tier=>"t1", :pods=>1}, "e
+u-west-2 Tier 2"=>{:tier=>"t2", :pods=>0}, "eu-north-1 - Tier 2"=>{:tier=>"t2", :pods=>0}, "ca-central-1 - Remote DC"=>{:tier=>"rdc", :pods=>0}, "us-east-1 - Remote DC"=>{:tier=>"rdc", :pods=>0}}
 node_utilization: {"eu-south-1 - Local DC"=>5, "eu-central-1 Tier 1 Regional Edge"=>5, "eu-west-3 Tier 1"=>1, "eu-west-2 Tier 2"=>0, "eu-north-1 - Tier 2"=>0, "ca-central-1 - Remote DC"=>0, "us-east-1 - Remote DC"=>0}
 costs: 55.2 per day
 =======================================
-D, [2025-09-15T14:52:38.234880 #620] DEBUG -- : Current spreading for MS1: [5, 3, 0, 0, 0, 0, 0] penalties: 10
-D, [2025-09-15T14:52:38.234919 #620] DEBUG -- : Current spreading for MS2: [0, 7, 1, 0, 0, 0, 0] penalties: 20
-BMAP: {"MS1"=>{"eu-south-1 - Local DC"=>5, "eu-central-1 Tier 1 Regional Edge"=>3, "eu-west-3 Tier 1"=>0, "eu-west-2 Tier 2"=>0, "eu-north-1 - Tier 2"=>0, "ca-central-1 - Remote DC"=>0, "us-east-1 - Remote DC"=>0}, "MS2"=>{"eu-south-1 - Local DC"=>0, "eu-central-1 Tier 1 Regional Edge"=>7, "eu-west-3 Tier 1"=>1, "eu-west-2 Tier 2"=>0, "eu-north-1 - Tier 2"=>0, "ca-central-1 - Remote DC"=>0, "us-east-1 - Remote DC"=>0}}
-Weighted sum: 20.065572937639153
+D, [2025-09-16T12:30:33.828309 #1717] DEBUG -- : Current spreading for MS1: [5, 3, 0, 0, 0, 0, 0] penalties: 10
+D, [2025-09-16T12:30:33.828369 #1717] DEBUG -- : Current spreading for MS2: [0, 7, 1, 0, 0, 0, 0] penalties: 20
+BMAP: {"MS1"=>{"eu-south-1 - Local DC"=>5, "eu-central-1 Tier 1 Regional Edge"=>3, "eu-west-3 Tier 1"=>0, "eu-west-2 Tier 2"=>0, "eu-north-1 - Tier 2"=>0, "ca-central-1 - Remote DC
+"=>0, "us-east-1 - Remote DC"=>0}, "MS2"=>{"eu-south-1 - Local DC"=>0, "eu-central-1 Tier 1 Regional Edge"=>7, "eu-west-3 Tier 1"=>1, "eu-west-2 Tier 2"=>0, "eu-north-1 - Tier 2"=>0, "ca-central-1 - Remote DC"=>0, "us-east-1 - Remote DC"=>0}}
+Weighted sum: 20.065479390173106
 Result:
--20.065572937639153
+-20.065479390173106

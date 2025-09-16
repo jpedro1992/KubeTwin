@@ -143,7 +143,7 @@ module KUBETWIN
                      else
                        ((score - min_score).to_f / (max_score - min_score)) * 100
                      end
-        # puts "[Scheduler] Node: #{node.node_id} - Raw Score: #{score.round(2)} - Normalized Score: #{normalized.round(2)}"
+        puts "[Scheduler] Node: #{node.node_id} - Raw Score: #{score.round(2)} - Normalized Score: #{normalized.round(2)}"
 
         { node: node, score: normalized }
       end

@@ -55,5 +55,21 @@ module KUBETWIN
       @resources_memory - @requested_resources[:memory]
     end
 
+    def capacity_cpu
+      @resources_cpu
+    end
+
+    def capacity_memory
+      @resources_memory
+    end
+
+    def requested_cpu
+      @requested_resources[:cpu]
+    end
+
+    def requested_memory
+      @requested_resources[:memory]
+    end
+
   end
 end
