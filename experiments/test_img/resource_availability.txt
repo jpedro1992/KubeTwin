@@ -1,94 +1,61 @@
-D, [2025-09-16T11:57:27.923242 #1497] DEBUG -- : Cluster: one {:name=>"eu-south-1 - Local DC", :location_id=>1, :type=>:mec, :tier=>"local", :node_number=>5, :node_resources_cpu=>50, :node_resources_memory=>50}
-D, [2025-09-16T11:57:27.923418 #1497] DEBUG -- : Cluster: two {:name=>"eu-central-1 Tier 1 Regional Edge", :location_id=>2, :type=>:mec, :node_number=>5, :tier=>"t1", :node_resources_cpu=>100, :node_resources_memory=>100}
-D, [2025-09-16T11:57:27.923462 #1497] DEBUG -- : Cluster: three {:name=>"eu-west-3 Tier 1", :location_id=>3, :type=>:mec, :node_number=>5, :tier=>"t1", :node_resources_cpu=>100, :node_resources_memory=>100}
-D, [2025-09-16T11:57:27.923484 #1497] DEBUG -- : Cluster: four {:name=>"eu-west-2 Tier 2", :location_id=>4, :type=>:mec, :node_number=>5, :tier=>"t2", :node_resources_cpu=>100, :node_resources_memory=>100}
-D, [2025-09-16T11:57:27.923518 #1497] DEBUG -- : Cluster: five {:name=>"eu-north-1 - Tier 2", :location_id=>5, :type=>:mec, :node_number=>5, :tier=>"t2", :node_resources_cpu=>100, :node_resources_memory=>100}
-D, [2025-09-16T11:57:27.923554 #1497] DEBUG -- : Cluster: six {:name=>"ca-central-1 - Remote DC", :location_id=>6, :type=>:cloud, :node_number=>5, :tier=>"rdc", :node_resources_cpu=>200, :node_resources_memory=>200}
-D, [2025-09-16T11:57:27.923569 #1497] DEBUG -- : Cluster: seven {:name=>"us-east-1 - Remote DC", :location_id=>7, :type=>:cloud, :node_number=>5, :tier=>"rdc", :node_resources_cpu=>200, :node_resources_memory=>200}
-D, [2025-09-16T11:57:27.923614 #1497] DEBUG -- : Creating node 0 cluster: one with resources: 50 50
-D, [2025-09-16T11:57:27.923643 #1497] DEBUG -- : Creating node 1 cluster: one with resources: 50 50
-D, [2025-09-16T11:57:27.923656 #1497] DEBUG -- : Creating node 2 cluster: one with resources: 50 50
-D, [2025-09-16T11:57:27.923685 #1497] DEBUG -- : Creating node 3 cluster: one with resources: 50 50
-D, [2025-09-16T11:57:27.923694 #1497] DEBUG -- : Creating node 4 cluster: one with resources: 50 50
-D, [2025-09-16T11:57:27.923704 #1497] DEBUG -- : Creating node 5 cluster: two with resources: 100 100
-D, [2025-09-16T11:57:27.923710 #1497] DEBUG -- : Creating node 6 cluster: two with resources: 100 100
-D, [2025-09-16T11:57:27.923715 #1497] DEBUG -- : Creating node 7 cluster: two with resources: 100 100
-D, [2025-09-16T11:57:27.923734 #1497] DEBUG -- : Creating node 8 cluster: two with resources: 100 100
-D, [2025-09-16T11:57:27.923760 #1497] DEBUG -- : Creating node 9 cluster: two with resources: 100 100
-D, [2025-09-16T11:57:27.923786 #1497] DEBUG -- : Creating node 10 cluster: three with resources: 100 100
-D, [2025-09-16T11:57:27.923811 #1497] DEBUG -- : Creating node 11 cluster: three with resources: 100 100
-D, [2025-09-16T11:57:27.923839 #1497] DEBUG -- : Creating node 12 cluster: three with resources: 100 100
-D, [2025-09-16T11:57:27.923866 #1497] DEBUG -- : Creating node 13 cluster: three with resources: 100 100
-D, [2025-09-16T11:57:27.923890 #1497] DEBUG -- : Creating node 14 cluster: three with resources: 100 100
-D, [2025-09-16T11:57:27.923902 #1497] DEBUG -- : Creating node 15 cluster: four with resources: 100 100
-D, [2025-09-16T11:57:27.923911 #1497] DEBUG -- : Creating node 16 cluster: four with resources: 100 100
-D, [2025-09-16T11:57:27.923918 #1497] DEBUG -- : Creating node 17 cluster: four with resources: 100 100
-D, [2025-09-16T11:57:27.923925 #1497] DEBUG -- : Creating node 18 cluster: four with resources: 100 100
-D, [2025-09-16T11:57:27.923931 #1497] DEBUG -- : Creating node 19 cluster: four with resources: 100 100
-D, [2025-09-16T11:57:27.923955 #1497] DEBUG -- : Creating node 20 cluster: five with resources: 100 100
-D, [2025-09-16T11:57:27.923966 #1497] DEBUG -- : Creating node 21 cluster: five with resources: 100 100
-D, [2025-09-16T11:57:27.923989 #1497] DEBUG -- : Creating node 22 cluster: five with resources: 100 100
-D, [2025-09-16T11:57:27.924018 #1497] DEBUG -- : Creating node 23 cluster: five with resources: 100 100
-D, [2025-09-16T11:57:27.924033 #1497] DEBUG -- : Creating node 24 cluster: five with resources: 100 100
-D, [2025-09-16T11:57:27.924044 #1497] DEBUG -- : Creating node 25 cluster: six with resources: 200 200
-D, [2025-09-16T11:57:27.924051 #1497] DEBUG -- : Creating node 26 cluster: six with resources: 200 200
-D, [2025-09-16T11:57:27.924075 #1497] DEBUG -- : Creating node 27 cluster: six with resources: 200 200
-D, [2025-09-16T11:57:27.924107 #1497] DEBUG -- : Creating node 28 cluster: six with resources: 200 200
-D, [2025-09-16T11:57:27.924130 #1497] DEBUG -- : Creating node 29 cluster: six with resources: 200 200
-D, [2025-09-16T11:57:27.924155 #1497] DEBUG -- : Creating node 30 cluster: seven with resources: 200 200
-D, [2025-09-16T11:57:27.924180 #1497] DEBUG -- : Creating node 31 cluster: seven with resources: 200 200
-D, [2025-09-16T11:57:27.924205 #1497] DEBUG -- : Creating node 32 cluster: seven with resources: 200 200
-D, [2025-09-16T11:57:27.924232 #1497] DEBUG -- : Creating node 33 cluster: seven with resources: 200 200
-D, [2025-09-16T11:57:27.924259 #1497] DEBUG -- : Creating node 34 cluster: seven with resources: 200 200
-D, [2025-09-16T11:57:27.926783 #1497] DEBUG -- : {"MS1"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.01143607, :sd=>0.00301789, :seed=>12345}},
+D, [2025-09-17T12:21:52.084749 #1816] DEBUG -- : Cluster: one {:name=>"eu-south-1 - Local DC", :location_id=>1, :type=>:mec, :tier=>"local", :node_number=>5, :node_resources_cpu=>50, :node_resources_memory=>50}
+D, [2025-09-17T12:21:52.084876 #1816] DEBUG -- : Cluster: two {:name=>"eu-central-1 Tier 1 Regional Edge", :location_id=>2, :type=>:mec, :node_number=>5, :tier=>"t1", :node_resources_cpu=>100, :node_resources_memory=>100}
+D, [2025-09-17T12:21:52.084909 #1816] DEBUG -- : Cluster: three {:name=>"eu-west-3 Tier 1", :location_id=>3, :type=>:mec, :node_number=>5, :tier=>"t1", :node_resources_cpu=>100, :node_resources_memory=>100}
+D, [2025-09-17T12:21:52.084937 #1816] DEBUG -- : Cluster: four {:name=>"eu-west-2 Tier 2", :location_id=>4, :type=>:mec, :node_number=>5, :tier=>"t2", :node_resources_cpu=>100, :node_resources_memory=>100}
+D, [2025-09-17T12:21:52.084964 #1816] DEBUG -- : Cluster: five {:name=>"eu-north-1 - Tier 2", :location_id=>5, :type=>:mec, :node_number=>5, :tier=>"t2", :node_resources_cpu=>100, :node_resources_memory=>100}
+D, [2025-09-17T12:21:52.084977 #1816] DEBUG -- : Cluster: six {:name=>"ca-central-1 - Remote DC", :location_id=>6, :type=>:cloud, :node_number=>5, :tier=>"rdc", :node_resources_cpu=>200, :node_resources_memory=>200}
+D, [2025-09-17T12:21:52.084986 #1816] DEBUG -- : Cluster: seven {:name=>"us-east-1 - Remote DC", :location_id=>7, :type=>:cloud, :node_number=>5, :tier=>"rdc", :node_resources_cpu=>200, :node_resources_memory=>200}
+D, [2025-09-17T12:21:52.085019 #1816] DEBUG -- : Creating node 0 cluster: one with resources: 50 50
+D, [2025-09-17T12:21:52.085029 #1816] DEBUG -- : Creating node 1 cluster: one with resources: 50 50
+D, [2025-09-17T12:21:52.085035 #1816] DEBUG -- : Creating node 2 cluster: one with resources: 50 50
+D, [2025-09-17T12:21:52.085040 #1816] DEBUG -- : Creating node 3 cluster: one with resources: 50 50
+D, [2025-09-17T12:21:52.085044 #1816] DEBUG -- : Creating node 4 cluster: one with resources: 50 50
+D, [2025-09-17T12:21:52.085048 #1816] DEBUG -- : Creating node 5 cluster: two with resources: 100 100
+D, [2025-09-17T12:21:52.085082 #1816] DEBUG -- : Creating node 6 cluster: two with resources: 100 100
+D, [2025-09-17T12:21:52.085102 #1816] DEBUG -- : Creating node 7 cluster: two with resources: 100 100
+D, [2025-09-17T12:21:52.085123 #1816] DEBUG -- : Creating node 8 cluster: two with resources: 100 100
+D, [2025-09-17T12:21:52.085132 #1816] DEBUG -- : Creating node 9 cluster: two with resources: 100 100
+D, [2025-09-17T12:21:52.085137 #1816] DEBUG -- : Creating node 10 cluster: three with resources: 100 100
+D, [2025-09-17T12:21:52.085141 #1816] DEBUG -- : Creating node 11 cluster: three with resources: 100 100
+D, [2025-09-17T12:21:52.085147 #1816] DEBUG -- : Creating node 12 cluster: three with resources: 100 100
+D, [2025-09-17T12:21:52.085150 #1816] DEBUG -- : Creating node 13 cluster: three with resources: 100 100
+D, [2025-09-17T12:21:52.085154 #1816] DEBUG -- : Creating node 14 cluster: three with resources: 100 100
+D, [2025-09-17T12:21:52.085158 #1816] DEBUG -- : Creating node 15 cluster: four with resources: 100 100
+D, [2025-09-17T12:21:52.085170 #1816] DEBUG -- : Creating node 16 cluster: four with resources: 100 100
+D, [2025-09-17T12:21:52.085181 #1816] DEBUG -- : Creating node 17 cluster: four with resources: 100 100
+D, [2025-09-17T12:21:52.085188 #1816] DEBUG -- : Creating node 18 cluster: four with resources: 100 100
+D, [2025-09-17T12:21:52.085192 #1816] DEBUG -- : Creating node 19 cluster: four with resources: 100 100
+D, [2025-09-17T12:21:52.085197 #1816] DEBUG -- : Creating node 20 cluster: five with resources: 100 100
+D, [2025-09-17T12:21:52.085201 #1816] DEBUG -- : Creating node 21 cluster: five with resources: 100 100
+D, [2025-09-17T12:21:52.085205 #1816] DEBUG -- : Creating node 22 cluster: five with resources: 100 100
+D, [2025-09-17T12:21:52.085209 #1816] DEBUG -- : Creating node 23 cluster: five with resources: 100 100
+D, [2025-09-17T12:21:52.085213 #1816] DEBUG -- : Creating node 24 cluster: five with resources: 100 100
+D, [2025-09-17T12:21:52.085217 #1816] DEBUG -- : Creating node 25 cluster: six with resources: 200 200
+D, [2025-09-17T12:21:52.085221 #1816] DEBUG -- : Creating node 26 cluster: six with resources: 200 200
+D, [2025-09-17T12:21:52.085225 #1816] DEBUG -- : Creating node 27 cluster: six with resources: 200 200
+D, [2025-09-17T12:21:52.085230 #1816] DEBUG -- : Creating node 28 cluster: six with resources: 200 200
+D, [2025-09-17T12:21:52.085247 #1816] DEBUG -- : Creating node 29 cluster: six with resources: 200 200
+D, [2025-09-17T12:21:52.085259 #1816] DEBUG -- : Creating node 30 cluster: seven with resources: 200 200
+D, [2025-09-17T12:21:52.085279 #1816] DEBUG -- : Creating node 31 cluster: seven with resources: 200 200
+D, [2025-09-17T12:21:52.085299 #1816] DEBUG -- : Creating node 32 cluster: seven with resources: 200 200
+D, [2025-09-17T12:21:52.085308 #1816] DEBUG -- : Creating node 33 cluster: seven with resources: 200 200
+D, [2025-09-17T12:21:52.085313 #1816] DEBUG -- : Creating node 34 cluster: seven with resources: 200 200
+D, [2025-09-17T12:21:52.088026 #1816] DEBUG -- : {"MS1"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.01143607, :sd=>0.00301789, :seed=>12345}},
 :cloud=>{:distribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>50, :resources_requirements_memory=>30, :node_affinity=>"lo
 cal", :rps=>1, :wait_for=>["MS2"]}, "MS2"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.0289486, :sd=>0.004604541, :seed=>12345}}, :cloud=>{:distribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>35, :resources_requirements_memory=>25, :node_affinity=>"local"}} false
-D, [2025-09-16T11:57:27.926866 #1497] DEBUG -- : Microservice type: MS1
-D, [2025-09-16T11:57:27.926890 #1497] DEBUG -- : Microservice type: MS2
+D, [2025-09-17T12:21:52.088145 #1816] DEBUG -- : Microservice type: MS1
+D, [2025-09-17T12:21:52.088178 #1816] DEBUG -- : Microservice type: MS2
 Register Scheduler strategy: RESOURCE_AVAILABILITY
 Register Filtering Plugins...
 Register Scoring Plugins...
 [Scheduler] ---- Pod Scheduling Decision ----
-[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
-[Scheduler] Starting CPUFilter...'
-[Scheduler] Starting MEMFilter...'
-[Scheduler] Starting ResourceAvailabilityScore...'
-[Scheduler] ResourceAvailabilityScore: max_CPU: 200.0, max_MEM: 200.0
-[Scheduler] ResourceAvailabilityScore: Node 0 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 1 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 2 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 3 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 4 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 5 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 6 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 7 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 8 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 9 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 10 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 11 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 12 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 13 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 14 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 15 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 16 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 17 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 18 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 19 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 20 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 21 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 22 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 23 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 24 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 25 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 26 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 27 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 28 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 29 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 30 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 31 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 32 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 33 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 34 score: 100.0
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Normalizing scores...
 [Scheduler] Node: 0 - Raw Score: 25.0 - Normalized Score: 0.0
 [Scheduler] Node: 1 - Raw Score: 25.0 - Normalized Score: 0.0
 [Scheduler] Node: 2 - Raw Score: 25.0 - Normalized Score: 0.0
@@ -126,46 +93,13 @@ Register Scoring Plugins...
 [Scheduler] Node: 34 - Raw Score: 100.0 - Normalized Score: 100.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
-[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
-[Scheduler] Starting CPUFilter...'
-[Scheduler] Starting MEMFilter...'
-[Scheduler] Starting ResourceAvailabilityScore...'
-[Scheduler] ResourceAvailabilityScore: max_CPU: 200.0, max_MEM: 200.0
-[Scheduler] ResourceAvailabilityScore: Node 0 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 1 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 2 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 3 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 4 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 5 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 6 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 7 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 8 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 9 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 10 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 11 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 12 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 13 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 14 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 15 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 16 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 17 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 18 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 19 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 20 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 21 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 22 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 23 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 24 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 25 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 26 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 27 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 28 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 29 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 30 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 31 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 32 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 33 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 34 score: 100.0
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Normalizing scores...
 [Scheduler] Node: 0 - Raw Score: 25.0 - Normalized Score: 0.0
 [Scheduler] Node: 1 - Raw Score: 25.0 - Normalized Score: 0.0
 [Scheduler] Node: 2 - Raw Score: 25.0 - Normalized Score: 0.0
@@ -203,46 +137,13 @@ Register Scoring Plugins...
 [Scheduler] Node: 34 - Raw Score: 100.0 - Normalized Score: 100.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
-[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
-[Scheduler] Starting CPUFilter...'
-[Scheduler] Starting MEMFilter...'
-[Scheduler] Starting ResourceAvailabilityScore...'
-[Scheduler] ResourceAvailabilityScore: max_CPU: 200.0, max_MEM: 200.0
-[Scheduler] ResourceAvailabilityScore: Node 0 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 1 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 2 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 3 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 4 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 5 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 6 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 7 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 8 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 9 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 10 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 11 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 12 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 13 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 14 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 15 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 16 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 17 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 18 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 19 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 20 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 21 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 22 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 23 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 24 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 25 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 26 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 27 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 28 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 29 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 30 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 31 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 32 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 33 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 34 score: 100.0
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Normalizing scores...
 [Scheduler] Node: 0 - Raw Score: 25.0 - Normalized Score: 0.0
 [Scheduler] Node: 1 - Raw Score: 25.0 - Normalized Score: 0.0
 [Scheduler] Node: 2 - Raw Score: 25.0 - Normalized Score: 0.0
@@ -280,46 +181,13 @@ Register Scoring Plugins...
 [Scheduler] Node: 34 - Raw Score: 100.0 - Normalized Score: 100.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
-[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
-[Scheduler] Starting CPUFilter...'
-[Scheduler] Starting MEMFilter...'
-[Scheduler] Starting ResourceAvailabilityScore...'
-[Scheduler] ResourceAvailabilityScore: max_CPU: 200.0, max_MEM: 200.0
-[Scheduler] ResourceAvailabilityScore: Node 0 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 1 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 2 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 3 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 4 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 5 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 6 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 7 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 8 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 9 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 10 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 11 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 12 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 13 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 14 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 15 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 16 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 17 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 18 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 19 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 20 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 21 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 22 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 23 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 24 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 25 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 26 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 27 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 28 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 29 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 30 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 31 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 32 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 33 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 34 score: 100.0
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Normalizing scores...
 [Scheduler] Node: 0 - Raw Score: 25.0 - Normalized Score: 0.0
 [Scheduler] Node: 1 - Raw Score: 25.0 - Normalized Score: 0.0
 [Scheduler] Node: 2 - Raw Score: 25.0 - Normalized Score: 0.0
@@ -357,46 +225,13 @@ Register Scoring Plugins...
 [Scheduler] Node: 34 - Raw Score: 100.0 - Normalized Score: 100.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
-[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
-[Scheduler] Starting CPUFilter...'
-[Scheduler] Starting MEMFilter...'
-[Scheduler] Starting ResourceAvailabilityScore...'
-[Scheduler] ResourceAvailabilityScore: max_CPU: 200.0, max_MEM: 200.0
-[Scheduler] ResourceAvailabilityScore: Node 0 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 1 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 2 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 3 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 4 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 5 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 6 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 7 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 8 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 9 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 10 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 11 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 12 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 13 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 14 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 15 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 16 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 17 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 18 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 19 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 20 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 21 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 22 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 23 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 24 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 25 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 26 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 27 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 28 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 29 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 30 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 31 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 32 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 33 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 34 score: 100.0
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Normalizing scores...
 [Scheduler] Node: 0 - Raw Score: 25.0 - Normalized Score: 0.0
 [Scheduler] Node: 1 - Raw Score: 25.0 - Normalized Score: 0.0
 [Scheduler] Node: 2 - Raw Score: 25.0 - Normalized Score: 0.0
@@ -434,46 +269,13 @@ Register Scoring Plugins...
 [Scheduler] Node: 34 - Raw Score: 100.0 - Normalized Score: 100.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
-[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
-[Scheduler] Starting CPUFilter...'
-[Scheduler] Starting MEMFilter...'
-[Scheduler] Starting ResourceAvailabilityScore...'
-[Scheduler] ResourceAvailabilityScore: max_CPU: 200.0, max_MEM: 200.0
-[Scheduler] ResourceAvailabilityScore: Node 0 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 1 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 2 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 3 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 4 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 5 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 6 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 7 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 8 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 9 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 10 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 11 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 12 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 13 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 14 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 15 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 16 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 17 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 18 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 19 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 20 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 21 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 22 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 23 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 24 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 25 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 26 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 27 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 28 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 29 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 30 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 31 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 32 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 33 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 34 score: 100.0
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Normalizing scores...
 [Scheduler] Node: 0 - Raw Score: 25.0 - Normalized Score: 0.0
 [Scheduler] Node: 1 - Raw Score: 25.0 - Normalized Score: 0.0
 [Scheduler] Node: 2 - Raw Score: 25.0 - Normalized Score: 0.0
@@ -511,46 +313,13 @@ Register Scoring Plugins...
 [Scheduler] Node: 34 - Raw Score: 100.0 - Normalized Score: 100.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
-[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
-[Scheduler] Starting CPUFilter...'
-[Scheduler] Starting MEMFilter...'
-[Scheduler] Starting ResourceAvailabilityScore...'
-[Scheduler] ResourceAvailabilityScore: max_CPU: 200.0, max_MEM: 200.0
-[Scheduler] ResourceAvailabilityScore: Node 0 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 1 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 2 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 3 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 4 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 5 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 6 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 7 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 8 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 9 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 10 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 11 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 12 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 13 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 14 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 15 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 16 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 17 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 18 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 19 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 20 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 21 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 22 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 23 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 24 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 25 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 26 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 27 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 28 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 29 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 30 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 31 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 32 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 33 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 34 score: 100.0
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Normalizing scores...
 [Scheduler] Node: 0 - Raw Score: 25.0 - Normalized Score: 0.0
 [Scheduler] Node: 1 - Raw Score: 25.0 - Normalized Score: 0.0
 [Scheduler] Node: 2 - Raw Score: 25.0 - Normalized Score: 0.0
@@ -588,46 +357,13 @@ Register Scoring Plugins...
 [Scheduler] Node: 34 - Raw Score: 100.0 - Normalized Score: 100.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
-[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1
-[Scheduler] Starting CPUFilter...'
-[Scheduler] Starting MEMFilter...'
-[Scheduler] Starting ResourceAvailabilityScore...'
-[Scheduler] ResourceAvailabilityScore: max_CPU: 200.0, max_MEM: 200.0
-[Scheduler] ResourceAvailabilityScore: Node 0 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 1 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 2 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 3 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 4 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 5 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 6 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 7 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 8 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 9 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 10 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 11 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 12 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 13 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 14 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 15 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 16 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 17 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 18 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 19 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 20 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 21 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 22 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 23 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 24 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 25 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 26 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 27 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 28 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 29 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 30 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 31 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 32 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 33 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 34 score: 100.0
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Normalizing scores...
 [Scheduler] Node: 0 - Raw Score: 25.0 - Normalized Score: 0.0
 [Scheduler] Node: 1 - Raw Score: 25.0 - Normalized Score: 0.0
 [Scheduler] Node: 2 - Raw Score: 25.0 - Normalized Score: 0.0
@@ -665,46 +401,13 @@ Register Scoring Plugins...
 [Scheduler] Node: 34 - Raw Score: 100.0 - Normalized Score: 100.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
-[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
-[Scheduler] Starting CPUFilter...'
-[Scheduler] Starting MEMFilter...'
-[Scheduler] Starting ResourceAvailabilityScore...'
-[Scheduler] ResourceAvailabilityScore: max_CPU: 200.0, max_MEM: 200.0
-[Scheduler] ResourceAvailabilityScore: Node 0 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 1 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 2 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 3 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 4 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 5 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 6 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 7 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 8 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 9 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 10 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 11 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 12 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 13 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 14 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 15 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 16 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 17 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 18 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 19 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 20 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 21 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 22 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 23 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 24 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 25 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 26 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 27 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 28 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 29 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 30 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 31 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 32 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 33 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 34 score: 100.0
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2, Dependencies: {"dep2"=>{:src=>"MS2", :dst=>"MS1", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Normalizing scores...
 [Scheduler] Node: 0 - Raw Score: 25.0 - Normalized Score: 0.0
 [Scheduler] Node: 1 - Raw Score: 25.0 - Normalized Score: 0.0
 [Scheduler] Node: 2 - Raw Score: 25.0 - Normalized Score: 0.0
@@ -742,46 +445,13 @@ Register Scoring Plugins...
 [Scheduler] Node: 34 - Raw Score: 100.0 - Normalized Score: 100.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
-[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
-[Scheduler] Starting CPUFilter...'
-[Scheduler] Starting MEMFilter...'
-[Scheduler] Starting ResourceAvailabilityScore...'
-[Scheduler] ResourceAvailabilityScore: max_CPU: 200.0, max_MEM: 200.0
-[Scheduler] ResourceAvailabilityScore: Node 0 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 1 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 2 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 3 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 4 score: 25.0
-[Scheduler] ResourceAvailabilityScore: Node 5 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 6 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 7 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 8 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 9 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 10 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 11 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 12 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 13 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 14 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 15 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 16 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 17 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 18 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 19 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 20 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 21 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 22 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 23 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 24 score: 50.0
-[Scheduler] ResourceAvailabilityScore: Node 25 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 26 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 27 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 28 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 29 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 30 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 31 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 32 score: 80.0
-[Scheduler] ResourceAvailabilityScore: Node 33 score: 85.0
-[Scheduler] ResourceAvailabilityScore: Node 34 score: 100.0
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2, Dependencies: {"dep2"=>{:src=>"MS2", :dst=>"MS1", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Normalizing scores...
 [Scheduler] Node: 0 - Raw Score: 25.0 - Normalized Score: 0.0
 [Scheduler] Node: 1 - Raw Score: 25.0 - Normalized Score: 0.0
 [Scheduler] Node: 2 - Raw Score: 25.0 - Normalized Score: 0.0
@@ -819,46 +489,13 @@ Register Scoring Plugins...
 [Scheduler] Node: 34 - Raw Score: 100.0 - Normalized Score: 100.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
-[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
-[Scheduler] Starting CPUFilter...'
-[Scheduler] Starting MEMFilter...'
-[Scheduler] Starting ResourceAvailabilityScore...'
-[Scheduler] ResourceAvailabilityScore: max_CPU: 165.0, max_MEM: 175.0
-[Scheduler] ResourceAvailabilityScore: Node 0 score: 29.44
-[Scheduler] ResourceAvailabilityScore: Node 1 score: 29.44
-[Scheduler] ResourceAvailabilityScore: Node 2 score: 29.44
-[Scheduler] ResourceAvailabilityScore: Node 3 score: 29.44
-[Scheduler] ResourceAvailabilityScore: Node 4 score: 29.44
-[Scheduler] ResourceAvailabilityScore: Node 5 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 6 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 7 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 8 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 9 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 10 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 11 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 12 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 13 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 14 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 15 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 16 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 17 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 18 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 19 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 20 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 21 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 22 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 23 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 24 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 25 score: 94.03
-[Scheduler] ResourceAvailabilityScore: Node 26 score: 94.03
-[Scheduler] ResourceAvailabilityScore: Node 27 score: 94.03
-[Scheduler] ResourceAvailabilityScore: Node 28 score: 94.03
-[Scheduler] ResourceAvailabilityScore: Node 29 score: 94.03
-[Scheduler] ResourceAvailabilityScore: Node 30 score: 94.03
-[Scheduler] ResourceAvailabilityScore: Node 31 score: 94.03
-[Scheduler] ResourceAvailabilityScore: Node 32 score: 94.03
-[Scheduler] ResourceAvailabilityScore: Node 33 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 34 score: 100.0
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2, Dependencies: {"dep2"=>{:src=>"MS2", :dst=>"MS1", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Normalizing scores...
 [Scheduler] Node: 0 - Raw Score: 29.44 - Normalized Score: 0.0
 [Scheduler] Node: 1 - Raw Score: 29.44 - Normalized Score: 0.0
 [Scheduler] Node: 2 - Raw Score: 29.44 - Normalized Score: 0.0
@@ -896,46 +533,13 @@ Register Scoring Plugins...
 [Scheduler] Node: 34 - Raw Score: 100.0 - Normalized Score: 100.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
-[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
-[Scheduler] Starting CPUFilter...'
-[Scheduler] Starting MEMFilter...'
-[Scheduler] Starting ResourceAvailabilityScore...'
-[Scheduler] ResourceAvailabilityScore: max_CPU: 165.0, max_MEM: 175.0
-[Scheduler] ResourceAvailabilityScore: Node 0 score: 29.44
-[Scheduler] ResourceAvailabilityScore: Node 1 score: 29.44
-[Scheduler] ResourceAvailabilityScore: Node 2 score: 29.44
-[Scheduler] ResourceAvailabilityScore: Node 3 score: 29.44
-[Scheduler] ResourceAvailabilityScore: Node 4 score: 29.44
-[Scheduler] ResourceAvailabilityScore: Node 5 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 6 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 7 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 8 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 9 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 10 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 11 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 12 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 13 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 14 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 15 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 16 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 17 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 18 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 19 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 20 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 21 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 22 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 23 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 24 score: 58.87
-[Scheduler] ResourceAvailabilityScore: Node 25 score: 94.03
-[Scheduler] ResourceAvailabilityScore: Node 26 score: 94.03
-[Scheduler] ResourceAvailabilityScore: Node 27 score: 94.03
-[Scheduler] ResourceAvailabilityScore: Node 28 score: 94.03
-[Scheduler] ResourceAvailabilityScore: Node 29 score: 94.03
-[Scheduler] ResourceAvailabilityScore: Node 30 score: 94.03
-[Scheduler] ResourceAvailabilityScore: Node 31 score: 94.03
-[Scheduler] ResourceAvailabilityScore: Node 32 score: 94.03
-[Scheduler] ResourceAvailabilityScore: Node 33 score: 82.25
-[Scheduler] ResourceAvailabilityScore: Node 34 score: 100.0
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2, Dependencies: {"dep2"=>{:src=>"MS2", :dst=>"MS1", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Normalizing scores...
 [Scheduler] Node: 0 - Raw Score: 29.44 - Normalized Score: 0.0
 [Scheduler] Node: 1 - Raw Score: 29.44 - Normalized Score: 0.0
 [Scheduler] Node: 2 - Raw Score: 29.44 - Normalized Score: 0.0
@@ -973,46 +577,13 @@ Register Scoring Plugins...
 [Scheduler] Node: 34 - Raw Score: 100.0 - Normalized Score: 100.0
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
-[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
-[Scheduler] Starting CPUFilter...'
-[Scheduler] Starting MEMFilter...'
-[Scheduler] Starting ResourceAvailabilityScore...'
-[Scheduler] ResourceAvailabilityScore: max_CPU: 150.0, max_MEM: 170.0
-[Scheduler] ResourceAvailabilityScore: Node 0 score: 31.37
-[Scheduler] ResourceAvailabilityScore: Node 1 score: 31.37
-[Scheduler] ResourceAvailabilityScore: Node 2 score: 31.37
-[Scheduler] ResourceAvailabilityScore: Node 3 score: 31.37
-[Scheduler] ResourceAvailabilityScore: Node 4 score: 31.37
-[Scheduler] ResourceAvailabilityScore: Node 5 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 6 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 7 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 8 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 9 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 10 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 11 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 12 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 13 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 14 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 15 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 16 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 17 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 18 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 19 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 20 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 21 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 22 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 23 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 24 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 25 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 26 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 27 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 28 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 29 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 30 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 31 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 32 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 33 score: 87.45
-[Scheduler] ResourceAvailabilityScore: Node 34 score: 87.45
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2, Dependencies: {"dep2"=>{:src=>"MS2", :dst=>"MS1", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Normalizing scores...
 [Scheduler] Node: 0 - Raw Score: 31.37 - Normalized Score: 0.0
 [Scheduler] Node: 1 - Raw Score: 31.37 - Normalized Score: 0.0
 [Scheduler] Node: 2 - Raw Score: 31.37 - Normalized Score: 0.0
@@ -1050,46 +621,13 @@ Register Scoring Plugins...
 [Scheduler] Node: 34 - Raw Score: 87.45 - Normalized Score: 81.71
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
-[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
-[Scheduler] Starting CPUFilter...'
-[Scheduler] Starting MEMFilter...'
-[Scheduler] Starting ResourceAvailabilityScore...'
-[Scheduler] ResourceAvailabilityScore: max_CPU: 150.0, max_MEM: 170.0
-[Scheduler] ResourceAvailabilityScore: Node 0 score: 31.37
-[Scheduler] ResourceAvailabilityScore: Node 1 score: 31.37
-[Scheduler] ResourceAvailabilityScore: Node 2 score: 31.37
-[Scheduler] ResourceAvailabilityScore: Node 3 score: 31.37
-[Scheduler] ResourceAvailabilityScore: Node 4 score: 31.37
-[Scheduler] ResourceAvailabilityScore: Node 5 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 6 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 7 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 8 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 9 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 10 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 11 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 12 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 13 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 14 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 15 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 16 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 17 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 18 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 19 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 20 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 21 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 22 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 23 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 24 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 25 score: 80.98
-[Scheduler] ResourceAvailabilityScore: Node 26 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 27 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 28 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 29 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 30 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 31 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 32 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 33 score: 87.45
-[Scheduler] ResourceAvailabilityScore: Node 34 score: 87.45
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2, Dependencies: {"dep2"=>{:src=>"MS2", :dst=>"MS1", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Normalizing scores...
 [Scheduler] Node: 0 - Raw Score: 31.37 - Normalized Score: 0.0
 [Scheduler] Node: 1 - Raw Score: 31.37 - Normalized Score: 0.0
 [Scheduler] Node: 2 - Raw Score: 31.37 - Normalized Score: 0.0
@@ -1127,46 +665,13 @@ Register Scoring Plugins...
 [Scheduler] Node: 34 - Raw Score: 87.45 - Normalized Score: 81.71
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
-[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
-[Scheduler] Starting CPUFilter...'
-[Scheduler] Starting MEMFilter...'
-[Scheduler] Starting ResourceAvailabilityScore...'
-[Scheduler] ResourceAvailabilityScore: max_CPU: 150.0, max_MEM: 170.0
-[Scheduler] ResourceAvailabilityScore: Node 0 score: 31.37
-[Scheduler] ResourceAvailabilityScore: Node 1 score: 31.37
-[Scheduler] ResourceAvailabilityScore: Node 2 score: 31.37
-[Scheduler] ResourceAvailabilityScore: Node 3 score: 31.37
-[Scheduler] ResourceAvailabilityScore: Node 4 score: 31.37
-[Scheduler] ResourceAvailabilityScore: Node 5 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 6 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 7 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 8 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 9 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 10 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 11 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 12 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 13 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 14 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 15 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 16 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 17 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 18 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 19 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 20 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 21 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 22 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 23 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 24 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 25 score: 80.98
-[Scheduler] ResourceAvailabilityScore: Node 26 score: 80.98
-[Scheduler] ResourceAvailabilityScore: Node 27 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 28 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 29 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 30 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 31 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 32 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 33 score: 87.45
-[Scheduler] ResourceAvailabilityScore: Node 34 score: 87.45
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2, Dependencies: {"dep2"=>{:src=>"MS2", :dst=>"MS1", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Normalizing scores...
 [Scheduler] Node: 0 - Raw Score: 31.37 - Normalized Score: 0.0
 [Scheduler] Node: 1 - Raw Score: 31.37 - Normalized Score: 0.0
 [Scheduler] Node: 2 - Raw Score: 31.37 - Normalized Score: 0.0
@@ -1204,46 +709,13 @@ Register Scoring Plugins...
 [Scheduler] Node: 34 - Raw Score: 87.45 - Normalized Score: 81.71
 [Scheduler] --------------------------------
 [Scheduler] ---- Pod Scheduling Decision ----
-[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2
-[Scheduler] Starting CPUFilter...'
-[Scheduler] Starting MEMFilter...'
-[Scheduler] Starting ResourceAvailabilityScore...'
-[Scheduler] ResourceAvailabilityScore: max_CPU: 150.0, max_MEM: 170.0
-[Scheduler] ResourceAvailabilityScore: Node 0 score: 31.37
-[Scheduler] ResourceAvailabilityScore: Node 1 score: 31.37
-[Scheduler] ResourceAvailabilityScore: Node 2 score: 31.37
-[Scheduler] ResourceAvailabilityScore: Node 3 score: 31.37
-[Scheduler] ResourceAvailabilityScore: Node 4 score: 31.37
-[Scheduler] ResourceAvailabilityScore: Node 5 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 6 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 7 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 8 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 9 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 10 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 11 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 12 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 13 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 14 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 15 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 16 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 17 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 18 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 19 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 20 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 21 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 22 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 23 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 24 score: 62.75
-[Scheduler] ResourceAvailabilityScore: Node 25 score: 80.98
-[Scheduler] ResourceAvailabilityScore: Node 26 score: 80.98
-[Scheduler] ResourceAvailabilityScore: Node 27 score: 80.98
-[Scheduler] ResourceAvailabilityScore: Node 28 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 29 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 30 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 31 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 32 score: 100.0
-[Scheduler] ResourceAvailabilityScore: Node 33 score: 87.45
-[Scheduler] ResourceAvailabilityScore: Node 34 score: 87.45
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2, Dependencies: {"dep2"=>{:src=>"MS2", :dst=>"MS1", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Normalizing scores...
 [Scheduler] Node: 0 - Raw Score: 31.37 - Normalized Score: 0.0
 [Scheduler] Node: 1 - Raw Score: 31.37 - Normalized Score: 0.0
 [Scheduler] Node: 2 - Raw Score: 31.37 - Normalized Score: 0.0
@@ -1282,19 +754,18 @@ Register Scoring Plugins...
 [Scheduler] --------------------------------
 ====== Evaluating new allocation ======
 stats: received: 9005, closed: 9005
-TTR: (mean: 20.202577166554644, variance: 139.51911838386326, longer_than: {}) shorter_than: {}
-QTIME: (mean: 19.985303318679254, variance: 139.515728771698)
-component_stats: {"MS1"=>#<KUBETWIN::ComponentStatistics:0x00007fa6b179efc8 @n=9005, @mean=20.03822943493099, @m_2=1256184.0908639068, @q_mean=19.98530331867926, @q_m_2=1256177.277
-1606976, @longer_than={}, @shorter_than={}, @received=9005, @variance=139.51400387204652, @q_variance=139.51324713024184>, "MS2"=>#<KUBETWIN::ComponentStatistics:0x00007fa6b179ee38
- @n=9005, @mean=0.0529261162517998, @m_2=0.3130577405202535, @q_mean=0.0, @q_m_2=0.0, @longer_than={}, @shorter_than={}, @received=9005, @variance=3.4768740617531485e-05, @q_variance=0.0>}
-allocation_map: {"eu-south-1 - Local DC"=>{:tier=>"local", :pods=>0}, "eu-central-1 Tier 1 Regional Edge"=>{:tier=>"t1", :pods=>0}, "eu-west-3 Tier 1"=>{:tier=>"t1", :pods=>0}, "eu
--west-2 Tier 2"=>{:tier=>"t2", :pods=>0}, "eu-north-1 - Tier 2"=>{:tier=>"t2", :pods=>0}, "ca-central-1 - Remote DC"=>{:tier=>"rdc", :pods=>9}, "us-east-1 - Remote DC"=>{:tier=>"rdc", :pods=>7}}
+TTR: (mean: 20.251866094037375, variance: 138.38716008634313, longer_than: {}) shorter_than: {}
+QTIME: (mean: 20.03451161980297, variance: 138.3835625434957)
+component_stats: {"MS1"=>#<KUBETWIN::ComponentStatistics:0x00007f747f91ed30 @n=9005, @mean=20.087437736054746, @m_2=1245988.2898818133, @q_mean=20.03451161980297, @q_m_2=1245981.55
+6212023, @longer_than={}, @shorter_than={}, @received=9005, @variance=138.3816403689264, @q_variance=138.38089251577333>, "MS2"=>#<KUBETWIN::ComponentStatistics:0x00007f747f91ec90
+@n=9005, @mean=0.05292611625179982, @m_2=0.3130577405202537, @q_mean=0.0, @q_m_2=0.0, @longer_than={}, @shorter_than={}, @received=9005, @variance=3.4768740617531505e-05, @q_variance=0.0>}
+allocation_map: {"eu-south-1 - Local DC"=>{:tier=>"local", :pods=>0}, "eu-central-1 Tier 1 Regional Edge"=>{:tier=>"t1", :pods=>0}, "eu-west-3 Tier 1"=>{:tier=>"t1", :pods=>0}, "eu-west-2 Tier 2"=>{:tier=>"t2", :pods=>0}, "eu-north-1 - Tier 2"=>{:tier=>"t2", :pods=>0}, "ca-central-1 - Remote DC"=>{:tier=>"rdc", :pods=>9}, "us-east-1 - Remote DC"=>{:tier=>"rdc", :pods=>7}}
 node_utilization: {"eu-south-1 - Local DC"=>0, "eu-central-1 Tier 1 Regional Edge"=>0, "eu-west-3 Tier 1"=>0, "eu-west-2 Tier 2"=>0, "eu-north-1 - Tier 2"=>0, "ca-central-1 - Remote DC"=>5, "us-east-1 - Remote DC"=>5}
 costs: 144.0 per day
 =======================================
-D, [2025-09-16T11:57:28.291273 #1497] DEBUG -- : Current spreading for MS1: [0, 0, 0, 0, 0, 5, 3] penalties: 10
-D, [2025-09-16T11:57:28.291319 #1497] DEBUG -- : Current spreading for MS2: [0, 0, 0, 0, 0, 4, 4] penalties: 20
+D, [2025-09-17T12:21:52.444257 #1816] DEBUG -- : Current spreading for MS1: [0, 0, 0, 0, 0, 5, 3] penalties: 10
+D, [2025-09-17T12:21:52.444300 #1816] DEBUG -- : Current spreading for MS2: [0, 0, 0, 0, 0, 4, 4] penalties: 20
 BMAP: {"MS1"=>{"eu-south-1 - Local DC"=>0, "eu-central-1 Tier 1 Regional Edge"=>0, "eu-west-3 Tier 1"=>0, "eu-west-2 Tier 2"=>0, "eu-north-1 - Tier 2"=>0, "ca-central-1 - Remote DC"=>5, "us-east-1 - Remote DC"=>3}, "MS2"=>{"eu-south-1 - Local DC"=>0, "eu-central-1 Tier 1 Regional Edge"=>0, "eu-west-3 Tier 1"=>0, "eu-west-2 Tier 2"=>0, "eu-north-1 - Tier 2"=>0, "ca-central-1 - Remote DC"=>4, "us-east-1 - Remote DC"=>4}}
-Weighted sum: 40.20257716655465
+Weighted sum: 40.251866094037375
 Result:
--40.20257716655465
+-40.251866094037375

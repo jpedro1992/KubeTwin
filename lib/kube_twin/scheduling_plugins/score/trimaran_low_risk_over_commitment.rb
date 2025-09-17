@@ -4,10 +4,10 @@ module KUBETWIN
     CPU_THRESHOLD = 0.8
     MEMORY_THRESHOLD = 0.8
 
-    def self.run(nodes, _node_affinity)
-      puts "[Scheduler] Starting LowRiskOverCommitment...'"
+    def self.run(filtered_nodes, _nodes, _node_affinity)
+      puts "[Scheduler] Starting LowRiskOverCommitment plugin...'"
 
-      nodes.map do |entry|
+      filtered_nodes.map do |entry|
         # puts "[Scheduler] Node #{entry[:node].node_id} capacity: #{entry[:node].capacity_cpu}, requested: #{entry[:node].requested_cpu}, available: #{entry[:node].available_resources_cpu}"
         # puts "[Scheduler] Node #{entry[:node].node_id} capacity: #{entry[:node].capacity_memory}, requested: #{entry[:node].requested_memory}, available: #{entry[:node].available_resources_memory}"
 
@@ -54,7 +54,7 @@ module KUBETWIN
         # average score
         combined_score = (cpu_score + mem_score) / 2.0
 
-        puts "[Scheduler] LowRiskOverCommitment: Node #{entry[:node].node_id} cpu_score: #{cpu_score.round(2)}, mem_score: #{mem_score.round(2)}, score: #{combined_score.round(2)}"
+        # puts "[Scheduler] LowRiskOverCommitment: Node #{entry[:node].node_id} cpu_score: #{cpu_score.round(2)}, mem_score: #{mem_score.round(2)}, score: #{combined_score.round(2)}"
 
         { node: entry[:node], score: combined_score }
       end

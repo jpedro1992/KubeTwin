@@ -32,6 +32,10 @@ module KUBETWIN
       raise 'Unfeasible resource assignement!' if (@requested_resources[:cpu] + resources_cpu > @resources_cpu) && (@requested_resources[:memory] + resources_memory > @resources_memory)
       @pod_id_list << pod.pod_id
       @pod_name_list << pod.podName
+
+      # puts "[Node] #{node_id}] Assigned pod #{pod.podName} (ID: #{pod.pod_id})"
+      # puts "[Node] #{node_id}] Current pod_name_list: #{@pod_name_list.inspect}"
+
       @requested_resources[:cpu] += resources_cpu
       @requested_resources[:memory] += resources_memory
     end

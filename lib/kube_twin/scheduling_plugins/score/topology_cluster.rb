@@ -1,15 +1,15 @@
 module KUBETWIN
   class TopologyClusterAggregate
-    def self.run(nodes, _node_affinity)
-      puts "[Scheduler] Starting TopologyClusterAggregate...'"
+    def self.run(filtered_nodes, _nodes, _node_affinity)
+      puts "[Scheduler] Starting TopologyClusterAggregate plugin...'"
 
-      max_cpu = nodes.map { |entry| entry[:cluster].node_number * entry[:cluster].node_resources_cpu }.max.to_f
-      max_mem = nodes.map { |entry| entry[:cluster].node_number * entry[:cluster].node_resources_memory }.max.to_f
+      max_cpu = filtered_nodes.map { |entry| entry[:cluster].node_number * entry[:cluster].node_resources_cpu }.max.to_f
+      max_mem = filtered_nodes.map { |entry| entry[:cluster].node_number * entry[:cluster].node_resources_memory }.max.to_f
 
       max_cpu = 1 if max_cpu.zero?
       max_mem = 1 if max_mem.zero?
 
-      nodes.map do |entry|
+      filtered_nodes.map do |entry|
         cluster = entry[:cluster]
 
         aggregate_cpu = cluster.node_number * cluster.node_resources_cpu

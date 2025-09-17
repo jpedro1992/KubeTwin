@@ -24,6 +24,7 @@ require_relative './scheduling_plugins/score/node_resources_most_allocatable'
 require_relative './scheduling_plugins/score/trimaran_low_risk_over_commitment'
 require_relative './scheduling_plugins/score/topology_cluster'
 require_relative './scheduling_plugins/filter/pod_topology_constraint'
+require_relative './scheduling_plugins/score/diktyo'
 require_relative './node'
 
 require 'json'
@@ -348,8 +349,11 @@ module KUBETWIN
       crs.each do |name, conf|
         # nil is service here
         # do we need a reference to service in ReplicaSet?
-        @replica_sets[name] = ReplicaSet.new(name, conf[:selector],
-                                             conf[:replicas], nil)
+        @replica_sets[name] = ReplicaSet.new(name,
+                                             conf[:selector],
+                                             conf[:replicas],
+                                             nil,
+                                             conf[:dependencies])
       end
 
       # @logger.debug @replica_sets
@@ -387,7 +391,7 @@ module KUBETWIN
       # creating a KubeScheduler
       # the KubeScheduler decides on which nodes schedule
       # the pods
-      @kube_scheduler = KubeScheduler.new(@cluster_repository)
+      @kube_scheduler = KubeScheduler.new(@cluster_repository, latency_manager)
 
       # Register filtering and scoring plugins
       # TODO: make this configurable from the configuration file
@@ -399,8 +403,9 @@ module KUBETWIN
       # TOPOLOGY_AWARE
       # NODE_AFFINITY
       # BALANCED
-      # COST
-      strategy_name = :TOPOLOGY_AWARE
+      # COST_AWARE
+      # DIKTYO
+      strategy_name = :BALANCED_WITH_TOPOLOGY
       strategy = KUBE_SCHEDULER_STRATEGIES[strategy_name]
       raise "Unknown strategy #{strategy_name}" unless strategy
       puts "Register Scheduler strategy: #{strategy_name}"
@@ -421,6 +426,7 @@ module KUBETWIN
         # here we need to create pods and register them into a Service
         rs.replicas.times do
           selector = rs.selector
+          dependencies = rs.dependencies
           # the nil fields is a node related information
           # get image info --> service component type (sct)
           # sct has info regarding service execution time
@@ -432,10 +438,10 @@ module KUBETWIN
           node_affinity = sct[:node_affinity]
           if @mapping
             @logger.debug "Mapping: #{@mapping}"
-            node = @kube_scheduler.get_node_from_cluster(reqs_c, reqs_m, @mapping[ms_id], selector)
+            node = @kube_scheduler.get_node_from_cluster(reqs_c, reqs_m, @mapping[ms_id], selector, dependencies)
             @logger.debug "Node: #{node} for selector: #{selector} with requirements: #{reqs_c} #{reqs_m}"
           else
-            node = @kube_scheduler.get_node(reqs_c, reqs_m, node_affinity, selector)
+            node = @kube_scheduler.get_node(reqs_c, reqs_m, node_affinity, selector, dependencies)
           end
           next if node.nil?
 

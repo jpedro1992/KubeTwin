@@ -21,7 +21,7 @@ module KUBETWIN
         return nodes
       end
 
-      puts "[Scheduler] Starting PodTopologySpreadConstraint with configuration: maxSkew=#{max_skew}, topologyKey=#{topology_key}, whenUnsatisfiable=#{when_unsatisfiable}, replicaSelector=#{selector}"
+      puts "[Scheduler] Starting PodTopologySpreadConstraint plugin with configuration: maxSkew=#{max_skew}, topologyKey=#{topology_key}, whenUnsatisfiable=#{when_unsatisfiable}, replicaSelector=#{selector}"
       filtered_nodes = nodes
 
       existing_pods = build_existing_pods(nodes)

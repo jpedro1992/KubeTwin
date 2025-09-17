@@ -7,18 +7,28 @@ require_relative './../score/node_resources_most_allocatable'
 require_relative './../score/trimaran_low_risk_over_commitment'
 require_relative './../score/topology_cluster'
 require_relative './../score/cost_aware'
+require_relative './../score/diktyo'
 require_relative './../filter/pod_topology_constraint'
 
 module KUBETWIN
 
 KUBE_SCHEDULER_STRATEGIES = {
-  COST: {
+  COST_AWARE: {
     filters: [
       KUBETWIN::CPUFilter.method(:run),
       KUBETWIN::MEMFilter.method(:run),
     ],
     scores: [
       KUBETWIN::CostAware.method(:run),
+    ]
+  },
+  DIKTYO: {
+    filters: [
+      KUBETWIN::CPUFilter.method(:run),
+      KUBETWIN::MEMFilter.method(:run),
+    ],
+    scores: [
+      KUBETWIN::DiktyoScoring.method(:run),
     ]
   },
   RESOURCE_AVAILABILITY: {
@@ -88,6 +98,23 @@ KUBE_SCHEDULER_STRATEGIES = {
       KUBETWIN::NodeResourcesLeastAllocatable.method(:run),
       KUBETWIN::NodeResourcesMostAllocatable.method(:run),
       KUBETWIN::CostAware.method(:run),
+      KUBETWIN::DiktyoScoring.method(:run),
+    ]
+  },
+  BALANCED_WITH_TOPOLOGY: {
+    filters: [
+      KUBETWIN::CPUFilter.method(:run),
+      KUBETWIN::MEMFilter.method(:run),
+      KUBETWIN::PodTopologySpreadConstraint.method(:run)
+    ],
+    scores: [
+      KUBETWIN::LowRiskOverCommitment.method(:run),
+      KUBETWIN::TopologyClusterAggregate.method(:run),
+      KUBETWIN::ResourceAvailabilityScore.method(:run),
+      KUBETWIN::NodeResourcesLeastAllocatable.method(:run),
+      KUBETWIN::NodeResourcesMostAllocatable.method(:run),
+      KUBETWIN::CostAware.method(:run),
+      KUBETWIN::DiktyoScoring.method(:run),
     ]
   },
 }

@@ -6,14 +6,14 @@ module KUBETWIN
       weight_mem: 1.0,   # Weight for memory cost
     }
 
-    def self.run(nodes, node_affinity, opts = {})
+    def self.run(filtered_nodes, _nodes, _node_affinity, opts = {})
       opts = {} unless opts.is_a?(Hash)
       weight_cpu = opts.fetch(:weight_cpu, DEFAULT_CONFIG[:weight_cpu])
       weight_mem = opts.fetch(:weight_mem, DEFAULT_CONFIG[:weight_mem])
 
       puts "[Scheduler] Starting CostAware plugin ..."
 
-      result = nodes.map do |entry|
+      result = filtered_nodes.map do |entry|
         # Compute CPU and Memory Cost for node
         cpu_cost = entry[:req_cpu] * entry[:cpu_hourly_cost]
         mem_cost = entry[:req_mem] * (entry[:mem_hourly_cost])
@@ -34,7 +34,7 @@ module KUBETWIN
       normalizedResult = result.map do |e|
         score = (range == 0) ? 100.0 : ((max - e[:combined_score]) / range.to_f) * 100
 
-        # puts "[Scheduler] CostAware: Node #{e[:node].node_id} Score=#{e[:combined_score]} normScore=#{score}"
+        # puts "[Scheduler] Node #{e[:node].node_id} Score=#{e[:combined_score]} normScore=#{score}"
 
         { node: e[:node], score: score }
       end

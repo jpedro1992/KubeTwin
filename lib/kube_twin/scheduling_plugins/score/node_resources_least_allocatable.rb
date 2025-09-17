@@ -2,10 +2,10 @@ module KUBETWIN
   # Scores nodes based on their allocatable CPU and memory resources
   # Priority param "Least": nodes with least allocatable resources score highest
   class NodeResourcesLeastAllocatable
-    def self.run(nodes, _node_affinity)
-      puts "[Scheduler] Starting NodeResourcesLeastAllocatable...'"
-      max_cpu = nodes.map { |n| n[:node].available_resources_cpu.to_f }.max
-      max_mem = nodes.map { |n| n[:node].available_resources_memory.to_f }.max
+    def self.run(filtered_nodes, _nodes, _node_affinity)
+      puts "[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'"
+      max_cpu = filtered_nodes.map { |n| n[:node].available_resources_cpu.to_f }.max
+      max_mem = filtered_nodes.map { |n| n[:node].available_resources_memory.to_f }.max
 
 
       max_cpu = 1 if max_cpu.nil? || max_cpu.zero?
@@ -13,7 +13,7 @@ module KUBETWIN
 
       # puts "[Scheduler] NodeResourcesLeastAllocatable: max_CPU: #{max_cpu}, max_MEM: #{max_mem}"
 
-      nodes.map do |entry|
+      filtered_nodes.map do |entry|
         # puts "[Scheduler] Node #{entry[:node].node_id} capacity: #{entry[:node].capacity_cpu}, requested: #{entry[:node].requested_cpu}, available: #{entry[:node].available_resources_cpu}"
         # puts "[Scheduler] Node #{entry[:node].node_id} capacity: #{entry[:node].capacity_memory}, requested: #{entry[:node].requested_memory}, available: #{entry[:node].available_resources_memory}"
 
