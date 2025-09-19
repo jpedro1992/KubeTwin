@@ -1,0 +1,2003 @@
+D, [2025-09-19T11:43:05.234321 #1285] DEBUG -- : Cluster: one {:name=>"eu-south-1 - Local DC", :location_id=>1, :type=>:mec, :tier=>"local", :node_number=>5, :node_resources_cpu=>50, :node_resources_memory=>50}
+D, [2025-09-19T11:43:05.234418 #1285] DEBUG -- : Cluster: two {:name=>"eu-central-1 Tier 1 Regional Edge", :location_id=>2, :type=>:mec, :node_number=>5, :tier=>"t1", :node_resources_cpu=>100, :node_resources_memory=>100}
+D, [2025-09-19T11:43:05.234478 #1285] DEBUG -- : Cluster: three {:name=>"eu-west-3 Tier 1", :location_id=>3, :type=>:mec, :node_number=>5, :tier=>"t1", :node_resources_cpu=>100, :node_resources_memory=>100}
+D, [2025-09-19T11:43:05.234505 #1285] DEBUG -- : Cluster: four {:name=>"eu-west-2 Tier 2", :location_id=>4, :type=>:mec, :node_number=>5, :tier=>"t2", :node_resources_cpu=>100, :node_resources_memory=>100}
+D, [2025-09-19T11:43:05.234531 #1285] DEBUG -- : Cluster: five {:name=>"eu-north-1 - Tier 2", :location_id=>5, :type=>:mec, :node_number=>5, :tier=>"t2", :node_resources_cpu=>100, :node_resources_memory=>100}
+D, [2025-09-19T11:43:05.234569 #1285] DEBUG -- : Cluster: six {:name=>"ca-central-1 - Remote DC", :location_id=>6, :type=>:cloud, :node_number=>5, :tier=>"rdc", :node_resources_cpu=>200, :node_resources_memory=>200}
+D, [2025-09-19T11:43:05.234583 #1285] DEBUG -- : Cluster: seven {:name=>"us-east-1 - Remote DC", :location_id=>7, :type=>:cloud, :node_number=>5, :tier=>"rdc", :node_resources_cpu=>200, :node_resources_memory=>200}
+D, [2025-09-19T11:43:05.234824 #1285] DEBUG -- : Creating node 0 cluster: one with resources: 50 50
+D, [2025-09-19T11:43:05.234864 #1285] DEBUG -- : Creating node 1 cluster: one with resources: 50 50
+D, [2025-09-19T11:43:05.234874 #1285] DEBUG -- : Creating node 2 cluster: one with resources: 50 50
+D, [2025-09-19T11:43:05.234891 #1285] DEBUG -- : Creating node 3 cluster: one with resources: 50 50
+D, [2025-09-19T11:43:05.234901 #1285] DEBUG -- : Creating node 4 cluster: one with resources: 50 50
+D, [2025-09-19T11:43:05.234921 #1285] DEBUG -- : Creating node 5 cluster: two with resources: 100 100
+D, [2025-09-19T11:43:05.234929 #1285] DEBUG -- : Creating node 6 cluster: two with resources: 100 100
+D, [2025-09-19T11:43:05.234934 #1285] DEBUG -- : Creating node 7 cluster: two with resources: 100 100
+D, [2025-09-19T11:43:05.234951 #1285] DEBUG -- : Creating node 8 cluster: two with resources: 100 100
+D, [2025-09-19T11:43:05.234960 #1285] DEBUG -- : Creating node 9 cluster: two with resources: 100 100
+D, [2025-09-19T11:43:05.234978 #1285] DEBUG -- : Creating node 10 cluster: three with resources: 100 100
+D, [2025-09-19T11:43:05.234988 #1285] DEBUG -- : Creating node 11 cluster: three with resources: 100 100
+D, [2025-09-19T11:43:05.234993 #1285] DEBUG -- : Creating node 12 cluster: three with resources: 100 100
+D, [2025-09-19T11:43:05.234998 #1285] DEBUG -- : Creating node 13 cluster: three with resources: 100 100
+D, [2025-09-19T11:43:05.235002 #1285] DEBUG -- : Creating node 14 cluster: three with resources: 100 100
+D, [2025-09-19T11:43:05.235006 #1285] DEBUG -- : Creating node 15 cluster: four with resources: 100 100
+D, [2025-09-19T11:43:05.235010 #1285] DEBUG -- : Creating node 16 cluster: four with resources: 100 100
+D, [2025-09-19T11:43:05.235015 #1285] DEBUG -- : Creating node 17 cluster: four with resources: 100 100
+D, [2025-09-19T11:43:05.235019 #1285] DEBUG -- : Creating node 18 cluster: four with resources: 100 100
+D, [2025-09-19T11:43:05.235024 #1285] DEBUG -- : Creating node 19 cluster: four with resources: 100 100
+D, [2025-09-19T11:43:05.235028 #1285] DEBUG -- : Creating node 20 cluster: five with resources: 100 100
+D, [2025-09-19T11:43:05.235032 #1285] DEBUG -- : Creating node 21 cluster: five with resources: 100 100
+D, [2025-09-19T11:43:05.235037 #1285] DEBUG -- : Creating node 22 cluster: five with resources: 100 100
+D, [2025-09-19T11:43:05.235041 #1285] DEBUG -- : Creating node 23 cluster: five with resources: 100 100
+D, [2025-09-19T11:43:05.235062 #1285] DEBUG -- : Creating node 24 cluster: five with resources: 100 100
+D, [2025-09-19T11:43:05.235072 #1285] DEBUG -- : Creating node 25 cluster: six with resources: 200 200
+D, [2025-09-19T11:43:05.235077 #1285] DEBUG -- : Creating node 26 cluster: six with resources: 200 200
+D, [2025-09-19T11:43:05.235082 #1285] DEBUG -- : Creating node 27 cluster: six with resources: 200 200
+D, [2025-09-19T11:43:05.235101 #1285] DEBUG -- : Creating node 28 cluster: six with resources: 200 200
+D, [2025-09-19T11:43:05.235112 #1285] DEBUG -- : Creating node 29 cluster: six with resources: 200 200
+D, [2025-09-19T11:43:05.235135 #1285] DEBUG -- : Creating node 30 cluster: seven with resources: 200 200
+D, [2025-09-19T11:43:05.235146 #1285] DEBUG -- : Creating node 31 cluster: seven with resources: 200 200
+D, [2025-09-19T11:43:05.235164 #1285] DEBUG -- : Creating node 32 cluster: seven with resources: 200 200
+D, [2025-09-19T11:43:05.235186 #1285] DEBUG -- : Creating node 33 cluster: seven with resources: 200 200
+D, [2025-09-19T11:43:05.235205 #1285] DEBUG -- : Creating node 34 cluster: seven with resources: 200 200
+D, [2025-09-19T11:43:05.237250 #1285] DEBUG -- : {"MS1"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.01143607, :sd=>0.00301789, :seed=>12345}},
+:cloud=>{:distribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>50, :resources_requirements_memory=>30, :node_affinity=>"lo
+cal", :rps=>1, :wait_for=>["MS2"]}, "MS2"=>{:service_time_distribution=>{:mec=>{:distribution=>:gaussian, :args=>{:mean=>0.0289486, :sd=>0.004604541, :seed=>12345}}, :cloud=>{:distribution=>:gaussian, :args=>{:mean=>0.053011, :sd=>0.006149, :seed=>12345}}}, :resources_requirements_cpu=>35, :resources_requirements_memory=>25, :node_affinity=>"local"}} false
+D, [2025-09-19T11:43:05.237319 #1285] DEBUG -- : Microservice type: MS1
+D, [2025-09-19T11:43:05.237342 #1285] DEBUG -- : Microservice type: MS2
+Register Scheduler strategy: BALANCED
+Register Filtering Plugins...
+Register Scoring Plugins...
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Node 25 in cluster 6 has no deployed pods
+[Scheduler] Node 26 in cluster 6 has no deployed pods
+[Scheduler] Node 27 in cluster 6 has no deployed pods
+[Scheduler] Node 28 in cluster 6 has no deployed pods
+[Scheduler] Node 29 in cluster 6 has no deployed pods
+[Scheduler] Node 30 in cluster 7 has no deployed pods
+[Scheduler] Node 31 in cluster 7 has no deployed pods
+[Scheduler] Node 32 in cluster 7 has no deployed pods
+[Scheduler] Node 33 in cluster 7 has no deployed pods
+[Scheduler] Node 34 in cluster 7 has no deployed pods
+[Scheduler] Total existing pods gathered: 0
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 1 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 2 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 3 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 4 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 5 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 6 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 7 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 8 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 9 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 10 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 11 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 12 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 13 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 14 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 15 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 16 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 17 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 18 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 19 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 20 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 21 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 22 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 23 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 24 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 25 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 26 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 27 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 28 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 29 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 30 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 31 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 32 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 33 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 34 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Node 26 in cluster 6 has no deployed pods
+[Scheduler] Node 27 in cluster 6 has no deployed pods
+[Scheduler] Node 28 in cluster 6 has no deployed pods
+[Scheduler] Node 29 in cluster 6 has no deployed pods
+[Scheduler] Node 30 in cluster 7 has no deployed pods
+[Scheduler] Node 31 in cluster 7 has no deployed pods
+[Scheduler] Node 32 in cluster 7 has no deployed pods
+[Scheduler] Node 33 in cluster 7 has no deployed pods
+[Scheduler] Node 34 in cluster 7 has no deployed pods
+[Scheduler] Total existing pods gathered: 1
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 1 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 2 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 3 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 4 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 5 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 6 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 7 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 8 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 9 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 10 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 11 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 12 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 13 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 14 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 15 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 16 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 17 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 18 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 19 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 20 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 21 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 22 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 23 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 24 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 25 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 26 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 27 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 28 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 29 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 30 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 31 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 32 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 33 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 34 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Node 27 in cluster 6 has no deployed pods
+[Scheduler] Node 28 in cluster 6 has no deployed pods
+[Scheduler] Node 29 in cluster 6 has no deployed pods
+[Scheduler] Node 30 in cluster 7 has no deployed pods
+[Scheduler] Node 31 in cluster 7 has no deployed pods
+[Scheduler] Node 32 in cluster 7 has no deployed pods
+[Scheduler] Node 33 in cluster 7 has no deployed pods
+[Scheduler] Node 34 in cluster 7 has no deployed pods
+[Scheduler] Total existing pods gathered: 2
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 1 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 2 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 3 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 4 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 5 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 6 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 7 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 8 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 9 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 10 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 11 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 12 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 13 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 14 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 15 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 16 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 17 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 18 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 19 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 20 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 21 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 22 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 23 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 24 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 25 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 26 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 27 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 28 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 29 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 30 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 31 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 32 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 33 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 34 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Node 28 in cluster 6 has no deployed pods
+[Scheduler] Node 29 in cluster 6 has no deployed pods
+[Scheduler] Node 30 in cluster 7 has no deployed pods
+[Scheduler] Node 31 in cluster 7 has no deployed pods
+[Scheduler] Node 32 in cluster 7 has no deployed pods
+[Scheduler] Node 33 in cluster 7 has no deployed pods
+[Scheduler] Node 34 in cluster 7 has no deployed pods
+[Scheduler] Total existing pods gathered: 3
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 1 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 2 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 3 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 4 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 5 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 6 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 7 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 8 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 9 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 10 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 11 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 12 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 13 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 14 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 15 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 16 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 17 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 18 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 19 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 20 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 21 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 22 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 23 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 24 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 25 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 26 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 27 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 28 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 29 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 30 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 31 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 32 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 33 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 34 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Node 29 in cluster 6 has no deployed pods
+[Scheduler] Node 30 in cluster 7 has no deployed pods
+[Scheduler] Node 31 in cluster 7 has no deployed pods
+[Scheduler] Node 32 in cluster 7 has no deployed pods
+[Scheduler] Node 33 in cluster 7 has no deployed pods
+[Scheduler] Node 34 in cluster 7 has no deployed pods
+[Scheduler] Total existing pods gathered: 4
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 1 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 2 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 3 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 4 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 5 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 6 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 7 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 8 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 9 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 10 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 11 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 12 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 13 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 14 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 15 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 16 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 17 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 18 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 19 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 20 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 21 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 22 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 23 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 24 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 25 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 26 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 27 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 28 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 29 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 30 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 31 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 32 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 33 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 34 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Node 30 in cluster 7 has no deployed pods
+[Scheduler] Node 31 in cluster 7 has no deployed pods
+[Scheduler] Node 32 in cluster 7 has no deployed pods
+[Scheduler] Node 33 in cluster 7 has no deployed pods
+[Scheduler] Node 34 in cluster 7 has no deployed pods
+[Scheduler] Total existing pods gathered: 5
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 1 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 2 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 3 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 4 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 5 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 6 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 7 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 8 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 9 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 10 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 11 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 12 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 13 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 14 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 15 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 16 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 17 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 18 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 19 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 20 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 21 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 22 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 23 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 24 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 25 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 26 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 27 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 28 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 29 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 30 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 31 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 32 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 33 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 34 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Node 31 in cluster 7 has no deployed pods
+[Scheduler] Node 32 in cluster 7 has no deployed pods
+[Scheduler] Node 33 in cluster 7 has no deployed pods
+[Scheduler] Node 34 in cluster 7 has no deployed pods
+[Scheduler] Total existing pods gathered: 6
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 1 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 2 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 3 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 4 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 5 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 6 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 7 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 8 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 9 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 10 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 11 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 12 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 13 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 14 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 15 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 16 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 17 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 18 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 19 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 20 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 21 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 22 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 23 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 24 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 25 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 26 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 27 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 28 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 29 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 30 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 31 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 32 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 33 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 34 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Node 32 in cluster 7 has no deployed pods
+[Scheduler] Node 33 in cluster 7 has no deployed pods
+[Scheduler] Node 34 in cluster 7 has no deployed pods
+[Scheduler] Total existing pods gathered: 7
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 1 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 2 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 3 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 4 - Raw Score: 430.0 - Normalized Score: 37.5
+[Scheduler] Node: 5 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 6 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 7 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 8 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 9 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 10 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 11 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 12 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 13 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 14 - Raw Score: 440.0 - Normalized Score: 50.0
+[Scheduler] Node: 15 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 16 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 17 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 18 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 19 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 20 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 21 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 22 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 23 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 24 - Raw Score: 400.0 - Normalized Score: 0.0
+[Scheduler] Node: 25 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 26 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 27 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 28 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 29 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 30 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 31 - Raw Score: 465.0 - Normalized Score: 81.25
+[Scheduler] Node: 32 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 33 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] Node: 34 - Raw Score: 480.0 - Normalized Score: 100.0
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2, Dependencies: {"dep2"=>{:src=>"MS2", :dst=>"MS1", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Node 33 in cluster 7 has no deployed pods
+[Scheduler] Node 34 in cluster 7 has no deployed pods
+[Scheduler] Total existing pods gathered: 8
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 337.65 - Normalized Score: 21.51
+[Scheduler] Node: 1 - Raw Score: 339.54 - Normalized Score: 22.59
+[Scheduler] Node: 2 - Raw Score: 340.87 - Normalized Score: 23.35
+[Scheduler] Node: 3 - Raw Score: 341.62 - Normalized Score: 23.78
+[Scheduler] Node: 4 - Raw Score: 342.74 - Normalized Score: 24.42
+[Scheduler] Node: 5 - Raw Score: 358.4 - Normalized Score: 33.37
+[Scheduler] Node: 6 - Raw Score: 358.49 - Normalized Score: 33.42
+[Scheduler] Node: 7 - Raw Score: 360.02 - Normalized Score: 34.29
+[Scheduler] Node: 8 - Raw Score: 359.63 - Normalized Score: 34.07
+[Scheduler] Node: 9 - Raw Score: 361.08 - Normalized Score: 34.9
+[Scheduler] Node: 10 - Raw Score: 366.2 - Normalized Score: 37.82
+[Scheduler] Node: 11 - Raw Score: 365.61 - Normalized Score: 37.48
+[Scheduler] Node: 12 - Raw Score: 363.74 - Normalized Score: 36.42
+[Scheduler] Node: 13 - Raw Score: 364.23 - Normalized Score: 36.69
+[Scheduler] Node: 14 - Raw Score: 366.26 - Normalized Score: 37.86
+[Scheduler] Node: 15 - Raw Score: 333.2 - Normalized Score: 18.97
+[Scheduler] Node: 16 - Raw Score: 334.4 - Normalized Score: 19.65
+[Scheduler] Node: 17 - Raw Score: 330.09 - Normalized Score: 17.19
+[Scheduler] Node: 18 - Raw Score: 331.96 - Normalized Score: 18.26
+[Scheduler] Node: 19 - Raw Score: 329.87 - Normalized Score: 17.06
+[Scheduler] Node: 20 - Raw Score: 306.45 - Normalized Score: 3.68
+[Scheduler] Node: 21 - Raw Score: 308.75 - Normalized Score: 5.0
+[Scheduler] Node: 22 - Raw Score: 300.0 - Normalized Score: 0.0
+[Scheduler] Node: 23 - Raw Score: 304.39 - Normalized Score: 2.51
+[Scheduler] Node: 24 - Raw Score: 303.74 - Normalized Score: 2.14
+[Scheduler] Node: 25 - Raw Score: 463.39 - Normalized Score: 93.35
+[Scheduler] Node: 26 - Raw Score: 462.46 - Normalized Score: 92.82
+[Scheduler] Node: 27 - Raw Score: 464.8 - Normalized Score: 94.16
+[Scheduler] Node: 28 - Raw Score: 464.71 - Normalized Score: 94.1
+[Scheduler] Node: 29 - Raw Score: 465.0 - Normalized Score: 94.27
+[Scheduler] Node: 30 - Raw Score: 458.98 - Normalized Score: 90.83
+[Scheduler] Node: 31 - Raw Score: 459.64 - Normalized Score: 91.21
+[Scheduler] Node: 32 - Raw Score: 457.58 - Normalized Score: 90.03
+[Scheduler] Node: 33 - Raw Score: 475.03 - Normalized Score: 100.0
+[Scheduler] Node: 34 - Raw Score: 474.83 - Normalized Score: 99.89
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2, Dependencies: {"dep2"=>{:src=>"MS2", :dst=>"MS1", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Node 34 in cluster 7 has no deployed pods
+[Scheduler] Total existing pods gathered: 9
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 337.1 - Normalized Score: 21.21
+[Scheduler] Node: 1 - Raw Score: 337.01 - Normalized Score: 21.16
+[Scheduler] Node: 2 - Raw Score: 337.95 - Normalized Score: 21.7
+[Scheduler] Node: 3 - Raw Score: 339.63 - Normalized Score: 22.66
+[Scheduler] Node: 4 - Raw Score: 338.12 - Normalized Score: 21.79
+[Scheduler] Node: 5 - Raw Score: 359.36 - Normalized Score: 33.93
+[Scheduler] Node: 6 - Raw Score: 358.25 - Normalized Score: 33.3
+[Scheduler] Node: 7 - Raw Score: 355.69 - Normalized Score: 31.83
+[Scheduler] Node: 8 - Raw Score: 354.05 - Normalized Score: 30.9
+[Scheduler] Node: 9 - Raw Score: 356.9 - Normalized Score: 32.53
+[Scheduler] Node: 10 - Raw Score: 366.37 - Normalized Score: 37.94
+[Scheduler] Node: 11 - Raw Score: 363.74 - Normalized Score: 36.44
+[Scheduler] Node: 12 - Raw Score: 362.05 - Normalized Score: 35.47
+[Scheduler] Node: 13 - Raw Score: 362.18 - Normalized Score: 35.54
+[Scheduler] Node: 14 - Raw Score: 362.74 - Normalized Score: 35.86
+[Scheduler] Node: 15 - Raw Score: 329.88 - Normalized Score: 17.08
+[Scheduler] Node: 16 - Raw Score: 326.65 - Normalized Score: 15.23
+[Scheduler] Node: 17 - Raw Score: 329.39 - Normalized Score: 16.8
+[Scheduler] Node: 18 - Raw Score: 329.34 - Normalized Score: 16.77
+[Scheduler] Node: 19 - Raw Score: 330.43 - Normalized Score: 17.4
+[Scheduler] Node: 20 - Raw Score: 300.87 - Normalized Score: 0.5
+[Scheduler] Node: 21 - Raw Score: 303.41 - Normalized Score: 1.95
+[Scheduler] Node: 22 - Raw Score: 302.68 - Normalized Score: 1.53
+[Scheduler] Node: 23 - Raw Score: 300.0 - Normalized Score: 0.0
+[Scheduler] Node: 24 - Raw Score: 301.32 - Normalized Score: 0.76
+[Scheduler] Node: 25 - Raw Score: 462.96 - Normalized Score: 93.16
+[Scheduler] Node: 26 - Raw Score: 463.21 - Normalized Score: 93.3
+[Scheduler] Node: 27 - Raw Score: 463.91 - Normalized Score: 93.7
+[Scheduler] Node: 28 - Raw Score: 465.0 - Normalized Score: 94.32
+[Scheduler] Node: 29 - Raw Score: 464.53 - Normalized Score: 94.05
+[Scheduler] Node: 30 - Raw Score: 459.6 - Normalized Score: 91.24
+[Scheduler] Node: 31 - Raw Score: 457.27 - Normalized Score: 89.91
+[Scheduler] Node: 32 - Raw Score: 459.34 - Normalized Score: 91.09
+[Scheduler] Node: 33 - Raw Score: 460.51 - Normalized Score: 91.76
+[Scheduler] Node: 34 - Raw Score: 474.93 - Normalized Score: 100.0
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2, Dependencies: {"dep2"=>{:src=>"MS2", :dst=>"MS1", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Total existing pods gathered: 10
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 342.42 - Normalized Score: 19.5
+[Scheduler] Node: 1 - Raw Score: 342.45 - Normalized Score: 19.52
+[Scheduler] Node: 2 - Raw Score: 347.08 - Normalized Score: 22.21
+[Scheduler] Node: 3 - Raw Score: 344.44 - Normalized Score: 20.68
+[Scheduler] Node: 4 - Raw Score: 343.2 - Normalized Score: 19.96
+[Scheduler] Node: 5 - Raw Score: 363.8 - Normalized Score: 31.94
+[Scheduler] Node: 6 - Raw Score: 364.94 - Normalized Score: 32.6
+[Scheduler] Node: 7 - Raw Score: 367.16 - Normalized Score: 33.89
+[Scheduler] Node: 8 - Raw Score: 365.93 - Normalized Score: 33.17
+[Scheduler] Node: 9 - Raw Score: 365.8 - Normalized Score: 33.1
+[Scheduler] Node: 10 - Raw Score: 372.24 - Normalized Score: 36.84
+[Scheduler] Node: 11 - Raw Score: 373.17 - Normalized Score: 37.38
+[Scheduler] Node: 12 - Raw Score: 373.13 - Normalized Score: 37.36
+[Scheduler] Node: 13 - Raw Score: 372.61 - Normalized Score: 37.06
+[Scheduler] Node: 14 - Raw Score: 372.72 - Normalized Score: 37.12
+[Scheduler] Node: 15 - Raw Score: 340.53 - Normalized Score: 18.4
+[Scheduler] Node: 16 - Raw Score: 337.24 - Normalized Score: 16.49
+[Scheduler] Node: 17 - Raw Score: 337.59 - Normalized Score: 16.69
+[Scheduler] Node: 18 - Raw Score: 341.1 - Normalized Score: 18.74
+[Scheduler] Node: 19 - Raw Score: 340.89 - Normalized Score: 18.61
+[Scheduler] Node: 20 - Raw Score: 310.81 - Normalized Score: 1.12
+[Scheduler] Node: 21 - Raw Score: 309.64 - Normalized Score: 0.44
+[Scheduler] Node: 22 - Raw Score: 308.87 - Normalized Score: 0.0
+[Scheduler] Node: 23 - Raw Score: 309.67 - Normalized Score: 0.46
+[Scheduler] Node: 24 - Raw Score: 309.76 - Normalized Score: 0.51
+[Scheduler] Node: 25 - Raw Score: 473.69 - Normalized Score: 95.82
+[Scheduler] Node: 26 - Raw Score: 479.03 - Normalized Score: 98.93
+[Scheduler] Node: 27 - Raw Score: 478.03 - Normalized Score: 98.35
+[Scheduler] Node: 28 - Raw Score: 476.77 - Normalized Score: 97.62
+[Scheduler] Node: 29 - Raw Score: 476.02 - Normalized Score: 97.18
+[Scheduler] Node: 30 - Raw Score: 471.98 - Normalized Score: 94.83
+[Scheduler] Node: 31 - Raw Score: 470.88 - Normalized Score: 94.19
+[Scheduler] Node: 32 - Raw Score: 475.46 - Normalized Score: 96.85
+[Scheduler] Node: 33 - Raw Score: 478.86 - Normalized Score: 98.83
+[Scheduler] Node: 34 - Raw Score: 480.87 - Normalized Score: 100.0
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2, Dependencies: {"dep2"=>{:src=>"MS2", :dst=>"MS1", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Total existing pods gathered: 11
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 347.63 - Normalized Score: 22.78
+[Scheduler] Node: 1 - Raw Score: 346.47 - Normalized Score: 22.09
+[Scheduler] Node: 2 - Raw Score: 344.16 - Normalized Score: 20.74
+[Scheduler] Node: 3 - Raw Score: 342.9 - Normalized Score: 20.0
+[Scheduler] Node: 4 - Raw Score: 345.23 - Normalized Score: 21.37
+[Scheduler] Node: 5 - Raw Score: 366.03 - Normalized Score: 33.59
+[Scheduler] Node: 6 - Raw Score: 368.68 - Normalized Score: 35.15
+[Scheduler] Node: 7 - Raw Score: 368.07 - Normalized Score: 34.79
+[Scheduler] Node: 8 - Raw Score: 368.59 - Normalized Score: 35.09
+[Scheduler] Node: 9 - Raw Score: 368.73 - Normalized Score: 35.18
+[Scheduler] Node: 10 - Raw Score: 373.07 - Normalized Score: 37.73
+[Scheduler] Node: 11 - Raw Score: 370.99 - Normalized Score: 36.51
+[Scheduler] Node: 12 - Raw Score: 371.39 - Normalized Score: 36.74
+[Scheduler] Node: 13 - Raw Score: 370.55 - Normalized Score: 36.25
+[Scheduler] Node: 14 - Raw Score: 373.21 - Normalized Score: 37.81
+[Scheduler] Node: 15 - Raw Score: 335.86 - Normalized Score: 15.86
+[Scheduler] Node: 16 - Raw Score: 339.66 - Normalized Score: 18.09
+[Scheduler] Node: 17 - Raw Score: 338.23 - Normalized Score: 17.25
+[Scheduler] Node: 18 - Raw Score: 337.18 - Normalized Score: 16.64
+[Scheduler] Node: 19 - Raw Score: 336.51 - Normalized Score: 16.24
+[Scheduler] Node: 20 - Raw Score: 311.76 - Normalized Score: 1.7
+[Scheduler] Node: 21 - Raw Score: 312.52 - Normalized Score: 2.14
+[Scheduler] Node: 22 - Raw Score: 313.92 - Normalized Score: 2.97
+[Scheduler] Node: 23 - Raw Score: 308.87 - Normalized Score: 0.0
+[Scheduler] Node: 24 - Raw Score: 310.56 - Normalized Score: 0.99
+[Scheduler] Node: 25 - Raw Score: 479.03 - Normalized Score: 100.0
+[Scheduler] Node: 26 - Raw Score: 477.85 - Normalized Score: 99.31
+[Scheduler] Node: 27 - Raw Score: 477.58 - Normalized Score: 99.15
+[Scheduler] Node: 28 - Raw Score: 478.17 - Normalized Score: 99.5
+[Scheduler] Node: 29 - Raw Score: 477.96 - Normalized Score: 99.37
+[Scheduler] Node: 30 - Raw Score: 470.34 - Normalized Score: 94.9
+[Scheduler] Node: 31 - Raw Score: 476.39 - Normalized Score: 98.45
+[Scheduler] Node: 32 - Raw Score: 471.98 - Normalized Score: 95.86
+[Scheduler] Node: 33 - Raw Score: 478.88 - Normalized Score: 99.91
+[Scheduler] Node: 34 - Raw Score: 463.04 - Normalized Score: 90.61
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2, Dependencies: {"dep2"=>{:src=>"MS2", :dst=>"MS1", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Total existing pods gathered: 12
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 347.79 - Normalized Score: 22.87
+[Scheduler] Node: 1 - Raw Score: 348.07 - Normalized Score: 23.03
+[Scheduler] Node: 2 - Raw Score: 345.46 - Normalized Score: 21.5
+[Scheduler] Node: 3 - Raw Score: 346.95 - Normalized Score: 22.38
+[Scheduler] Node: 4 - Raw Score: 346.15 - Normalized Score: 21.91
+[Scheduler] Node: 5 - Raw Score: 370.06 - Normalized Score: 35.96
+[Scheduler] Node: 6 - Raw Score: 369.55 - Normalized Score: 35.66
+[Scheduler] Node: 7 - Raw Score: 368.76 - Normalized Score: 35.19
+[Scheduler] Node: 8 - Raw Score: 369.81 - Normalized Score: 35.81
+[Scheduler] Node: 9 - Raw Score: 367.78 - Normalized Score: 34.62
+[Scheduler] Node: 10 - Raw Score: 373.25 - Normalized Score: 37.83
+[Scheduler] Node: 11 - Raw Score: 378.64 - Normalized Score: 41.0
+[Scheduler] Node: 12 - Raw Score: 373.77 - Normalized Score: 38.14
+[Scheduler] Node: 13 - Raw Score: 375.48 - Normalized Score: 39.14
+[Scheduler] Node: 14 - Raw Score: 375.83 - Normalized Score: 39.35
+[Scheduler] Node: 15 - Raw Score: 338.25 - Normalized Score: 17.26
+[Scheduler] Node: 16 - Raw Score: 341.74 - Normalized Score: 19.32
+[Scheduler] Node: 17 - Raw Score: 340.79 - Normalized Score: 18.76
+[Scheduler] Node: 18 - Raw Score: 344.5 - Normalized Score: 20.93
+[Scheduler] Node: 19 - Raw Score: 341.16 - Normalized Score: 18.97
+[Scheduler] Node: 20 - Raw Score: 312.6 - Normalized Score: 2.19
+[Scheduler] Node: 21 - Raw Score: 311.9 - Normalized Score: 1.78
+[Scheduler] Node: 22 - Raw Score: 312.57 - Normalized Score: 2.17
+[Scheduler] Node: 23 - Raw Score: 308.87 - Normalized Score: 0.0
+[Scheduler] Node: 24 - Raw Score: 318.08 - Normalized Score: 5.41
+[Scheduler] Node: 25 - Raw Score: 464.51 - Normalized Score: 91.46
+[Scheduler] Node: 26 - Raw Score: 477.96 - Normalized Score: 99.37
+[Scheduler] Node: 27 - Raw Score: 477.47 - Normalized Score: 99.08
+[Scheduler] Node: 28 - Raw Score: 479.03 - Normalized Score: 100.0
+[Scheduler] Node: 29 - Raw Score: 477.77 - Normalized Score: 99.26
+[Scheduler] Node: 30 - Raw Score: 471.36 - Normalized Score: 95.49
+[Scheduler] Node: 31 - Raw Score: 477.79 - Normalized Score: 99.27
+[Scheduler] Node: 32 - Raw Score: 474.07 - Normalized Score: 97.08
+[Scheduler] Node: 33 - Raw Score: 479.03 - Normalized Score: 100.0
+[Scheduler] Node: 34 - Raw Score: 465.27 - Normalized Score: 91.91
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2, Dependencies: {"dep2"=>{:src=>"MS2", :dst=>"MS1", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Total existing pods gathered: 13
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 344.86 - Normalized Score: 18.64
+[Scheduler] Node: 1 - Raw Score: 345.44 - Normalized Score: 18.98
+[Scheduler] Node: 2 - Raw Score: 347.26 - Normalized Score: 20.04
+[Scheduler] Node: 3 - Raw Score: 346.39 - Normalized Score: 19.53
+[Scheduler] Node: 4 - Raw Score: 349.33 - Normalized Score: 21.24
+[Scheduler] Node: 5 - Raw Score: 371.79 - Normalized Score: 34.28
+[Scheduler] Node: 6 - Raw Score: 370.94 - Normalized Score: 33.78
+[Scheduler] Node: 7 - Raw Score: 369.21 - Normalized Score: 32.78
+[Scheduler] Node: 8 - Raw Score: 373.47 - Normalized Score: 35.25
+[Scheduler] Node: 9 - Raw Score: 373.16 - Normalized Score: 35.07
+[Scheduler] Node: 10 - Raw Score: 378.98 - Normalized Score: 38.45
+[Scheduler] Node: 11 - Raw Score: 377.38 - Normalized Score: 37.52
+[Scheduler] Node: 12 - Raw Score: 376.04 - Normalized Score: 36.74
+[Scheduler] Node: 13 - Raw Score: 381.31 - Normalized Score: 39.8
+[Scheduler] Node: 14 - Raw Score: 377.07 - Normalized Score: 37.34
+[Scheduler] Node: 15 - Raw Score: 344.49 - Normalized Score: 18.43
+[Scheduler] Node: 16 - Raw Score: 343.75 - Normalized Score: 18.0
+[Scheduler] Node: 17 - Raw Score: 340.58 - Normalized Score: 16.16
+[Scheduler] Node: 18 - Raw Score: 341.04 - Normalized Score: 16.43
+[Scheduler] Node: 19 - Raw Score: 345.85 - Normalized Score: 19.22
+[Scheduler] Node: 20 - Raw Score: 315.39 - Normalized Score: 1.54
+[Scheduler] Node: 21 - Raw Score: 314.4 - Normalized Score: 0.96
+[Scheduler] Node: 22 - Raw Score: 318.01 - Normalized Score: 3.06
+[Scheduler] Node: 23 - Raw Score: 315.37 - Normalized Score: 1.53
+[Scheduler] Node: 24 - Raw Score: 312.75 - Normalized Score: 0.0
+[Scheduler] Node: 25 - Raw Score: 463.7 - Normalized Score: 87.64
+[Scheduler] Node: 26 - Raw Score: 481.12 - Normalized Score: 97.75
+[Scheduler] Node: 27 - Raw Score: 485.0 - Normalized Score: 100.0
+[Scheduler] Node: 28 - Raw Score: 481.36 - Normalized Score: 97.89
+[Scheduler] Node: 29 - Raw Score: 483.49 - Normalized Score: 99.12
+[Scheduler] Node: 30 - Raw Score: 479.1 - Normalized Score: 96.58
+[Scheduler] Node: 31 - Raw Score: 477.09 - Normalized Score: 95.41
+[Scheduler] Node: 32 - Raw Score: 476.52 - Normalized Score: 95.07
+[Scheduler] Node: 33 - Raw Score: 470.41 - Normalized Score: 91.53
+[Scheduler] Node: 34 - Raw Score: 467.38 - Normalized Score: 89.77
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2, Dependencies: {"dep2"=>{:src=>"MS2", :dst=>"MS1", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Total existing pods gathered: 14
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 340.26 - Normalized Score: 15.97
+[Scheduler] Node: 1 - Raw Score: 344.0 - Normalized Score: 18.15
+[Scheduler] Node: 2 - Raw Score: 342.23 - Normalized Score: 17.11
+[Scheduler] Node: 3 - Raw Score: 342.43 - Normalized Score: 17.23
+[Scheduler] Node: 4 - Raw Score: 341.57 - Normalized Score: 16.74
+[Scheduler] Node: 5 - Raw Score: 368.02 - Normalized Score: 32.09
+[Scheduler] Node: 6 - Raw Score: 364.59 - Normalized Score: 30.1
+[Scheduler] Node: 7 - Raw Score: 365.64 - Normalized Score: 30.71
+[Scheduler] Node: 8 - Raw Score: 367.48 - Normalized Score: 31.77
+[Scheduler] Node: 9 - Raw Score: 364.09 - Normalized Score: 29.81
+[Scheduler] Node: 10 - Raw Score: 372.9 - Normalized Score: 34.92
+[Scheduler] Node: 11 - Raw Score: 372.98 - Normalized Score: 34.97
+[Scheduler] Node: 12 - Raw Score: 372.91 - Normalized Score: 34.93
+[Scheduler] Node: 13 - Raw Score: 374.27 - Normalized Score: 35.72
+[Scheduler] Node: 14 - Raw Score: 374.17 - Normalized Score: 35.66
+[Scheduler] Node: 15 - Raw Score: 342.02 - Normalized Score: 17.0
+[Scheduler] Node: 16 - Raw Score: 341.21 - Normalized Score: 16.52
+[Scheduler] Node: 17 - Raw Score: 340.27 - Normalized Score: 15.98
+[Scheduler] Node: 18 - Raw Score: 340.95 - Normalized Score: 16.38
+[Scheduler] Node: 19 - Raw Score: 340.0 - Normalized Score: 15.82
+[Scheduler] Node: 20 - Raw Score: 315.25 - Normalized Score: 1.46
+[Scheduler] Node: 21 - Raw Score: 313.79 - Normalized Score: 0.61
+[Scheduler] Node: 22 - Raw Score: 312.95 - Normalized Score: 0.12
+[Scheduler] Node: 23 - Raw Score: 312.75 - Normalized Score: 0.0
+[Scheduler] Node: 24 - Raw Score: 313.01 - Normalized Score: 0.15
+[Scheduler] Node: 25 - Raw Score: 468.84 - Normalized Score: 90.62
+[Scheduler] Node: 26 - Raw Score: 485.0 - Normalized Score: 100.0
+[Scheduler] Node: 27 - Raw Score: 467.56 - Normalized Score: 89.87
+[Scheduler] Node: 28 - Raw Score: 479.74 - Normalized Score: 96.95
+[Scheduler] Node: 29 - Raw Score: 482.54 - Normalized Score: 98.57
+[Scheduler] Node: 30 - Raw Score: 476.26 - Normalized Score: 94.93
+[Scheduler] Node: 31 - Raw Score: 477.94 - Normalized Score: 95.9
+[Scheduler] Node: 32 - Raw Score: 479.63 - Normalized Score: 96.88
+[Scheduler] Node: 33 - Raw Score: 470.96 - Normalized Score: 91.85
+[Scheduler] Node: 34 - Raw Score: 468.38 - Normalized Score: 90.35
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 35, MEM: 25, NodeAffinity: local, Selector: MS2, Dependencies: {"dep2"=>{:src=>"MS2", :dst=>"MS1", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Total existing pods gathered: 15
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 344.51 - Normalized Score: 18.44
+[Scheduler] Node: 1 - Raw Score: 345.6 - Normalized Score: 19.07
+[Scheduler] Node: 2 - Raw Score: 344.92 - Normalized Score: 18.68
+[Scheduler] Node: 3 - Raw Score: 342.91 - Normalized Score: 17.51
+[Scheduler] Node: 4 - Raw Score: 343.07 - Normalized Score: 17.6
+[Scheduler] Node: 5 - Raw Score: 372.0 - Normalized Score: 34.4
+[Scheduler] Node: 6 - Raw Score: 374.39 - Normalized Score: 35.79
+[Scheduler] Node: 7 - Raw Score: 368.85 - Normalized Score: 32.57
+[Scheduler] Node: 8 - Raw Score: 365.72 - Normalized Score: 30.76
+[Scheduler] Node: 9 - Raw Score: 366.67 - Normalized Score: 31.31
+[Scheduler] Node: 10 - Raw Score: 377.42 - Normalized Score: 37.54
+[Scheduler] Node: 11 - Raw Score: 374.96 - Normalized Score: 36.12
+[Scheduler] Node: 12 - Raw Score: 376.16 - Normalized Score: 36.81
+[Scheduler] Node: 13 - Raw Score: 378.3 - Normalized Score: 38.06
+[Scheduler] Node: 14 - Raw Score: 376.29 - Normalized Score: 36.89
+[Scheduler] Node: 15 - Raw Score: 343.54 - Normalized Score: 17.88
+[Scheduler] Node: 16 - Raw Score: 340.61 - Normalized Score: 16.18
+[Scheduler] Node: 17 - Raw Score: 343.65 - Normalized Score: 17.94
+[Scheduler] Node: 18 - Raw Score: 340.48 - Normalized Score: 16.1
+[Scheduler] Node: 19 - Raw Score: 342.96 - Normalized Score: 17.54
+[Scheduler] Node: 20 - Raw Score: 314.28 - Normalized Score: 0.89
+[Scheduler] Node: 21 - Raw Score: 313.84 - Normalized Score: 0.64
+[Scheduler] Node: 22 - Raw Score: 316.44 - Normalized Score: 2.14
+[Scheduler] Node: 23 - Raw Score: 312.75 - Normalized Score: 0.0
+[Scheduler] Node: 24 - Raw Score: 313.39 - Normalized Score: 0.38
+[Scheduler] Node: 25 - Raw Score: 467.75 - Normalized Score: 89.99
+[Scheduler] Node: 26 - Raw Score: 468.38 - Normalized Score: 90.35
+[Scheduler] Node: 27 - Raw Score: 468.59 - Normalized Score: 90.47
+[Scheduler] Node: 28 - Raw Score: 485.0 - Normalized Score: 100.0
+[Scheduler] Node: 29 - Raw Score: 484.06 - Normalized Score: 99.45
+[Scheduler] Node: 30 - Raw Score: 482.25 - Normalized Score: 98.4
+[Scheduler] Node: 31 - Raw Score: 479.64 - Normalized Score: 96.89
+[Scheduler] Node: 32 - Raw Score: 477.13 - Normalized Score: 95.43
+[Scheduler] Node: 33 - Raw Score: 468.74 - Normalized Score: 90.56
+[Scheduler] Node: 34 - Raw Score: 468.14 - Normalized Score: 90.21
+[Scheduler] --------------------------------
+**** Horizontal Pod Autoscaling ****
+MS2 pods: 8 average processing_time: 0.05346068888337539 desired_metric: 0.07954627327910854
+************************************
+D, [2025-09-19T11:43:05.274277 #1285] DEBUG -- : pods: 8 scaling_ratio: 0.6720703142910898
+**** Horizontal Pod Autoscaling ****
+MS1 pods: 8 average processing_time: 0.905925111364826 desired_metric: 0.07916343825665262
+************************************
+D, [2025-09-19T11:43:05.274362 #1285] DEBUG -- : pods: 8 scaling_ratio: 11.443731239006603
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Total existing pods gathered: 14
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 343.03 - Normalized Score: 17.8
+[Scheduler] Node: 1 - Raw Score: 343.33 - Normalized Score: 17.98
+[Scheduler] Node: 2 - Raw Score: 342.75 - Normalized Score: 17.64
+[Scheduler] Node: 3 - Raw Score: 341.49 - Normalized Score: 16.89
+[Scheduler] Node: 4 - Raw Score: 345.09 - Normalized Score: 19.01
+[Scheduler] Node: 5 - Raw Score: 371.8 - Normalized Score: 34.71
+[Scheduler] Node: 6 - Raw Score: 367.39 - Normalized Score: 32.12
+[Scheduler] Node: 7 - Raw Score: 368.97 - Normalized Score: 33.05
+[Scheduler] Node: 8 - Raw Score: 370.58 - Normalized Score: 34.0
+[Scheduler] Node: 9 - Raw Score: 369.36 - Normalized Score: 33.28
+[Scheduler] Node: 10 - Raw Score: 375.89 - Normalized Score: 37.11
+[Scheduler] Node: 11 - Raw Score: 378.21 - Normalized Score: 38.48
+[Scheduler] Node: 12 - Raw Score: 378.11 - Normalized Score: 38.42
+[Scheduler] Node: 13 - Raw Score: 377.65 - Normalized Score: 38.15
+[Scheduler] Node: 14 - Raw Score: 376.63 - Normalized Score: 37.55
+[Scheduler] Node: 15 - Raw Score: 343.12 - Normalized Score: 17.86
+[Scheduler] Node: 16 - Raw Score: 346.42 - Normalized Score: 19.79
+[Scheduler] Node: 17 - Raw Score: 340.14 - Normalized Score: 16.1
+[Scheduler] Node: 18 - Raw Score: 336.66 - Normalized Score: 14.06
+[Scheduler] Node: 19 - Raw Score: 343.57 - Normalized Score: 18.12
+[Scheduler] Node: 20 - Raw Score: 316.0 - Normalized Score: 1.91
+[Scheduler] Node: 21 - Raw Score: 315.61 - Normalized Score: 1.69
+[Scheduler] Node: 22 - Raw Score: 315.3 - Normalized Score: 1.5
+[Scheduler] Node: 23 - Raw Score: 315.08 - Normalized Score: 1.37
+[Scheduler] Node: 24 - Raw Score: 312.75 - Normalized Score: 0.0
+[Scheduler] Node: 25 - Raw Score: 463.1 - Normalized Score: 88.38
+[Scheduler] Node: 26 - Raw Score: 473.13 - Normalized Score: 94.27
+[Scheduler] Node: 27 - Raw Score: 475.81 - Normalized Score: 95.84
+[Scheduler] Node: 28 - Raw Score: 459.82 - Normalized Score: 86.45
+[Scheduler] Node: 29 - Raw Score: 477.19 - Normalized Score: 96.66
+[Scheduler] Node: 30 - Raw Score: 481.86 - Normalized Score: 99.4
+[Scheduler] Node: 31 - Raw Score: 482.88 - Normalized Score: 100.0
+[Scheduler] Node: 32 - Raw Score: 481.95 - Normalized Score: 99.46
+[Scheduler] Node: 33 - Raw Score: 473.65 - Normalized Score: 94.58
+[Scheduler] Node: 34 - Raw Score: 474.95 - Normalized Score: 95.34
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Total existing pods gathered: 15
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 342.01 - Normalized Score: 17.13
+[Scheduler] Node: 1 - Raw Score: 343.72 - Normalized Score: 18.12
+[Scheduler] Node: 2 - Raw Score: 343.45 - Normalized Score: 17.97
+[Scheduler] Node: 3 - Raw Score: 345.34 - Normalized Score: 19.07
+[Scheduler] Node: 4 - Raw Score: 344.17 - Normalized Score: 18.39
+[Scheduler] Node: 5 - Raw Score: 369.73 - Normalized Score: 33.35
+[Scheduler] Node: 6 - Raw Score: 367.5 - Normalized Score: 32.04
+[Scheduler] Node: 7 - Raw Score: 370.66 - Normalized Score: 33.89
+[Scheduler] Node: 8 - Raw Score: 369.4 - Normalized Score: 33.15
+[Scheduler] Node: 9 - Raw Score: 369.47 - Normalized Score: 33.19
+[Scheduler] Node: 10 - Raw Score: 375.13 - Normalized Score: 36.5
+[Scheduler] Node: 11 - Raw Score: 375.48 - Normalized Score: 36.71
+[Scheduler] Node: 12 - Raw Score: 378.09 - Normalized Score: 38.23
+[Scheduler] Node: 13 - Raw Score: 377.09 - Normalized Score: 37.65
+[Scheduler] Node: 14 - Raw Score: 375.51 - Normalized Score: 36.72
+[Scheduler] Node: 15 - Raw Score: 338.48 - Normalized Score: 15.06
+[Scheduler] Node: 16 - Raw Score: 342.6 - Normalized Score: 17.47
+[Scheduler] Node: 17 - Raw Score: 341.7 - Normalized Score: 16.94
+[Scheduler] Node: 18 - Raw Score: 337.67 - Normalized Score: 14.58
+[Scheduler] Node: 19 - Raw Score: 341.46 - Normalized Score: 16.8
+[Scheduler] Node: 20 - Raw Score: 315.82 - Normalized Score: 1.8
+[Scheduler] Node: 21 - Raw Score: 312.75 - Normalized Score: 0.0
+[Scheduler] Node: 22 - Raw Score: 314.04 - Normalized Score: 0.76
+[Scheduler] Node: 23 - Raw Score: 313.32 - Normalized Score: 0.33
+[Scheduler] Node: 24 - Raw Score: 314.74 - Normalized Score: 1.17
+[Scheduler] Node: 25 - Raw Score: 462.63 - Normalized Score: 87.7
+[Scheduler] Node: 26 - Raw Score: 475.7 - Normalized Score: 95.35
+[Scheduler] Node: 27 - Raw Score: 478.8 - Normalized Score: 97.16
+[Scheduler] Node: 28 - Raw Score: 461.89 - Normalized Score: 87.27
+[Scheduler] Node: 29 - Raw Score: 476.84 - Normalized Score: 96.02
+[Scheduler] Node: 30 - Raw Score: 483.65 - Normalized Score: 100.0
+[Scheduler] Node: 31 - Raw Score: 462.73 - Normalized Score: 87.76
+[Scheduler] Node: 32 - Raw Score: 482.69 - Normalized Score: 99.44
+[Scheduler] Node: 33 - Raw Score: 474.95 - Normalized Score: 94.91
+[Scheduler] Node: 34 - Raw Score: 472.82 - Normalized Score: 93.67
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Total existing pods gathered: 16
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 346.98 - Normalized Score: 20.1
+[Scheduler] Node: 1 - Raw Score: 344.63 - Normalized Score: 18.73
+[Scheduler] Node: 2 - Raw Score: 343.38 - Normalized Score: 17.99
+[Scheduler] Node: 3 - Raw Score: 345.66 - Normalized Score: 19.33
+[Scheduler] Node: 4 - Raw Score: 347.77 - Normalized Score: 20.57
+[Scheduler] Node: 5 - Raw Score: 371.7 - Normalized Score: 34.62
+[Scheduler] Node: 6 - Raw Score: 371.01 - Normalized Score: 34.22
+[Scheduler] Node: 7 - Raw Score: 370.68 - Normalized Score: 34.02
+[Scheduler] Node: 8 - Raw Score: 371.07 - Normalized Score: 34.25
+[Scheduler] Node: 9 - Raw Score: 371.99 - Normalized Score: 34.79
+[Scheduler] Node: 10 - Raw Score: 378.61 - Normalized Score: 38.68
+[Scheduler] Node: 11 - Raw Score: 377.34 - Normalized Score: 37.93
+[Scheduler] Node: 12 - Raw Score: 376.89 - Normalized Score: 37.67
+[Scheduler] Node: 13 - Raw Score: 377.71 - Normalized Score: 38.15
+[Scheduler] Node: 14 - Raw Score: 378.33 - Normalized Score: 38.52
+[Scheduler] Node: 15 - Raw Score: 343.07 - Normalized Score: 17.81
+[Scheduler] Node: 16 - Raw Score: 343.7 - Normalized Score: 18.18
+[Scheduler] Node: 17 - Raw Score: 343.62 - Normalized Score: 18.13
+[Scheduler] Node: 18 - Raw Score: 343.02 - Normalized Score: 17.78
+[Scheduler] Node: 19 - Raw Score: 342.15 - Normalized Score: 17.27
+[Scheduler] Node: 20 - Raw Score: 313.64 - Normalized Score: 0.52
+[Scheduler] Node: 21 - Raw Score: 312.75 - Normalized Score: 0.0
+[Scheduler] Node: 22 - Raw Score: 316.65 - Normalized Score: 2.29
+[Scheduler] Node: 23 - Raw Score: 314.57 - Normalized Score: 1.07
+[Scheduler] Node: 24 - Raw Score: 312.83 - Normalized Score: 0.05
+[Scheduler] Node: 25 - Raw Score: 460.86 - Normalized Score: 86.98
+[Scheduler] Node: 26 - Raw Score: 476.94 - Normalized Score: 96.42
+[Scheduler] Node: 27 - Raw Score: 477.21 - Normalized Score: 96.58
+[Scheduler] Node: 28 - Raw Score: 465.72 - Normalized Score: 89.84
+[Scheduler] Node: 29 - Raw Score: 475.48 - Normalized Score: 95.57
+[Scheduler] Node: 30 - Raw Score: 460.22 - Normalized Score: 86.61
+[Scheduler] Node: 31 - Raw Score: 461.81 - Normalized Score: 87.54
+[Scheduler] Node: 32 - Raw Score: 483.03 - Normalized Score: 100.0
+[Scheduler] Node: 33 - Raw Score: 471.01 - Normalized Score: 92.94
+[Scheduler] Node: 34 - Raw Score: 474.95 - Normalized Score: 95.26
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Total existing pods gathered: 17
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 346.14 - Normalized Score: 19.96
+[Scheduler] Node: 1 - Raw Score: 344.69 - Normalized Score: 19.09
+[Scheduler] Node: 2 - Raw Score: 348.19 - Normalized Score: 21.18
+[Scheduler] Node: 3 - Raw Score: 348.98 - Normalized Score: 21.66
+[Scheduler] Node: 4 - Raw Score: 344.27 - Normalized Score: 18.84
+[Scheduler] Node: 5 - Raw Score: 367.43 - Normalized Score: 32.69
+[Scheduler] Node: 6 - Raw Score: 371.46 - Normalized Score: 35.09
+[Scheduler] Node: 7 - Raw Score: 370.28 - Normalized Score: 34.38
+[Scheduler] Node: 8 - Raw Score: 369.64 - Normalized Score: 34.0
+[Scheduler] Node: 9 - Raw Score: 369.77 - Normalized Score: 34.08
+[Scheduler] Node: 10 - Raw Score: 377.46 - Normalized Score: 38.68
+[Scheduler] Node: 11 - Raw Score: 376.0 - Normalized Score: 37.81
+[Scheduler] Node: 12 - Raw Score: 378.93 - Normalized Score: 39.56
+[Scheduler] Node: 13 - Raw Score: 376.1 - Normalized Score: 37.86
+[Scheduler] Node: 14 - Raw Score: 377.35 - Normalized Score: 38.61
+[Scheduler] Node: 15 - Raw Score: 345.79 - Normalized Score: 19.75
+[Scheduler] Node: 16 - Raw Score: 346.72 - Normalized Score: 20.31
+[Scheduler] Node: 17 - Raw Score: 346.13 - Normalized Score: 19.95
+[Scheduler] Node: 18 - Raw Score: 339.3 - Normalized Score: 15.87
+[Scheduler] Node: 19 - Raw Score: 338.92 - Normalized Score: 15.65
+[Scheduler] Node: 20 - Raw Score: 315.4 - Normalized Score: 1.59
+[Scheduler] Node: 21 - Raw Score: 312.75 - Normalized Score: 0.0
+[Scheduler] Node: 22 - Raw Score: 314.6 - Normalized Score: 1.11
+[Scheduler] Node: 23 - Raw Score: 315.75 - Normalized Score: 1.8
+[Scheduler] Node: 24 - Raw Score: 314.84 - Normalized Score: 1.25
+[Scheduler] Node: 25 - Raw Score: 465.88 - Normalized Score: 91.52
+[Scheduler] Node: 26 - Raw Score: 475.7 - Normalized Score: 97.39
+[Scheduler] Node: 27 - Raw Score: 479.15 - Normalized Score: 99.46
+[Scheduler] Node: 28 - Raw Score: 465.43 - Normalized Score: 91.25
+[Scheduler] Node: 29 - Raw Score: 480.06 - Normalized Score: 100.0
+[Scheduler] Node: 30 - Raw Score: 462.27 - Normalized Score: 89.36
+[Scheduler] Node: 31 - Raw Score: 464.51 - Normalized Score: 90.7
+[Scheduler] Node: 32 - Raw Score: 459.58 - Normalized Score: 87.76
+[Scheduler] Node: 33 - Raw Score: 473.04 - Normalized Score: 95.8
+[Scheduler] Node: 34 - Raw Score: 473.71 - Normalized Score: 96.2
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Total existing pods gathered: 18
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 346.41 - Normalized Score: 20.3
+[Scheduler] Node: 1 - Raw Score: 340.95 - Normalized Score: 17.0
+[Scheduler] Node: 2 - Raw Score: 343.14 - Normalized Score: 18.33
+[Scheduler] Node: 3 - Raw Score: 344.41 - Normalized Score: 19.09
+[Scheduler] Node: 4 - Raw Score: 345.54 - Normalized Score: 19.77
+[Scheduler] Node: 5 - Raw Score: 368.17 - Normalized Score: 33.41
+[Scheduler] Node: 6 - Raw Score: 366.66 - Normalized Score: 32.5
+[Scheduler] Node: 7 - Raw Score: 369.13 - Normalized Score: 33.99
+[Scheduler] Node: 8 - Raw Score: 371.2 - Normalized Score: 35.24
+[Scheduler] Node: 9 - Raw Score: 367.57 - Normalized Score: 33.05
+[Scheduler] Node: 10 - Raw Score: 375.4 - Normalized Score: 37.77
+[Scheduler] Node: 11 - Raw Score: 375.41 - Normalized Score: 37.78
+[Scheduler] Node: 12 - Raw Score: 375.33 - Normalized Score: 37.73
+[Scheduler] Node: 13 - Raw Score: 376.54 - Normalized Score: 38.46
+[Scheduler] Node: 14 - Raw Score: 375.48 - Normalized Score: 37.82
+[Scheduler] Node: 15 - Raw Score: 339.81 - Normalized Score: 16.32
+[Scheduler] Node: 16 - Raw Score: 345.72 - Normalized Score: 19.88
+[Scheduler] Node: 17 - Raw Score: 340.4 - Normalized Score: 16.67
+[Scheduler] Node: 18 - Raw Score: 344.23 - Normalized Score: 18.98
+[Scheduler] Node: 19 - Raw Score: 343.42 - Normalized Score: 18.49
+[Scheduler] Node: 20 - Raw Score: 314.06 - Normalized Score: 0.79
+[Scheduler] Node: 21 - Raw Score: 313.18 - Normalized Score: 0.26
+[Scheduler] Node: 22 - Raw Score: 312.75 - Normalized Score: 0.0
+[Scheduler] Node: 23 - Raw Score: 313.07 - Normalized Score: 0.19
+[Scheduler] Node: 24 - Raw Score: 312.79 - Normalized Score: 0.03
+[Scheduler] Node: 25 - Raw Score: 463.62 - Normalized Score: 90.95
+[Scheduler] Node: 26 - Raw Score: 478.62 - Normalized Score: 100.0
+[Scheduler] Node: 27 - Raw Score: 474.43 - Normalized Score: 97.47
+[Scheduler] Node: 28 - Raw Score: 460.96 - Normalized Score: 89.35
+[Scheduler] Node: 29 - Raw Score: 457.39 - Normalized Score: 87.2
+[Scheduler] Node: 30 - Raw Score: 460.06 - Normalized Score: 88.81
+[Scheduler] Node: 31 - Raw Score: 463.57 - Normalized Score: 90.93
+[Scheduler] Node: 32 - Raw Score: 464.51 - Normalized Score: 91.49
+[Scheduler] Node: 33 - Raw Score: 473.65 - Normalized Score: 97.0
+[Scheduler] Node: 34 - Raw Score: 471.98 - Normalized Score: 95.99
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Total existing pods gathered: 19
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 346.24 - Normalized Score: 20.09
+[Scheduler] Node: 1 - Raw Score: 347.62 - Normalized Score: 20.92
+[Scheduler] Node: 2 - Raw Score: 344.31 - Normalized Score: 18.94
+[Scheduler] Node: 3 - Raw Score: 345.34 - Normalized Score: 19.55
+[Scheduler] Node: 4 - Raw Score: 344.72 - Normalized Score: 19.18
+[Scheduler] Node: 5 - Raw Score: 368.91 - Normalized Score: 33.69
+[Scheduler] Node: 6 - Raw Score: 370.9 - Normalized Score: 34.88
+[Scheduler] Node: 7 - Raw Score: 369.64 - Normalized Score: 34.13
+[Scheduler] Node: 8 - Raw Score: 371.9 - Normalized Score: 35.48
+[Scheduler] Node: 9 - Raw Score: 369.89 - Normalized Score: 34.28
+[Scheduler] Node: 10 - Raw Score: 377.13 - Normalized Score: 38.62
+[Scheduler] Node: 11 - Raw Score: 380.9 - Normalized Score: 40.88
+[Scheduler] Node: 12 - Raw Score: 378.48 - Normalized Score: 39.43
+[Scheduler] Node: 13 - Raw Score: 376.21 - Normalized Score: 38.07
+[Scheduler] Node: 14 - Raw Score: 375.47 - Normalized Score: 37.63
+[Scheduler] Node: 15 - Raw Score: 341.07 - Normalized Score: 16.99
+[Scheduler] Node: 16 - Raw Score: 340.97 - Normalized Score: 16.93
+[Scheduler] Node: 17 - Raw Score: 347.55 - Normalized Score: 20.88
+[Scheduler] Node: 18 - Raw Score: 343.16 - Normalized Score: 18.24
+[Scheduler] Node: 19 - Raw Score: 347.58 - Normalized Score: 20.9
+[Scheduler] Node: 20 - Raw Score: 315.49 - Normalized Score: 1.64
+[Scheduler] Node: 21 - Raw Score: 314.51 - Normalized Score: 1.06
+[Scheduler] Node: 22 - Raw Score: 315.17 - Normalized Score: 1.46
+[Scheduler] Node: 23 - Raw Score: 312.75 - Normalized Score: 0.0
+[Scheduler] Node: 24 - Raw Score: 315.74 - Normalized Score: 1.8
+[Scheduler] Node: 25 - Raw Score: 462.45 - Normalized Score: 89.8
+[Scheduler] Node: 26 - Raw Score: 457.55 - Normalized Score: 86.86
+[Scheduler] Node: 27 - Raw Score: 479.45 - Normalized Score: 100.0
+[Scheduler] Node: 28 - Raw Score: 463.08 - Normalized Score: 90.18
+[Scheduler] Node: 29 - Raw Score: 455.9 - Normalized Score: 85.87
+[Scheduler] Node: 30 - Raw Score: 464.51 - Normalized Score: 91.04
+[Scheduler] Node: 31 - Raw Score: 463.57 - Normalized Score: 90.47
+[Scheduler] Node: 32 - Raw Score: 458.65 - Normalized Score: 87.52
+[Scheduler] Node: 33 - Raw Score: 474.69 - Normalized Score: 97.14
+[Scheduler] Node: 34 - Raw Score: 473.46 - Normalized Score: 96.41
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Total existing pods gathered: 20
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 351.3 - Normalized Score: 17.93
+[Scheduler] Node: 1 - Raw Score: 347.06 - Normalized Score: 15.35
+[Scheduler] Node: 2 - Raw Score: 347.87 - Normalized Score: 15.85
+[Scheduler] Node: 3 - Raw Score: 351.04 - Normalized Score: 17.77
+[Scheduler] Node: 4 - Raw Score: 348.57 - Normalized Score: 16.27
+[Scheduler] Node: 5 - Raw Score: 375.63 - Normalized Score: 32.71
+[Scheduler] Node: 6 - Raw Score: 379.19 - Normalized Score: 34.88
+[Scheduler] Node: 7 - Raw Score: 379.3 - Normalized Score: 34.94
+[Scheduler] Node: 8 - Raw Score: 380.36 - Normalized Score: 35.59
+[Scheduler] Node: 9 - Raw Score: 375.75 - Normalized Score: 32.78
+[Scheduler] Node: 10 - Raw Score: 385.95 - Normalized Score: 38.98
+[Scheduler] Node: 11 - Raw Score: 385.93 - Normalized Score: 38.97
+[Scheduler] Node: 12 - Raw Score: 385.29 - Normalized Score: 38.58
+[Scheduler] Node: 13 - Raw Score: 386.55 - Normalized Score: 39.34
+[Scheduler] Node: 14 - Raw Score: 384.76 - Normalized Score: 38.26
+[Scheduler] Node: 15 - Raw Score: 351.95 - Normalized Score: 18.32
+[Scheduler] Node: 16 - Raw Score: 350.47 - Normalized Score: 17.42
+[Scheduler] Node: 17 - Raw Score: 347.76 - Normalized Score: 15.78
+[Scheduler] Node: 18 - Raw Score: 351.98 - Normalized Score: 18.34
+[Scheduler] Node: 19 - Raw Score: 355.92 - Normalized Score: 20.74
+[Scheduler] Node: 20 - Raw Score: 323.1 - Normalized Score: 0.79
+[Scheduler] Node: 21 - Raw Score: 321.79 - Normalized Score: 0.0
+[Scheduler] Node: 22 - Raw Score: 325.29 - Normalized Score: 2.12
+[Scheduler] Node: 23 - Raw Score: 322.46 - Normalized Score: 0.4
+[Scheduler] Node: 24 - Raw Score: 324.22 - Normalized Score: 1.47
+[Scheduler] Node: 25 - Raw Score: 469.43 - Normalized Score: 89.7
+[Scheduler] Node: 26 - Raw Score: 468.02 - Normalized Score: 88.85
+[Scheduler] Node: 27 - Raw Score: 468.83 - Normalized Score: 89.34
+[Scheduler] Node: 28 - Raw Score: 476.29 - Normalized Score: 93.87
+[Scheduler] Node: 29 - Raw Score: 468.65 - Normalized Score: 89.23
+[Scheduler] Node: 30 - Raw Score: 474.16 - Normalized Score: 92.58
+[Scheduler] Node: 31 - Raw Score: 471.7 - Normalized Score: 91.09
+[Scheduler] Node: 32 - Raw Score: 475.13 - Normalized Score: 93.17
+[Scheduler] Node: 33 - Raw Score: 486.37 - Normalized Score: 100.0
+[Scheduler] Node: 34 - Raw Score: 485.96 - Normalized Score: 99.75
+[Scheduler] --------------------------------
+[Scheduler] ---- Pod Scheduling Decision ----
+[Scheduler] Pod requirements - CPU: 50, MEM: 30, NodeAffinity: local, Selector: MS1, Dependencies: {"dep1"=>{:src=>"MS1", :dst=>"MS2", :max_latency=>0.05, :min_bandwidth=>10.0}}
+[Scheduler] Starting Filter function...
+[Scheduler] Starting CPUFilter plugin...'
+[Scheduler] Starting MEMFilter plugin...'
+[Scheduler] Starting Score function...
+[Scheduler] Starting LowRiskOverCommitment plugin...'
+[Scheduler] Starting TopologyClusterAggregate plugin...'
+[Scheduler] Starting ResourceAvailabilityScore plugin...'
+[Scheduler] Starting NodeResourcesLeastAllocatable plugin...'
+[Scheduler] Starting NodeResourcesMostAllocatable plugin...'
+[Scheduler] Starting CostAware plugin ...
+[Scheduler] Starting Diktyo plugin...'
+[Scheduler] Node 0 in cluster 1 has no deployed pods
+[Scheduler] Node 1 in cluster 1 has no deployed pods
+[Scheduler] Node 2 in cluster 1 has no deployed pods
+[Scheduler] Node 3 in cluster 1 has no deployed pods
+[Scheduler] Node 4 in cluster 1 has no deployed pods
+[Scheduler] Node 5 in cluster 2 has no deployed pods
+[Scheduler] Node 6 in cluster 2 has no deployed pods
+[Scheduler] Node 7 in cluster 2 has no deployed pods
+[Scheduler] Node 8 in cluster 2 has no deployed pods
+[Scheduler] Node 9 in cluster 2 has no deployed pods
+[Scheduler] Node 10 in cluster 3 has no deployed pods
+[Scheduler] Node 11 in cluster 3 has no deployed pods
+[Scheduler] Node 12 in cluster 3 has no deployed pods
+[Scheduler] Node 13 in cluster 3 has no deployed pods
+[Scheduler] Node 14 in cluster 3 has no deployed pods
+[Scheduler] Node 15 in cluster 4 has no deployed pods
+[Scheduler] Node 16 in cluster 4 has no deployed pods
+[Scheduler] Node 17 in cluster 4 has no deployed pods
+[Scheduler] Node 18 in cluster 4 has no deployed pods
+[Scheduler] Node 19 in cluster 4 has no deployed pods
+[Scheduler] Node 20 in cluster 5 has no deployed pods
+[Scheduler] Node 21 in cluster 5 has no deployed pods
+[Scheduler] Node 22 in cluster 5 has no deployed pods
+[Scheduler] Node 23 in cluster 5 has no deployed pods
+[Scheduler] Node 24 in cluster 5 has no deployed pods
+[Scheduler] Total existing pods gathered: 21
+[Scheduler] Normalizing scores...
+[Scheduler] Node: 0 - Raw Score: 346.89 - Normalized Score: 15.24
+[Scheduler] Node: 1 - Raw Score: 349.03 - Normalized Score: 16.54
+[Scheduler] Node: 2 - Raw Score: 349.32 - Normalized Score: 16.71
+[Scheduler] Node: 3 - Raw Score: 347.1 - Normalized Score: 15.37
+[Scheduler] Node: 4 - Raw Score: 347.08 - Normalized Score: 15.35
+[Scheduler] Node: 5 - Raw Score: 378.68 - Normalized Score: 34.54
+[Scheduler] Node: 6 - Raw Score: 379.56 - Normalized Score: 35.08
+[Scheduler] Node: 7 - Raw Score: 379.96 - Normalized Score: 35.32
+[Scheduler] Node: 8 - Raw Score: 375.23 - Normalized Score: 32.45
+[Scheduler] Node: 9 - Raw Score: 377.95 - Normalized Score: 34.1
+[Scheduler] Node: 10 - Raw Score: 385.09 - Normalized Score: 38.43
+[Scheduler] Node: 11 - Raw Score: 385.26 - Normalized Score: 38.54
+[Scheduler] Node: 12 - Raw Score: 384.27 - Normalized Score: 37.94
+[Scheduler] Node: 13 - Raw Score: 386.86 - Normalized Score: 39.51
+[Scheduler] Node: 14 - Raw Score: 383.48 - Normalized Score: 37.46
+[Scheduler] Node: 15 - Raw Score: 349.44 - Normalized Score: 16.79
+[Scheduler] Node: 16 - Raw Score: 347.44 - Normalized Score: 15.58
+[Scheduler] Node: 17 - Raw Score: 353.36 - Normalized Score: 19.17
+[Scheduler] Node: 18 - Raw Score: 351.61 - Normalized Score: 18.1
+[Scheduler] Node: 19 - Raw Score: 352.26 - Normalized Score: 18.5
+[Scheduler] Node: 20 - Raw Score: 323.07 - Normalized Score: 0.77
+[Scheduler] Node: 21 - Raw Score: 323.07 - Normalized Score: 0.77
+[Scheduler] Node: 22 - Raw Score: 321.79 - Normalized Score: 0.0
+[Scheduler] Node: 23 - Raw Score: 322.6 - Normalized Score: 0.49
+[Scheduler] Node: 24 - Raw Score: 321.81 - Normalized Score: 0.01
+[Scheduler] Node: 25 - Raw Score: 472.3 - Normalized Score: 91.39
+[Scheduler] Node: 26 - Raw Score: 470.63 - Normalized Score: 90.38
+[Scheduler] Node: 27 - Raw Score: 469.34 - Normalized Score: 89.6
+[Scheduler] Node: 28 - Raw Score: 472.62 - Normalized Score: 91.59
+[Scheduler] Node: 29 - Raw Score: 470.68 - Normalized Score: 90.41
+[Scheduler] Node: 30 - Raw Score: 475.13 - Normalized Score: 93.11
+[Scheduler] Node: 31 - Raw Score: 474.32 - Normalized Score: 92.62
+[Scheduler] Node: 32 - Raw Score: 474.81 - Normalized Score: 92.92
+[Scheduler] Node: 33 - Raw Score: 461.94 - Normalized Score: 85.1
+[Scheduler] Node: 34 - Raw Score: 486.47 - Normalized Score: 100.0
+[Scheduler] --------------------------------
+**** Horizontal Pod Autoscaling ****
+MS2 pods: 6 average processing_time: 0.07434026511108814 desired_metric: 0.07930576579402393
+************************************
+**** Horizontal Pod Autoscaling ****
+MS1 pods: 16 average processing_time: 0.7900351161617315 desired_metric: 0.07875241768938014
+************************************
+D, [2025-09-19T11:43:05.331322 #1285] DEBUG -- : pods: 16 scaling_ratio: 10.031883964221059
+**** Horizontal Pod Autoscaling ****
+MS2 pods: 6 average processing_time: 0.07339878392348942 desired_metric: 0.07973573167847034
+************************************
+**** Horizontal Pod Autoscaling ****
+MS1 pods: 16 average processing_time: 0.1316802272280856 desired_metric: 0.07969867983617747
+************************************
+D, [2025-09-19T11:43:05.373636 #1285] DEBUG -- : pods: 16 scaling_ratio: 1.6522259527856349
+**** Horizontal Pod Autoscaling ****
+MS2 pods: 6 average processing_time: 0.07106668394593817 desired_metric: 0.07945442634856593
+************************************
+D, [2025-09-19T11:43:05.420604 #1285] DEBUG -- : pods: 6 scaling_ratio: 0.8944332897725444
+**** Horizontal Pod Autoscaling ****
+MS1 pods: 16 average processing_time: 0.0692580157960876 desired_metric: 0.07897290443811103
+************************************
+D, [2025-09-19T11:43:05.420678 #1285] DEBUG -- : pods: 16 scaling_ratio: 0.876984533984859
+**** Horizontal Pod Autoscaling ****
+MS2 pods: 6 average processing_time: 0.0667130962612024 desired_metric: 0.07979825030971158
+************************************
+D, [2025-09-19T11:43:05.469398 #1285] DEBUG -- : pods: 6 scaling_ratio: 0.8360220431184481
+**** Horizontal Pod Autoscaling ****
+MS1 pods: 15 average processing_time: 0.07172461421463566 desired_metric: 0.07967352361294144
+************************************
+**** Horizontal Pod Autoscaling ****
+MS2 pods: 6 average processing_time: 0.0678604051338423 desired_metric: 0.07866759687483971
+************************************
+D, [2025-09-19T11:43:05.516974 #1285] DEBUG -- : pods: 6 scaling_ratio: 0.8626220684204746
+**** Horizontal Pod Autoscaling ****
+MS1 pods: 15 average processing_time: 0.08295705349499466 desired_metric: 0.07993045943069192
+************************************
+**** Horizontal Pod Autoscaling ****
+MS2 pods: 6 average processing_time: 0.06678811890848792 desired_metric: 0.07877103266428809
+************************************
+D, [2025-09-19T11:43:05.544532 #1285] DEBUG -- : pods: 6 scaling_ratio: 0.8478766451257559
+**** Horizontal Pod Autoscaling ****
+MS1 pods: 15 average processing_time: 0.0794741511783255 desired_metric: 0.08044839179968466
+************************************
+**** Horizontal Pod Autoscaling ****
+MS2 pods: 0 average processing_time: NaN desired_metric: 0.08021765191853689
+************************************
+Ending the simulation!
+**** Horizontal Pod Autoscaling ****
+MS1 pods: 0 average processing_time: NaN desired_metric: 0.07914288543291853
+************************************
+Ending the simulation!
+====== Evaluating new allocation ======
+stats: received: 9005, closed: 9005
+TTR: (mean: 0.43693663807857747, variance: 0.2259825842790457, longer_than: {}) shorter_than: {}
+QTIME: (mean: 0.2203477320440743, variance: 0.2258880224060523)
+component_stats: {"MS1"=>#<KUBETWIN::ComponentStatistics:0x00007f165006e7e0 @n=9005, @mean=0.2565149629731622, @m_2=2026.5407225528959, @q_mean=0.20365136467966974, @q_m_2=2026.5209016096671, @longer_than={}, @shorter_than={}, @received=9005, @variance=0.22507115976820258, @q_variance=0.22506895841955432>, "MS2"=>#<KUBETWIN::ComponentStatistics:0x00007f165006e600 @n=9005, @mean=0.06965215458994344, @m_2=2.8014116900738046, @q_mean=0.016696367364403726, @q_m_2=2.4969204740160538, @longer_than={}, @shorter_than={}, @received=9005, @variance=0.0003111296857034434, @q_variance=0.00027731235828698953>}
+allocation_map: {"eu-south-1 - Local DC"=>{:tier=>"local", :pods=>0}, "eu-central-1 Tier 1 Regional Edge"=>{:tier=>"t1", :pods=>0}, "eu-west-3 Tier 1"=>{:tier=>"t1", :pods=>0}, "eu-west-2 Tier 2"=>{:tier=>"t2", :pods=>0}, "eu-north-1 - Tier 2"=>{:tier=>"t2", :pods=>0}, "ca-central-1 - Remote DC"=>{:tier=>"rdc", :pods=>10}, "us-east-1 - Remote DC"=>{:tier=>"rdc", :pods=>11}}
+node_utilization: {"eu-south-1 - Local DC"=>0, "eu-central-1 Tier 1 Regional Edge"=>0, "eu-west-3 Tier 1"=>0, "eu-west-2 Tier 2"=>0, "eu-north-1 - Tier 2"=>0, "ca-central-1 - Remote DC"=>5, "us-east-1 - Remote DC"=>5}
+costs: 144.0 per day
+=======================================
+D, [2025-09-19T11:43:05.599661 #1285] DEBUG -- : Current spreading for MS1: [0, 0, 0, 0, 0, 8, 7] penalties: 10
+D, [2025-09-19T11:43:05.599723 #1285] DEBUG -- : Current spreading for MS2: [0, 0, 0, 0, 0, 2, 4] penalties: 20
+BMAP: {"MS1"=>{"eu-south-1 - Local DC"=>0, "eu-central-1 Tier 1 Regional Edge"=>0, "eu-west-3 Tier 1"=>0, "eu-west-2 Tier 2"=>0, "eu-north-1 - Tier 2"=>0, "ca-central-1 - Remote DC"=>8, "us-east-1 - Remote DC"=>7}, "MS2"=>{"eu-south-1 - Local DC"=>0, "eu-central-1 Tier 1 Regional Edge"=>0, "eu-west-3 Tier 1"=>0, "eu-west-2 Tier 2"=>0, "eu-north-1 - Tier 2"=>0, "ca-central-1 - Remote DC"=>2, "us-east-1 - Remote DC"=>4}}
+Weighted sum: 20.436936638078578
+Result:
+-20.436936638078578

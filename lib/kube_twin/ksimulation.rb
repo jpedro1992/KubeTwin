@@ -820,7 +820,7 @@ module KUBETWIN
           current_metric /= pods.to_f
 
           puts '**** Horizontal Pod Autoscaling ****'
-          puts "#{hpa.name} pods: #{pods} average processing_time: #{current_metric} desired_metric: #{desired_metric}"
+          puts "#{hpa.name} pods: #{pods} average processing_time: #{current_metric} desired_metric: #{desired_metric} min_replicas: #{hpa.min_replicas} max_replicas: #{hpa.max_replicas}"
           puts '************************************'
 
           if pods == 0
@@ -853,12 +853,13 @@ module KUBETWIN
               # then create the replicas
               to_scale.times do
                 selector = rs.selector
+                dependencies = rs.dependencies
                 sct = @microservice_types[selector]
                 reqs_c = sct[:resources_requirements_cpu]
                 reqs_m = sct[:resources_requirements_memory]
 
                 node_affinity = sct[:node_affinity]
-                node = @kube_scheduler.get_node(reqs_c, reqs_m, node_affinity)
+                node = @kube_scheduler.get_node(reqs_c, reqs_m, node_affinity, selector, dependencies)
 
                 break if node.nil? # check here --- what happens if no nodes are available
 
