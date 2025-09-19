@@ -408,14 +408,15 @@ module KUBETWIN
       strategy_name = :BALANCED_WITH_TOPOLOGY
       strategy = KUBE_SCHEDULER_STRATEGIES[strategy_name]
       raise "Unknown strategy #{strategy_name}" unless strategy
+
       puts "Register Scheduler strategy: #{strategy_name}"
 
-      puts "Register Filtering Plugins..."
+      puts 'Register Filtering Plugins...'
       strategy[:filters].each do |filter_plugin|
         @kube_scheduler.register_filter_plugin(filter_plugin)
       end
 
-      puts "Register Scoring Plugins..."
+      puts 'Register Scoring Plugins...'
       strategy[:scores].each do |score_plugin|
         @kube_scheduler.register_score_plugin(score_plugin)
       end
@@ -806,6 +807,7 @@ module KUBETWIN
           d_replicas = 0
 
           s.pods[hpa.name].each do |pod|
+            pods += 1
             next if pod.container.served_request.zero?
 
             current_metric += pod.container.total_queue_processing_time / pod.container.served_request
@@ -815,7 +817,6 @@ module KUBETWIN
             # calculate them each time period
             pod.container.reset_metrics
             # puts "#{pod.container.current_processing_metric}"
-            pods += 1
           end
           current_metric /= pods.to_f
 
@@ -838,16 +839,15 @@ module KUBETWIN
 
           unless tolerance_range === scaling_ratio
             # then here implement the check to scale up or down the associated pods
-            @logger.debug "pods: #{pods} scaling_ratio: #{scaling_ratio}"
             d_replicas = (pods * scaling_ratio).ceil
             # @logger.debug "desired_replicas: #{d_replicas} current_replicas #{pods}"
-
+            @logger.debug "#{hpa.name} pods: #{pods} scaling_ratio: #{scaling_ratio} d_replicas #{d_replicas}"
             if d_replicas > pods
 
               # get the replica set
               rs = @replica_sets[hname]
               to_scale = d_replicas <= hpa.max_replicas ? (d_replicas - pods) : (hpa.max_replicas - pods)
-
+              # @logger.debug "#{hpa.name} #{to_scale}"
               rs.set_replicas(d_replicas)
 
               # then create the replicas
@@ -993,11 +993,10 @@ module KUBETWIN
       replication_penalties = 0
       @services.each do |k, s|
         current_spreading = []
+        # puts "#{s.pods[k]}"
         @cluster_repository.each do |_, c|
-          pods_number = 0
-          c.nodes.values.each do |n|
-            pods_number += s.pods[s.selector].count { |p| p.node.node_id == n.node_id }
-          end
+          pods_number = s.pods[k].select { |p| p.cluster_id == c.cluster_id }.length
+          # @logger.debug "pods_number #{pods_number} total pods #{s.pods[k].length}"
           current_spreading << pods_number
           if bmap.key?(k)
             bmap[k][c.name] = pods_number
@@ -1005,9 +1004,27 @@ module KUBETWIN
             bmap[k] = { c.name => pods_number }
           end
         end
+        # @cluster_repository.each do |_, c|
+        #  pods_number = 0
+        #  s.pods[k].each do |p|
+        #    @logger.debug "pods_cluster_id #{p.node.cluster_id}"
+        #    pods_number += 1 if p.node.cluster_id.to_sym == c.cluster_id.to_sym
+        #  end
+
+        #  @logger.debug "Counting pods #{k} #{pods_number} #{c.cluster_id}"
+        #  # c.nodes.values.each do |_n|
+        #  #  pods_number += s.pods[k].count { |p| p.cluster_id == c.cl }
+        #  # end
+        #  current_spreading << pods_number
+        #  if bmap.key?(k)
+        #    bmap[k][c.name] = pods_number
+        #  else
+        #    bmap[k] = { c.name => pods_number }
+        #  end
+        # end
         # replication_penalties += (current_spreading.count { |x| x > 0 } - 1) * REPLICATION_PENALTY if current_spreading.count { |x| x > 0 } > 1
-        replication_penalties += 10 if current_spreading.include?(0) # default value
         @logger.debug "Current spreading for #{k}: #{current_spreading} penalties: #{replication_penalties}"
+        replication_penalties += 10 if current_spreading.include?(0) # default value
         # else
         #  replication_penalties -= 10
         # end

@@ -12,7 +12,7 @@ module KUBETWIN
 
     # commenting podIP info for now :podIp
     attr_reader :pod_id, :podName, :node, :label,
-     :container, :requirements
+                :container, :requirements
 
     # here fix it
     # instead of nodeIP we could use a nodeID
@@ -21,19 +21,20 @@ module KUBETWIN
       @pod_id = pod_id
       @podName = podName
       @node = node
-      
+
       @node_affinity = image_info[:node_affinity].nil? ? nil : image_info[:node_affinity]
 
       @container = Container.new(0, 1, image_info[:service_time_distribution][node.type],
-                        {blocking: image_info[:blocking], node: @node, label: label, img_info: image_info})
-                        
-       # image_info[:blocking]) #, opts[:port]) # @containers = {}
+                                 { blocking: image_info[:blocking], node: @node, label: label, img_info: image_info })
+
+      # image_info[:blocking]) #, opts[:port]) # @containers = {}
       # startup the container here -- we just need a MVP for now
       @container.startupC
       @startTime = Time.now
       @status = Pod::POD_PENDING
       @label = label
-      @requirements = {cpu: image_info[:resources_requirements_cpu], memory: image_info[:resources_requirements_memory]}
+      @requirements = { cpu: image_info[:resources_requirements_cpu],
+                        memory: image_info[:resources_requirements_memory] }
       # @namespace      = "default"
       # priority       = 0
     end
@@ -41,7 +42,7 @@ module KUBETWIN
     def startUpPod
       @container.startupC
       # here commented to speed-up the simulation
-      # it is working 
+      # it is working
       # raise 'Setup container error' if @container.state != Container::CONTAINER_RUNNING
 
       @status = Pod::POD_RUNNING
@@ -58,15 +59,19 @@ module KUBETWIN
       if (@container.state == Container::CONTAINER_TERMINATED) && (@container.endCode == 0)
         @status == Pod::POD_SUCCEEDED
       end
-      if (@container.state == Container::CONTAINER_TERMINATED) && (@container.endCode == 1)
-        @status == Pod::POD_FAILED
-      end
+      return unless (@container.state == Container::CONTAINER_TERMINATED) && (@container.endCode == 1)
+
+      @status == Pod::POD_FAILED
     end
 
-    # TODO refactor this method to remove unused fields
-    #def describePod(_pod)
+    def cluster_id
+      @node.cluster_id
+    end
+
+    # TODO: refactor this method to remove unused fields
+    # def describePod(_pod)
     #  "Name: #{@podName} \nIP: #{@pod_id} \nNode IP: #{@nodeIp} \nStart Time: #{@startTime} \nStatus: #{@status} \nContainers: \n\tContainer ID: #{@container.containerId} \n\tImage ID: #{@container.imageId} \n\tPort: #{@container.port} \n\tLimits: \n\t\tcpu: #{@container.limits.cpu} \n\t\tmemory: #{@container.limits.memory} \n\tRequests: \n\t\tcpu: #{@container.guaranteed.cpu} \n\t\tmemory: #{@container.guaranteed.memory}"
-    #end
+    # end
 
     # Pod running if at least one of its primary containers starts OK
     # def check_containers
