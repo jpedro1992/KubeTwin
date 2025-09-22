@@ -84,7 +84,8 @@ module KUBETWIN
                  :cooldown_duration,
                  :workflow_types,
                  :seed,
-                 :policies
+                 :policies,
+                 :strategy
   end
 
   class Configuration
@@ -125,6 +126,8 @@ module KUBETWIN
       @custom_stats = [] unless defined? @custom_stats
       @seeds = {} unless defined? @seeds
 
+      @strategy = @strategy.to_sym
+
       # freeze everything!
       # TODO check if everything is freezed
       IceNine.deep_freeze(@constraints)
@@ -143,6 +146,7 @@ module KUBETWIN
       #IceNine.deep_freeze(@start_time)
       IceNine.deep_freeze(@warmup_duration)
       IceNine.deep_freeze(@workflow_types)
+      IceNine.deep_freeze(@strategy)
     end
 
     def self.load_from_file(filename, validate: true)

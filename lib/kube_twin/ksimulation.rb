@@ -392,7 +392,7 @@ module KUBETWIN
       # the KubeScheduler decides on which nodes schedule
       # the pods
       @kube_scheduler = KubeScheduler.new(@cluster_repository, latency_manager)
-
+      strategy_name = @configuration.strategy
       # Register filtering and scoring plugins
       # TODO: make this configurable from the configuration file
       # Available strategies:
@@ -405,7 +405,9 @@ module KUBETWIN
       # BALANCED
       # COST_AWARE
       # DIKTYO
-      strategy_name = :BALANCED_WITH_TOPOLOGY
+
+      # strategy_name = :BALANCED_WITH_TOPOLOGY
+      puts "Scheduling strategy: #{strategy_name}"
       strategy = KUBE_SCHEDULER_STRATEGIES[strategy_name]
       raise "Unknown strategy #{strategy_name}" unless strategy
 
