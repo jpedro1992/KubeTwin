@@ -49,6 +49,8 @@ module KUBETWIN
       @results_dir += '/' unless @results_dir.nil?
       @microservice_mdn = {}
       @mapping = nil
+      @hpa_min_replicas = {}
+      @hpa_max_replicas = {}
       @logger = opts[:logger] || Logger.new(STDOUT)
       @logger.level = opts[:log_level] || Logger::DEBUG
     end
@@ -367,6 +369,9 @@ module KUBETWIN
                                         conf[:minReplicas], conf[:maxReplicas],
                                         conf[:targetProcessingPercentage],
                                         conf[:periodSeconds])
+
+          @hpa_min_replicas[conf[:name]] = conf[:minReplicas]
+          @hpa_max_replicas[conf[:name]] = conf[:maxReplicas]
         end
       end
 
@@ -525,15 +530,19 @@ module KUBETWIN
       current_event = 0
 
       # benchmark file
-      Time.now.strftime('%Y%m%d%H%M%S')
+      time = Time.now.strftime('%Y%m%d%H%M%S')
       # @sim_bench = File.open("csv_bench_#{time}.csv", 'w')
-      # @allocation_bench = File.open("allocation_bench_#{time}.csv", 'w')
+      @allocation_bench = File.open("allocation_bench_#{strategy_name}.csv", 'w')
       # @request_profile = File.open("request_profile_#{time}.csv", 'w')
       # @request_profile << "Time,CRequests\n"
       @last_second = @current_time.to_i
       @req_in_sec = 0
 
-      # @allocation_bench << "Time,Component,Request,TTP,Pods\n"
+      # TTP: Time to process
+      # Pods: number of pods used to process the request
+      # Component: component name
+      # Request: request id
+      @allocation_bench << "timestamp,component,number_requests,number_closed,ttp_mean,ttp_variance,ttp_longer_than,ttp_shorter_than,qtime_mean,qtime_variance,hpa_min_replicas,hpa_max_replicas,number_pods\n"
 
       # launch simulation
       until @event_queue.empty?
@@ -901,14 +910,21 @@ module KUBETWIN
 
           # print some stats (useful to track simulation data)
         when Event::ET_STATS_PRINT
-
           # calculate the number of pods
           pods_n = ''
           @services.each do |k, s|
             pods_number = s.pods[s.selector].length
             pods_n += "#{k}: #{pods_number} "
-            # @allocation_bench << "#{now},#{k},#{hpa_component_stats[k].received},#{hpa_component_stats[k].mean},#{pods_number}\n"
-            # puts "#{now},#{k},#{hpa_component_stats[k].received},#{hpa_component_stats[k].mean},#{pods_number}\n"
+            min = @hpa_min_replicas[k]
+            max = @hpa_max_replicas[k]
+
+            # allocation_bench header:
+            # timestamp,component,number_requests,number_closed,ttp_mean,ttp_variance,ttp_longer_than,ttp_shorter_than,qtime_mean,qtime_variance,hpa_min_replicas,hpa_max_replicas,number_pods
+            @allocation_bench << "#{now},#{k},#{hpa_component_stats[k].received},#{hpa_component_stats[k].n},#{hpa_component_stats[k].mean},#{hpa_component_stats[k].variance},#{hpa_component_stats[k].longer_than.to_s},#{hpa_component_stats[k].shorter_than.to_s},#{hpa_component_stats[k].q_mean},#{hpa_component_stats[k].q_variance},#{min},#{max},#{pods_number}\n"
+
+            # puts "#{now},#{k},#{hpa_component_stats[k].received},#{hpa_component_stats[k].mean},
+                #{hpa_component_stats[k].variance},#{hpa_component_stats[k].longer_than},#{hpa_component_stats[k].qmean},#{hpa_component_stats[k].qvariance},
+                #{min},#{max}, #{pods_number}\n"
             # just to print the allocation map
           end
 
@@ -919,7 +935,7 @@ module KUBETWIN
           # "component_stats: #{hpa_component_stats.to_s}\n"+
           # ls"#{pods_n}"
 
-          # reset also comoponent statistics
+          # reset also component statistics
 
           hpa_component_stats = Hash[
             @microservice_types.keys.map do |m_id|
@@ -983,7 +999,7 @@ module KUBETWIN
       # puts "#{stats.to_csv}"
       puts "====== Evaluating new allocation ======\n" +
            "stats: #{stats}\n" +
-           # "per_workflow_and_customer_stats: #{per_workflow_and_customer_stats.to_s}\n" +
+           #"per_workflow_and_customer_stats: #{per_workflow_and_customer_stats.to_s}\n" +
            "component_stats: #{per_component_stats}\n" +
            "allocation_map: #{allocation_map}\n" +
            "node_utilization: #{node_utilization}\n" +
