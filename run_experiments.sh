@@ -54,3 +54,18 @@ STRATEGY="COST_AWARE"
 sed -i "s/^strategy .*/strategy :$STRATEGY/" examples/$TEST
 echo "--------------Running experiment with scheduling strategy: $STRATEGY----------------------"
 bundle exec bin/kube_twin "examples/$TEST" > "$TEST_DIR/cost.txt"
+
+STRATEGY="DIKTYO_COST"
+sed -i "s/^strategy .*/strategy :$STRATEGY/" examples/$TEST
+echo "--------------Running experiment with scheduling strategy: $STRATEGY----------------------"
+bundle exec bin/kube_twin "examples/$TEST" > "$TEST_DIR/diktyo_cost.txt"
+
+STRATEGY="DIKTYO_RISK"
+sed -i "s/^strategy .*/strategy :$STRATEGY/" examples/$TEST
+echo "--------------Running experiment with scheduling strategy: $STRATEGY----------------------"
+bundle exec bin/kube_twin "examples/$TEST" > "$TEST_DIR/diktyo_risk.txt"
+
+STRATEGY="DIKTYO_TOPOLOGY"
+sed -i "s/^strategy .*/strategy :$STRATEGY/" examples/$TEST
+echo "--------------Running experiment with scheduling strategy: $STRATEGY----------------------"
+bundle exec bin/kube_twin "examples/$TEST" > "$TEST_DIR/diktyo_topology.txt"

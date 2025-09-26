@@ -31,6 +31,37 @@ KUBE_SCHEDULER_STRATEGIES = {
       KUBETWIN::DiktyoScoring.method(:run),
     ]
   },
+  DIKTYO_COST: {
+    filters: [
+      KUBETWIN::CPUFilter.method(:run),
+      KUBETWIN::MEMFilter.method(:run),
+    ],
+    scores: [
+      KUBETWIN::DiktyoScoring.method(:run),
+      KUBETWIN::CostAware.method(:run),
+    ]
+  },
+  DIKTYO_TOPOLOGY: {
+    filters: [
+      KUBETWIN::CPUFilter.method(:run),
+      KUBETWIN::MEMFilter.method(:run),
+      KUBETWIN::PodTopologySpreadConstraint.method(:run)
+    ],
+    scores: [
+      KUBETWIN::DiktyoScoring.method(:run),
+      KUBETWIN::TopologyClusterAggregate.method(:run),
+    ]
+  },
+  DIKTYO_RISK: {
+    filters: [
+      KUBETWIN::CPUFilter.method(:run),
+      KUBETWIN::MEMFilter.method(:run),
+    ],
+    scores: [
+      KUBETWIN::DiktyoScoring.method(:run),
+      KUBETWIN::LowRiskOverCommitment.method(:run),
+    ]
+  },
   RESOURCE_AVAILABILITY: {
     filters: [
       KUBETWIN::CPUFilter.method(:run),

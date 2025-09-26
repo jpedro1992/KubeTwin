@@ -29,6 +29,7 @@ require_relative './node'
 
 require 'json'
 require 'logger'
+require 'csv'
 
 module KUBETWIN
   class KSimulation
@@ -1090,6 +1091,63 @@ module KUBETWIN
       end
       puts "Weighted sum: #{weighted_sum}"
       -weighted_sum
+
+      # CSV file path
+      csv_file = "results.csv"
+      csv_bmap = "results_allocation.csv"
+
+      # Write CSV header if file does not exist
+      unless File.exist?(csv_file)
+        CSV.open(csv_file, "w") do |csv|
+          csv << ["strategy", "costs", "weighted_sum", "ttr_mean", "ttr_variance", "q_time_mean", "q_time_variance"]
+        end
+      end
+
+      ttr_mean = stats.mean
+      ttr_variance = stats.variance
+      q_time_mean = per_component_stats.values.map(&:q_mean).sum / per_component_stats.size
+      q_time_variance = per_component_stats.values.map(&:q_variance).sum / per_component_stats.size
+
+      # Append a new row for the current strategy
+      CSV.open(csv_file, "a") do |csv|
+        csv << [strategy_name, costs, weighted_sum, ttr_mean, ttr_variance, q_time_mean, q_time_variance]
+      end
+
+      # --- Write per-component allocation map CSV ---
+      unless File.exist?(csv_bmap)
+        CSV.open(csv_bmap, "w") do |csv|
+          csv << ["strategy", "component", "eu-south-1", "eu-central-1", "eu-west-3", "eu-west-2", "eu-north-1", "ca-central-1", "us-east-1"]
+        end
+      end
+
+      # Map full cluster names to short names for CSV
+      cluster_name_map = {
+        "eu-south-1 - Local DC" => "eu-south-1",
+        "eu-central-1 Tier 1 Regional Edge" => "eu-central-1",
+        "eu-west-3 Tier 1" => "eu-west-3",
+        "eu-west-2 Tier 2" => "eu-west-2",
+        "eu-north-1 - Tier 2" => "eu-north-1",
+        "ca-central-1 - Remote DC" => "ca-central-1",
+        "us-east-1 - Remote DC" => "us-east-1"
+      }
+
+      # Fixed order of nodes for CSV
+      nodes = ["eu-south-1", "eu-central-1", "eu-west-3", "eu-west-2", "eu-north-1", "ca-central-1", "us-east-1"]
+
+      CSV.open(csv_bmap, "a") do |csv|
+        bmap.each do |component, node_map|
+          # Normalize cluster names and default to 0
+          normalized_map = {}
+          node_map.each do |full_name, count|
+            short_name = cluster_name_map[full_name]
+            normalized_map[short_name] = count if short_name
+          end
+
+          row = [strategy_name, component] + nodes.map { |n| normalized_map[n] || 0 }
+          csv << row
+        end
+      end
     end
   end
 end
+
