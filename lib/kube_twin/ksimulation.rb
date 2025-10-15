@@ -1105,8 +1105,8 @@ module KUBETWIN
 
       ttr_mean = stats.mean
       ttr_variance = stats.variance
-      q_time_mean = per_component_stats.values.map(&:q_mean).sum / per_component_stats.size
-      q_time_variance = per_component_stats.values.map(&:q_variance).sum / per_component_stats.size
+      q_time_mean = per_component_stats.values.map { |c| c.q_mean || 0.0 }.sum / per_component_stats.size
+      q_time_variance = per_component_stats.values.map { |c| c.q_variance || 0.0 }.sum / per_component_stats.size
 
       # Append a new row for the current strategy
       CSV.open(csv_file, "a") do |csv|

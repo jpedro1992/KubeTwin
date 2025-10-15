@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Define testing variables here
-TEST="test_img_rec_random_bursts.conf"
-BASE_DIR="experiments/test_img/hpa_random_bursts"
+TEST="cuttlefish_ramp_up_15min.conf"
+BASE_DIR="experiments/cuttlefish/ramp_up_15min_v2"
 
 STRATEGIES=(
   "BALANCED_WITH_TOPOLOGY"
