@@ -36,7 +36,7 @@ module KUBETWIN
                       80 + 20 * (cpu_ratio / CPU_THRESHOLD)
                     else
                       # Linear penalty above threshold
-                      100 * (1 - (cpu__ratio - CPU_THRESHOLD) / (1.0 - CPU_THRESHOLD))
+                      100 * (1 - (cpu_ratio - CPU_THRESHOLD) / (1.0 - CPU_THRESHOLD))
                     end
 
         mem_score = if mem_ratio <= MEMORY_THRESHOLD
