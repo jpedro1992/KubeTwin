@@ -9,15 +9,17 @@ require 'ice_nine'
 module ERV
   module GaussianMixtureHelper
     def self.RawParametersToMixtureArgs(*args)
-      raise ArgumentError, "Arguments must be a multiple of 3!" if (args.count % 3) != 0
-      args.each_slice(3).map do |(a,b,c)|
+      raise ArgumentError, 'Arguments must be a multiple of 3!' if (args.count % 3) != 0
+
+      args.each_slice(3).map do |(a, b, c)|
         { distribution: :gaussian, weight: a * c, args: { mean: b, sd: c } }
       end
     end
 
     def self.RawParametersToMixtureArgsSeed(*args, seed)
-      raise ArgumentError, "Arguments must be a multiple of 3!" if (args.count % 3) != 0
-      args.each_slice(3).map do |(a,b,c)|
+      raise ArgumentError, 'Arguments must be a multiple of 3!' if (args.count % 3) != 0
+
+      args.each_slice(3).map do |(a, b, c)|
         { distribution: :gaussian, weight: a * c, args: { mean: b, sd: c, seed: seed } }
       end
     end
@@ -25,9 +27,20 @@ module ERV
 
   module GammaMixtureHelper
     def self.RawParametersToMixtureArgsSeed(*args, seed)
-      raise ArgumentError, "Arguments must be a multiple of 3!" if (args.count % 3) != 0
-      args.each_slice(3).map do |(a,b,c)|
+      raise ArgumentError, 'Arguments must be a multiple of 3!' if (args.count % 3) != 0
+
+      args.each_slice(3).map do |(a, b, c)|
         { distribution: :gamma, weight: a, args: { scale: c, shape: b, seed: seed } }
+      end
+    end
+  end
+
+  module WeibullMixtureHelper
+    def self.RawParametersToMixtureArgsSeed(*args, seed)
+      raise ArgumentError, 'Arguments must be a multiple of 3!' if (args.count % 3) != 0
+
+      args.each_slice(3).map do |(a, b, c)|
+        { distribution: :weibull, weight: a, args: { scale: c, shape: b, seed: seed } }
       end
     end
   end
@@ -41,8 +54,8 @@ if defined? JRUBY_VERSION
     # def minutes; self * 60; end
     # def second; self; end
     # def seconds; self; end
-    def msec; self * 1E-3; end
-    def msecs; self * 1E-3; end
+    def msec = self * 1E-3
+    def msecs = self * 1E-3
   end
 else
   module TimeExtensions
@@ -51,14 +64,13 @@ else
       # def minutes; self * 60; end
       # def second; self; end
       # def seconds; self; end
-      def msec; self * 1E-3; end
-      def msecs; self * 1E-3; end
+      def msec = self * 1E-3
+      def msecs = self * 1E-3
     end
   end
 end
 
 module KUBETWIN
-
   module Configurable
     dsl_accessor :constraints,
                  :customers,
@@ -140,10 +152,10 @@ module KUBETWIN
       IceNine.deep_freeze(@evaluation)
       IceNine.deep_freeze(@kpi_customization)
       IceNine.deep_freeze(@latency_models)
-      #IceNine.deep_freeze(@request_generation)
+      # IceNine.deep_freeze(@request_generation)
       IceNine.deep_freeze(@seeds)
-      #IceNine.deep_freeze(@microservice_types)
-      #IceNine.deep_freeze(@start_time)
+      # IceNine.deep_freeze(@microservice_types)
+      # IceNine.deep_freeze(@start_time)
       IceNine.deep_freeze(@warmup_duration)
       IceNine.deep_freeze(@workflow_types)
       IceNine.deep_freeze(@strategy)
@@ -176,3 +188,4 @@ module KUBETWIN
     end
   end
 end
+

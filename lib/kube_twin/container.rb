@@ -1,21 +1,17 @@
 # frozen_string_literal: true
 
-
 require_relative './logger'
 require_relative './event'
 
-
 module KUBETWIN
-
   class RequestInfo < Struct.new(:request, :service_time, :arrival_time)
     include Comparable
-    def <=>(o)
-      arrival_time <=> o.arrival_time
+    def <=>(other)
+      arrival_time <=> other.arrival_time
     end
   end
 
   class Container
-
     SEED = 123
 
     # states
@@ -39,7 +35,6 @@ module KUBETWIN
     Guaranteed = Struct.new(:cpu, :memory)
     Limits = Struct.new(:cpu, :memory)
 
-
     def initialize(containerId, imageId, st_distribution, opts = {})
       @containerId = containerId
       @imageId = imageId
@@ -50,11 +45,7 @@ module KUBETWIN
       @state = CONTAINER_WAITING
       @name = opts[:label]
 
-      unless opts[:blocking].nil?
-        @blocking = opts[:blocking]
-      else
-        @blocking = true
-      end
+      @blocking = opts[:blocking].nil? || opts[:blocking]
 
       # node info
       @node = opts[:node]
@@ -78,17 +69,18 @@ module KUBETWIN
       @arrival_times = []
     end
 
-    def check_rps(interval=8)
-      #@arrival_times.last(interval).reverse.inject(:-) / interval.to_f
+    def check_rps(interval = 8)
+      # @arrival_times.last(interval).reverse.inject(:-) / interval.to_f
       i = 0
       interarrival_times = 0.0
-      @arrival_times.last(interval).reverse.each_slice(2) do |t,tl|
+      @arrival_times.last(interval).reverse.each_slice(2) do |t, tl|
         break if t.nil? || tl.nil?
-        #puts "t: #{t} tl: #{tl}"
+
+        # puts "t: #{t} tl: #{tl}"
         i += 1
         interarrival_times += t - tl
       end
-      return interarrival_times / i.to_f
+      interarrival_times / i.to_f
     end
 
     def to_free(container)
@@ -118,7 +110,8 @@ module KUBETWIN
       # improve this code in the future
       r.arrival_at_container = time
       rps = @rps
-      #@service_time = sim.retrieve_mdn_model(name, rps) unless @path.nil?
+      # s_time = calculate_service_time(sim)
+      @service_time = sim.retrieve_mdn_model(name, rps) unless @path.nil?
       @last_request_time = time
       while (st = @service_time.sample) <= 1E-6; end
 
@@ -126,14 +119,13 @@ module KUBETWIN
       @request_queue << ri
 
       if @trace
-        puts "***"
+        puts '***'
         @request_queue.each_cons(2) do |x, y|
-          puts "#{x[2]},#{y[2]},#{y[2]-x[2]}"
+          puts "#{x[2]},#{y[2]},#{y[2] - x[2]}"
           raise 'Inconsistent ordering in request_queue!' if y[2] < x[2]
         end
-        puts "***"
+        puts '***'
       end
-
 
       try_servicing_new_request(sim, time) unless @busy
     end
@@ -145,57 +137,94 @@ module KUBETWIN
       try_servicing_new_request(sim, time) unless @busy
     end
 
-    def try_servicing_new_request(sim, time)
-
-      if @busy
-        raise "Container is currently processing another request (id: #{@containerId})"
-      end
-
-      unless @request_queue.empty? # || (@state == Container::CONTAINER_TERMINATED)
-
-        # monkey patch for MQTT service
-        if @blocking == true
-          @busy = true
+    def calculate_service_time(sim)
+      unless @path.nil?
+        if @arrival_times.length < 2
+          rps = if @rps.nil?
+                  1 # default value for the current use-case
+                else
+                  @rps
+                end
         else
-          @busy = false
+          inter_arrival_times = check_rps
+          # @logger.info "Inter_Arrival_time; #{inter_arrival_times}"
+          if inter_arrival_times == 0.0
+            raise 'Inter arrival time is zero'
+            rps = 34
+          else
+            begin
+              # rps = (1 / inter_arrival_times).ceil
+              rps = (1 / inter_arrival_times.to_f)
+              # ceil the rps to the second decimal digit
+              rps = rps.round(1)
+            rescue StandardError
+              puts inter_arrival_times
+              abort
+            end
+          end
         end
-        #puts "Start: #{time}"
-        ri = @request_queue.shift
-        # puts "#{containerId} #{@request_queue.length} sr: #{served_request} #{time - ri.arrival_time}" if @request_queue.length > 2
-
-        req = ri.request
-        # update the request's working information
-
-        #req.update_queuing_time(time - ri.arrival_time)
-        req.update_queuing_time(time - req.arrival_at_container)
-
-        req.step_completed(ri.service_time)
-
-        # update container-based metric here
-        @total_queue_time += time - ri.arrival_time
-        # raise "We are looking at two different times" if req.queuing_time != (time - ri.arrival_time)
-        @total_queue_processing_time += ri.service_time + (time - ri.arrival_time)
-        # schedule completion of workflow step
-        # puts "Finished #{time + ri.service_time} #{@request_queue.length}"
-        sim.new_event(Event::ET_WORKFLOW_STEP_COMPLETED, req, time + ri.service_time, self)
+        # @logger.debug("Name: #{@name} Retrieved RPS: #{rps}")
+        rps = 34 if rps > 34
       end
+      if @name == 'FE1'
+        # @logger.debug "Retrieved RPS: #{rps} for container #{@name} containerId: #{@containerId} queue size: #{@request_queue.size}"
+      end
+      @service_time = sim.retrieve_mdn_model(@name, @rps, @replica) unless @path.nil?
+      while (st = @service_time.sample) <= 1E-6; end
+      #       case @name
+      #       when 'FE1'
+      #         st *= 0.43
+      #       when 'FE2'
+      #         st *= 0.36
+      #       when 'FE3'
+      #         st *= 0.21
+      #       else
+      #         st
+      #       end
+      st
+    end
+
+    def try_servicing_new_request(sim, time)
+      raise "Container is currently processing another request (id: #{@containerId})" if @busy
+
+      return if @request_queue.empty? # || (@state == Container::CONTAINER_TERMINATED)
+
+      # monkey patch for MQTT service
+      @busy = @blocking == true
+      # puts "Start: #{time}"
+      ri = @request_queue.shift
+      # puts "#{containerId} #{@request_queue.length} sr: #{served_request} #{time - ri.arrival_time}" if @request_queue.length > 2
+
+      req = ri.request
+      # update the request's working information
+
+      # req.update_queuing_time(time - ri.arrival_time)
+      req.update_queuing_time(time - req.arrival_at_container)
+      s_time = calculate_service_time(sim)
+      ri.service_time = s_time
+
+      req.step_completed(ri.service_time)
+      next_step = req.next_step
+
+      # update container-based metric here
+      @total_queue_time += time - ri.arrival_time
+      # raise "We are looking at two different times" if req.queuing_time != (time - ri.arrival_time)
+      @total_queue_processing_time += ri.service_time + (time - ri.arrival_time)
+      # schedule completion of workflow step
+      # puts "Finished #{time + ri.service_time} #{@request_queue.length}"
+      sim.new_event(Event::ET_WORKFLOW_STEP_COMPLETED, [req, next_step], time + ri.service_time, self)
     end
 
     def request_resources(moreCpu)
-      if @state == CONTAINER_RUNNING
-        raise 'Impossible assign resources, container is still running'
-      end
+      raise 'Impossible assign resources, container is still running' if @state == CONTAINER_RUNNING
 
       @guaranteed.cpu += moreCpu
-      if @guaranteed.cpu > @limits.cpu
-        raise 'CPU limits error, too much resources in request'
-      end
+      raise 'CPU limits error, too much resources in request' if @guaranteed.cpu > @limits.cpu
 
       @state = CONTAINER_WAITING
 
       puts 'Resources assigned, waiting for setup...'
       startupC
     end
-
   end
 end

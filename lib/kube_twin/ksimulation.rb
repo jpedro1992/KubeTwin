@@ -26,10 +26,15 @@ require_relative './scheduling_plugins/score/topology_cluster'
 require_relative './scheduling_plugins/filter/pod_topology_constraint'
 require_relative './scheduling_plugins/score/diktyo'
 require_relative './node'
+require_relative './workflow_node'
 
 require 'json'
 require 'logger'
 require 'csv'
+
+require 'pycall'
+require 'pycall/import'
+include PyCall::Import
 
 module KUBETWIN
   class KSimulation
@@ -49,11 +54,41 @@ module KUBETWIN
       @num_reqs = DEFAULT_NUM_REQS if @num_reqs.nil?
       @results_dir += '/' unless @results_dir.nil?
       @microservice_mdn = {}
+      # os = PyCall.import_module('os')
+      # os.environ['TF_USE_LEGACY_KERAS'] = '1'
       @mapping = nil
       @hpa_min_replicas = {}
       @hpa_max_replicas = {}
       @logger = opts[:logger] || Logger.new(STDOUT)
       @logger.level = opts[:log_level] || Logger::DEBUG
+    end
+
+    def retrieve_mdn_model(name, rps, replica = 2)
+      # if not create mdn
+      unless @microservice_mdn[name][:st].key?(rps)
+        numpy = PyCall.import_module('numpy')
+        # here rember to set replica to the correct value
+        # @logger.info "RPS: #{rps}, Replica: #{replica}, Name: #{name}, MDN: #{@microservice_mdn[name][:model]}"
+        weight_pred, conc_pred, scale_pred = @microservice_mdn[name][:model].predict(
+          [numpy.array([rps, replica.to_f]), numpy.array([1, 1])], verbose: nil
+        )
+        # convert numpy to python list
+        ws = weight_pred.tolist
+        cps = conc_pred.tolist
+        scs = scale_pred.tolist
+        gamma_mix = []
+        ncomponents = ws[0].length - 1
+        # @logger.debug "retrieve mdn model for #{name} RPS: #{rps}, Replica: #{replica} ncomponents: #{ncomponents}"
+        (0..ncomponents).each do |i|
+          gamma_mix << ws[0][i].to_f
+          gamma_mix << cps[0][i].to_f
+          gamma_mix << scs[0][i].to_f
+        end
+        @microservice_mdn[name][:st][rps] = ERV::MixtureDistribution.new(
+          ERV::WeibullMixtureHelper.RawParametersToMixtureArgsSeed(*gamma_mix, SEED)
+        )
+      end
+      @microservice_mdn[name][:st][rps]
     end
 
     def new_event(type, data, time, destination)
@@ -243,6 +278,7 @@ module KUBETWIN
       @microservice_types.each do |k, v|
         next if v[:mdn_file].nil?
 
+        pyfrom 'tensorflow', import: :keras
         model = keras.models.load_model(v[:mdn_file])
         # @logger.debug "model: #{model}"
         @microservice_mdn[k] = { model: model, st: {} }
@@ -331,6 +367,10 @@ module KUBETWIN
 
       # Initialize Kubernetes internal objects/services
 
+      @workflows = {}
+      workflow_type_repository.each do |k, v|
+        @workflows[k] = WorkflowNode.build_workflow(k, v)
+      end
       @kube_dns = KubeDns.new
 
       # debug variables
@@ -531,7 +571,7 @@ module KUBETWIN
       current_event = 0
 
       # benchmark file
-      time = Time.now.strftime('%Y%m%d%H%M%S')
+      Time.now.strftime('%Y%m%d%H%M%S')
       # @sim_bench = File.open("csv_bench_#{time}.csv", 'w')
       @allocation_bench = File.open("allocation_bench_#{strategy_name}.csv", 'w')
       # @request_profile = File.open("request_profile_#{time}.csv", 'w')
@@ -580,7 +620,8 @@ module KUBETWIN
 
           # find first component name for requested workflow
           workflow = workflow_type_repository[req_attrs[:workflow_type_id]]
-          first_component_name = workflow[:component_sequence][0][:name]
+          first_component_name = @workflows[req_attrs[:workflow_type_id]].children.first.name
+          # first_component_name = workflow[:component_sequence][0][:name]
 
           # first we need to resolve the component name using
           # the kubernetes DNS
@@ -604,7 +645,8 @@ module KUBETWIN
 
           # generate the request here
           new_req = Request.new(**req_attrs.merge!(initial_data_center_id: cluster_id,
-                                                   arrival_time: arrival_time))
+                                                   arrival_time: arrival_time,
+                                                   component: first_component_name))
 
           # schedule arrival of current request
           new_event(Event::ET_REQUEST_ARRIVAL, [new_req, pod], arrival_time, nil)
@@ -663,7 +705,9 @@ module KUBETWIN
 
           # increase count of received requests in hpa_component_stats
           workflow = workflow_type_repository[req.workflow_type_id]
-          component_name = workflow[:component_sequence][req.next_step][:name]
+          component_name = req.next_component.nil? ? req.component : req.next_component
+          puts "Component name: #{component_name}"
+          # component_name = workflow[:component_sequence][req.next_step][:name]
           hpa_component_stats[component_name].request_received
           per_component_stats[component_name].request_received
 
@@ -674,7 +718,7 @@ module KUBETWIN
         when Event::ET_WORKFLOW_STEP_COMPLETED
 
           # retrieve request and vm
-          req = e.data
+          req, next_step = e.data
           container = e.destination
           @processed += 1
 
@@ -688,63 +732,85 @@ module KUBETWIN
 
           current_cluster = @cluster_repository[req.data_center_id]
           # find the next workflow
+          workflow_id = req.workflow_type_id
           workflow = workflow_type_repository[req.workflow_type_id]
 
           # register step completion
-          component_name = workflow[:component_sequence][req.worked_step][:name]
+          component_name = container.name
           hpa_component_stats[component_name].record_request(req, now)
           per_component_stats[component_name].record_request(req, now)
 
-          req.ttr_step(@current_time)
-
+          req.ttr_step(@current_time, container.name)
           # check if there are other steps left to complete the workflow
-          if req.next_step < workflow[:component_sequence].size
+          size = @workflows[workflow_id].size
+          # next step info
+          tmp_current_name = req.next_component.nil? ? req.component : container.name
+          # @logger.debug "tmp_current_name: #{tmp_current_name}"
+          services = @workflows[workflow_id].get_child_of(tmp_current_name)
+          has_children = !services.nil?
 
-            # find next component name
-            next_component_name = workflow[:component_sequence][req.next_step][:name]
+          if next_step < size && has_children == true
+            # get the children of the current node
+            services.children.each do |s|
+              next_component_name = s.name
+              req.component = req.next_component unless req.next_component.nil?
+              req.next_component = next_component_name
+              # @logger.debug "Next component: #{next_component_name}"
+              # resolve the next component name
+              service = @kube_dns.lookup(next_component_name)
 
-            # resolve the next component name
-            service = @kube_dns.lookup(next_component_name)
+              # e.time should be equivalent to @current_time
+              forwarding_time = e.time
 
-            # e.time should be equivalent to @current_time
-            forwarding_time = e.time
+              # get a pod from the one available
+              pod = service.get_pod(next_component_name) # same as selector
 
-            # get a pod from the one available
-            pod = service.get_pod(next_component_name) # same as selector
+              # we need to get a reference to the cluster where the pod is running
+              cluster_id = pod.node.cluster_id
+              cluster = cluster_repository[cluster_id]
 
-            # we need to get a reference to the cluster where the pod is running
-            cluster_id = pod.node.cluster_id
-            cluster = @cluster_repository[cluster_id]
+              transmission_time =
+                latency_manager.sample_latency_between(current_cluster.location_id, cluster.location_id)
+              req.update_transfer_time(transmission_time)
+              forwarding_time += transmission_time + rand(1E-5..1E-4)
 
-            transmission_time =
-              latency_manager.sample_latency_between(current_cluster.location_id, cluster.location_id)
-            req.update_transfer_time(transmission_time)
-            forwarding_time += transmission_time
+              # update request's current data_center_id / cluster_id
+              req.data_center_id = cluster.cluster_id
 
-            # update request's current data_center_id / cluster_id
-            req.data_center_id = cluster.cluster_id
+              # make sure we actually found a pod
+              unless pod
+                raise 'Cannot find a Pod running a component of type ' +
+                      "#{next_component_name} in any cluster!"
+              end
 
-            # make sure we actually found a pod
-            unless pod
-              raise 'Cannot find a Pod running a component of type ' +
-                    "#{next_component_name} in any cluster!"
+              # schedule request forwarding to pod
+              @forwarded += 1
+              # http chained microservices
+              # if the current microservice is the one which the old was waiting, free the old container
+              # @logger.debug "#{pod.container.name} is about to block container #{container.name}"
+              pod.container.to_free(container) unless container.wait_for.empty?
+              new_event(Event::ET_REQUEST_FORWARDING, req, forwarding_time, pod)
             end
 
-            # schedule request forwarding to pod
-            @forwarded += 1
+          elsif next_step == size # workflow is finished
+            oc = container.free_linked_container
+            while true
+              break if oc.nil?
 
-            # http chained microservices
-            # if the current microservice is the one which the old was waiting, free the old container
-            pod.container.to_free(container) unless container.wait_for.empty?
+              @logger.debug "Container: #{container.name} releasing container #{oc.name} #{oc.busy}"
+              oc.request_finished(self, e.time) if oc.busy
+              oc = oc.containers_to_free.shift
+            end
 
-            new_event(Event::ET_REQUEST_FORWARDING, req, forwarding_time, pod)
+            # end
+            # oc = container.free_linked_container
+            # oc.request_finished(self, e.time) if oc
 
-          else # workflow is finished
             # calculate transmission time
             transmission_time =
               latency_manager.sample_latency_between(
                 # data center location
-                @cluster_repository[req.data_center_id].location_id,
+                cluster_repository[req.data_center_id].location_id,
                 # customer location
                 customer_repository.dig(req.customer_id, :location_id)
               )
@@ -753,10 +819,70 @@ module KUBETWIN
 
             # keep track of transmission time
             req.update_transfer_time(transmission_time)
-
             # schedule request closure
             new_event(Event::ET_REQUEST_CLOSURE, req, e.time + transmission_time, nil)
           end
+
+        #           # check if there are other steps left to complete the workflow
+        #           if req.next_step < workflow[:component_sequence].size
+        #
+        #             # find next component name
+        #             next_component_name = workflow[:component_sequence][req.next_step][:name]
+        #
+        #             # resolve the next component name
+        #             service = @kube_dns.lookup(next_component_name)
+        #
+        #             # e.time should be equivalent to @current_time
+        #             forwarding_time = e.time
+        #
+        #             # get a pod from the one available
+        #             pod = service.get_pod(next_component_name) # same as selector
+        #
+        #             # we need to get a reference to the cluster where the pod is running
+        #             cluster_id = pod.node.cluster_id
+        #             cluster = @cluster_repository[cluster_id]
+        #
+        #             transmission_time =
+        #               latency_manager.sample_latency_between(current_cluster.location_id, cluster.location_id)
+        #             req.update_transfer_time(transmission_time)
+        #             forwarding_time += transmission_time
+        #
+        #             # update request's current data_center_id / cluster_id
+        #             req.data_center_id = cluster.cluster_id
+        #
+        #             # make sure we actually found a pod
+        #             unless pod
+        #               raise 'Cannot find a Pod running a component of type ' +
+        #                     "#{next_component_name} in any cluster!"
+        #             end
+        #
+        #             # schedule request forwarding to pod
+        #             @forwarded += 1
+        #
+        #             # http chained microservices
+        #             # if the current microservice is the one which the old was waiting, free the old container
+        #             pod.container.to_free(container) unless container.wait_for.empty?
+        #
+        #             new_event(Event::ET_REQUEST_FORWARDING, req, forwarding_time, pod)
+        #
+        #           else # workflow is finished
+        #             # calculate transmission time
+        #             transmission_time =
+        #               latency_manager.sample_latency_between(
+        #                 # data center location
+        #                 @cluster_repository[req.data_center_id].location_id,
+        #                 # customer location
+        #                 customer_repository.dig(req.customer_id, :location_id)
+        #               )
+        #
+        #             raise "Negative transmission time (#{transmission_time})!" unless transmission_time >= 0.0
+        #
+        #             # keep track of transmission time
+        #             req.update_transfer_time(transmission_time)
+        #
+        #             # schedule request closure
+        #             new_event(Event::ET_REQUEST_CLOSURE, req, e.time + transmission_time, nil)
+        #           end
 
         when Event::ET_REQUEST_CLOSURE
           # retrieve request and vm
@@ -921,11 +1047,11 @@ module KUBETWIN
 
             # allocation_bench header:
             # timestamp,component,number_requests,number_closed,ttp_mean,ttp_variance,ttp_longer_than,ttp_shorter_than,qtime_mean,qtime_variance,hpa_min_replicas,hpa_max_replicas,number_pods
-            @allocation_bench << "#{now},#{k},#{hpa_component_stats[k].received},#{hpa_component_stats[k].n},#{hpa_component_stats[k].mean},#{hpa_component_stats[k].variance},#{hpa_component_stats[k].longer_than.to_s},#{hpa_component_stats[k].shorter_than.to_s},#{hpa_component_stats[k].q_mean},#{hpa_component_stats[k].q_variance},#{min},#{max},#{pods_number}\n"
+            @allocation_bench << "#{now},#{k},#{hpa_component_stats[k].received},#{hpa_component_stats[k].n},#{hpa_component_stats[k].mean},#{hpa_component_stats[k].variance},#{hpa_component_stats[k].longer_than},#{hpa_component_stats[k].shorter_than},#{hpa_component_stats[k].q_mean},#{hpa_component_stats[k].q_variance},#{min},#{max},#{pods_number}\n"
 
             # puts "#{now},#{k},#{hpa_component_stats[k].received},#{hpa_component_stats[k].mean},
-                #{hpa_component_stats[k].variance},#{hpa_component_stats[k].longer_than},#{hpa_component_stats[k].qmean},#{hpa_component_stats[k].qvariance},
-                #{min},#{max}, #{pods_number}\n"
+            # {hpa_component_stats[k].variance},#{hpa_component_stats[k].longer_than},#{hpa_component_stats[k].qmean},#{hpa_component_stats[k].qvariance},
+            # {min},#{max}, #{pods_number}\n"
             # just to print the allocation map
           end
 
@@ -1000,7 +1126,7 @@ module KUBETWIN
       # puts "#{stats.to_csv}"
       puts "====== Evaluating new allocation ======\n" +
            "stats: #{stats}\n" +
-           #"per_workflow_and_customer_stats: #{per_workflow_and_customer_stats.to_s}\n" +
+           # "per_workflow_and_customer_stats: #{per_workflow_and_customer_stats.to_s}\n" +
            "component_stats: #{per_component_stats}\n" +
            "allocation_map: #{allocation_map}\n" +
            "node_utilization: #{node_utilization}\n" +
@@ -1090,16 +1216,15 @@ module KUBETWIN
         weighted_sum += closed_percentage if closed_percentage < availability_policy
       end
       puts "Weighted sum: #{weighted_sum}"
-      -weighted_sum
 
       # CSV file path
-      csv_file = "results.csv"
-      csv_bmap = "results_allocation.csv"
+      csv_file = 'results.csv'
+      csv_bmap = 'results_allocation.csv'
 
       # Write CSV header if file does not exist
       unless File.exist?(csv_file)
-        CSV.open(csv_file, "w") do |csv|
-          csv << ["strategy", "costs", "weighted_sum", "ttr_mean", "ttr_variance", "q_time_mean", "q_time_variance"]
+        CSV.open(csv_file, 'w') do |csv|
+          csv << %w[strategy costs weighted_sum ttr_mean ttr_variance q_time_mean q_time_variance]
         end
       end
 
@@ -1109,32 +1234,33 @@ module KUBETWIN
       q_time_variance = per_component_stats.values.map { |c| c.q_variance || 0.0 }.sum / per_component_stats.size
 
       # Append a new row for the current strategy
-      CSV.open(csv_file, "a") do |csv|
+      CSV.open(csv_file, 'a') do |csv|
         csv << [strategy_name, costs, weighted_sum, ttr_mean, ttr_variance, q_time_mean, q_time_variance]
       end
 
       # --- Write per-component allocation map CSV ---
       unless File.exist?(csv_bmap)
-        CSV.open(csv_bmap, "w") do |csv|
-          csv << ["strategy", "component", "eu-south-1", "eu-central-1", "eu-west-3", "eu-west-2", "eu-north-1", "ca-central-1", "us-east-1"]
+        CSV.open(csv_bmap, 'w') do |csv|
+          csv << %w[strategy component eu-south-1 eu-central-1 eu-west-3 eu-west-2 eu-north-1
+                    ca-central-1 us-east-1]
         end
       end
 
       # Map full cluster names to short names for CSV
       cluster_name_map = {
-        "eu-south-1 - Local DC" => "eu-south-1",
-        "eu-central-1 Tier 1 Regional Edge" => "eu-central-1",
-        "eu-west-3 Tier 1" => "eu-west-3",
-        "eu-west-2 Tier 2" => "eu-west-2",
-        "eu-north-1 - Tier 2" => "eu-north-1",
-        "ca-central-1 - Remote DC" => "ca-central-1",
-        "us-east-1 - Remote DC" => "us-east-1"
+        'eu-south-1 - Local DC' => 'eu-south-1',
+        'eu-central-1 Tier 1 Regional Edge' => 'eu-central-1',
+        'eu-west-3 Tier 1' => 'eu-west-3',
+        'eu-west-2 Tier 2' => 'eu-west-2',
+        'eu-north-1 - Tier 2' => 'eu-north-1',
+        'ca-central-1 - Remote DC' => 'ca-central-1',
+        'us-east-1 - Remote DC' => 'us-east-1'
       }
 
       # Fixed order of nodes for CSV
-      nodes = ["eu-south-1", "eu-central-1", "eu-west-3", "eu-west-2", "eu-north-1", "ca-central-1", "us-east-1"]
+      nodes = %w[eu-south-1 eu-central-1 eu-west-3 eu-west-2 eu-north-1 ca-central-1 us-east-1]
 
-      CSV.open(csv_bmap, "a") do |csv|
+      CSV.open(csv_bmap, 'a') do |csv|
         bmap.each do |component, node_map|
           # Normalize cluster names and default to 0
           normalized_map = {}
@@ -1150,4 +1276,3 @@ module KUBETWIN
     end
   end
 end
-
