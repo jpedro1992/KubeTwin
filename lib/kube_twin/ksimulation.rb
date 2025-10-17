@@ -505,7 +505,7 @@ module KUBETWIN
           #
           # Let's add a reference to the replicas set so the container
           # knows how many replicas are present. This is useful when executing mdn_models
-          pod = Pod.new(pod_id, "#{selector}_#{pod_id}", node, selector, sct, rs)
+          pod = Pod.new(pod_id, "#{selector}_#{pod_id}", node, selector, sct, rs, self)
           pod.startUpPod
 
           # assign resources for the pod
@@ -1011,7 +1011,7 @@ module KUBETWIN
 
                 break if node.nil? # check here --- what happens if no nodes are available
 
-                pod = Pod.new(pod_id, "#{selector}_#{pod_id}", node, selector, sct, rs)
+                pod = Pod.new(pod_id, "#{selector}_#{pod_id}", node, selector, sct, rs, self)
                 pod.startUpPod
                 # assign resources for the pod
                 node.assign_resources(pod, reqs_c, reqs_m)

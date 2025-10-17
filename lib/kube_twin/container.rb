@@ -72,7 +72,13 @@ module KUBETWIN
       @last_request_time = nil
       @path = opts[:img_info][:mdn_file]
       @rps = opts[:img_info][:rps].to_i
-      @service_time = ERV::RandomVariable.new(st_distribution) if @path.nil?
+      if @path.nil?
+        @service_time = ERV::RandomVariable.new(st_distribution)
+      else
+        # Load the model using sim --- BE CONSISTENT IN THE FUTURE
+        sim = opts[:sim]
+        @service_time = sim.retrieve_mdn_model(@name, @rps, @replica_set.replicas) unless @path.nil?
+      end
       @arrival_times = []
     end
 
@@ -118,10 +124,10 @@ module KUBETWIN
       r.arrival_at_container = time
       rps = @rps
       # s_time = calculate_service_time(sim)
-      @service_time = sim.retrieve_mdn_model(name, rps) unless @path.nil?
+      # @service_time = sim.retrieve_mdn_model(@name, rps, @replica_set.replicas) unless @path.nil?
       @last_request_time = time
-      while (st = @service_time.sample) <= 1E-6; end
-
+      # while (st = @service_time.sample) <= 1E-6; end
+      st = nil
       ri = RequestInfo.new(r, st, time)
       @request_queue << ri
 
