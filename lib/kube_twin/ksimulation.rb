@@ -743,10 +743,10 @@ module KUBETWIN
 
           # register step completion
           component_name = container.name
-          ttr_step = now - req.arrival_at_container[component_name]
-          if ttr_step > 1.0
-            warn "Component name: #{component_name} #{req.component} #{now - req.arrival_at_container[component_name]}"
-          end
+          # ttr_step = now - req.arrival_at_container[component_name]
+          # if ttr_step > 1.0
+          #  warn "Component name: #{component_name} #{req.component} #{now - req.arrival_at_container[component_name]}"
+          # end
           hpa_component_stats[component_name].record_request(req, component_name, now)
           per_component_stats[component_name].record_request(req, component_name, now)
 
