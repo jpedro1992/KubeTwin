@@ -101,6 +101,7 @@ module KUBETWIN
       # add a chained container, which must wait
       # until the next workflow step is completed
       @containers_to_free << container
+      # warn "#{@name}: Containers to free #{@containers_to_free&.first&.name}"
     end
 
     def free_linked_container
@@ -146,6 +147,7 @@ module KUBETWIN
 
     def request_finished(sim, time)
       @busy = false
+      # warn "REQUEST FINISHED called. container #{@name}:#{@containerId}"
       # update also the metrics
       @served_request += 1
       try_servicing_new_request(sim, time) unless @busy

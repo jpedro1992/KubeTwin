@@ -733,8 +733,9 @@ module KUBETWIN
 
           # tell the old container that it can start processing another request
           # if microservice should wait for one other
-          oc = container.free_linked_container
-          oc.request_finished(self, e.time) if oc
+          # oc = container.free_linked_container
+          # warn "Container: #{container.name} releasing linked container #{oc.name}" if oc
+          # oc.request_finished(self, e.time) if oc
 
           current_cluster = @cluster_repository[req.data_center_id]
           # find the next workflow
@@ -799,11 +800,13 @@ module KUBETWIN
               # http chained microservices
               # if the current microservice is the one which the old was waiting, free the old container
               # @logger.debug "#{pod.container.name} is about to block container #{container.name}"
-              pod.container.to_free(container) unless container.wait_for.empty?
+              # warn "#{pod.container.name} : #{pod.container.wait_for}"
+              pod.container.to_free(container) if !pod.container.wait_for.empty? || (next_step == size - 1)
               new_event(Event::ET_REQUEST_FORWARDING, req, forwarding_time, pod)
             end
 
           elsif next_step == size # workflow is finished
+            # warn "Finally over #{container.name} #{container.containers_to_free.each { |c| c.name }}"
             oc = container.free_linked_container
             while true
               break if oc.nil?
