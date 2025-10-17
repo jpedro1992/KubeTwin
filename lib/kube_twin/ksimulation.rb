@@ -17,13 +17,24 @@ require_relative './kube_scheduler'
 require_relative './node'
 require_relative './workflow_node'
 require 'logger'
+require_relative './kube_scheduler'
+require_relative './scheduling_plugins/strategies/deployment_strategies'
+require_relative './scheduling_plugins/filter/cpu_resources'
+require_relative './scheduling_plugins/filter/mem_resources'
+require_relative './scheduling_plugins/score/node_affinity'
+require_relative './scheduling_plugins/score/resource_availability'
+require_relative './scheduling_plugins/score/node_resources_least_allocatable'
+require_relative './scheduling_plugins/score/node_resources_most_allocatable'
+require_relative './scheduling_plugins/score/trimaran_low_risk_over_commitment'
+require_relative './scheduling_plugins/score/topology_cluster'
+require_relative './scheduling_plugins/filter/pod_topology_constraint'
+require_relative './scheduling_plugins/score/diktyo'
+require 'csv'
 
 
 require 'pycall'
 require 'pycall/import'
 include PyCall::Import
-
-
 
 module KUBETWIN
 
@@ -46,6 +57,8 @@ module KUBETWIN
       @microservice_mdn = Hash.new
       os = PyCall.import_module("os")
       os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
+      @hpa_min_replicas = {}
+      @hpa_max_replicas = {}
       @logger = Logger.new(STDOUT)
       @logger.level = Logger::INFO
       
@@ -85,6 +98,45 @@ module KUBETWIN
 
     def now
       @current_time
+    end
+
+    ## just an helper method to create the cluster configuration
+    def self.create_cluster_configuration(sim_conf)
+      if sim_conf.federation.nil?
+        cid = -1
+        # create clusters and relative nodes and store them in a repository
+        Hash[
+          @configuration.clusters.map do |k, v|
+            cid += 1
+            @logger.debug "Cluster: #{k} #{v}"
+            [k, Cluster.new(id: k, fixed_hourly_cost_cpu: nil,
+                            fixed_hourly_cost_memory: nil, **v)]
+          end
+        ]
+      else
+        federation = JSON.parse(sim_conf.federation, symbolize_names: true)
+        # puts "Federation resources: #{federation[:resources]}"
+        cid = -1
+        Hash[
+          federation[:resources].map do |k, v|
+            # puts "k: #{k} v: #{v}"
+            node_number = v[:nodes].length if v[:nodes]
+            node_number ||= v[:cpu].to_i / DEFAULT_CPU_PER_NODE
+            node_cpu = v[:cpu].to_i / node_number
+            node_mem = v[:mem].to_i / node_number
+            # we assume that the resources are homogeneous
+            # Since we only have an aggregate for CPU and Memoryù
+            # we assume to divide clusters equally. Each node
+            # has 2000 milliCPU and 2 GB of Memory (2048 MB)
+            cid += 1
+            [k, Cluster.new(id: k, fixed_hourly_cost_cpu: nil,
+                            fixed_hourly_cost_memory: nil, location_id: cid,
+                            node_resources_cpu: node_cpu.to_i,
+                            node_resources_memory: node_mem.to_i, name: k,
+                            node_number: node_number.to_i, type: :mec, tier: 'local')]
+          end
+        ]
+      end
     end
 
     # rss is replica set
@@ -133,6 +185,7 @@ module KUBETWIN
           # set also the cluster_id here
           n = Node.new(node_id, c.node_resources_cpu, c.node_resources_memory, c.cluster_id, c.type)
           c.add_node(n)
+          @logger.debug "Creating node #{n.node_id} cluster: #{n.cluster_id} with resources: #{n.resources_cpu} #{n.resources_memory}"
           node_id += 1
         end
       end
@@ -162,6 +215,7 @@ module KUBETWIN
       # statistics for servicemdnmdn
       per_component_stats = Hash[
         @microservice_types.keys.map do |m_id|
+          @logger.debug "Microservice type: #{m_id}"
           [
             m_id,
             ComponentStatistics.new()
@@ -215,8 +269,11 @@ module KUBETWIN
       crs.each do |name, conf|
         # nil is service here
         # do we need a reference to service in ReplicaSet?
-        @replica_sets[name] = ReplicaSet.new(name, conf[:selector],
-           conf[:replicas], nil)
+        @replica_sets[name] = ReplicaSet.new(name,
+                                             conf[:selector],
+                                             conf[:replicas],
+                                             nil,
+                                             conf[:dependencies])
       end
 
       @horizontal_pod_autoscaler_repo = {}
@@ -228,6 +285,8 @@ module KUBETWIN
                   conf[:minReplicas], conf[:maxReplicas],
                     conf[:targetProcessingPercentage],
                     conf[:periodSeconds])
+          @hpa_min_replicas[conf[:name]] = conf[:minReplicas]
+          @hpa_max_replicas[conf[:name]] = conf[:maxReplicas]
         end
       end
 
@@ -255,13 +314,32 @@ module KUBETWIN
       # creating a KubeScheduler
       # the KubeScheduler decides on which nodes schedule
       # the pods
-      @kube_scheduler = KubeScheduler.new(cluster_repository)
+      @kube_scheduler = KubeScheduler.new(cluster_repository, latency_manager)
+      strategy_name = @configuration.strategy
+
+      puts "Scheduling strategy: #{strategy_name}"
+      strategy = KUBE_SCHEDULER_STRATEGIES[strategy_name]
+      raise "Unknown strategy #{strategy_name}" unless strategy
+
+      puts "Register Scheduler strategy: #{strategy_name}"
+
+      puts 'Register Filtering Plugins...'
+      strategy[:filters].each do |filter_plugin|
+        @kube_scheduler.register_filter_plugin(filter_plugin)
+      end
+
+      puts 'Register Scoring Plugins...'
+      strategy[:scores].each do |score_plugin|
+        @kube_scheduler.register_score_plugin(score_plugin)
+      end
+
 
       pod_id = 0
       @replica_sets.each do |k, rs|
         # here we need to create pods and register them into a Service
         rs.replicas.times do
           selector = rs.selector
+          dependencies = rs.dependencies
           # the nil fields is a node related information
           # get image info --> service component type (sct)
           # sct has info regarding service execution time
@@ -272,7 +350,7 @@ module KUBETWIN
           reqs_m = sct[:resources_requirements_memory]
           node_affinity = sct[:node_affinity]
 
-          node = @kube_scheduler.get_node(reqs_c, node_affinity)
+          node = @kube_scheduler.get_node(reqs_c, reqs_m, node_affinity, selector, dependencies)
           next if node.nil? # no more resources
           # once we know where the pod is going to be allocated
           # we can retrieve also the service_time_distribution
@@ -350,14 +428,14 @@ module KUBETWIN
       # benchmark file
       time = Time.now.strftime('%Y%m%d%H%M%S')
       #@sim_bench = File.open("csv_bench_#{time}.csv", 'w')
-      #@allocation_bench = File.open("allocation_bench_#{time}.csv", 'w')
+      @allocation_bench = File.open("allocation_bench_#{strategy_name}.csv", 'w')
       #@request_profile = File.open("request_profile_#{time}.csv", 'w')
       #@request_profile << "Time,CRequests\n"
       @last_second = @current_time.to_i
       @req_in_sec = 0
 
 
-      #@allocation_bench << "Time,Component,Request,TTP,Pods\n"
+      @allocation_bench << "timestamp,component,number_requests,number_closed,ttp_mean,ttp_variance,ttp_longer_than,ttp_shorter_than,qtime_mean,qtime_variance,hpa_min_replicas,hpa_max_replicas,number_pods\n"
 
       # launch simulation
       until @event_queue.empty?
@@ -479,9 +557,9 @@ module KUBETWIN
             pod.container.new_request(self, req, time)
 
           when Event::ET_WORKFLOW_STEP_COMPLETED
-
             # retrieve request and vm
             req, next_step = e.data
+            # puts "Step completed for request #{req.rid} at #{now} next step: #{next_step}"
             container  = e.destination
             # check the current step here --- it's an array
             #req.services_completed << current_step_services
@@ -510,7 +588,7 @@ module KUBETWIN
             services = @workflows[workflow_id].get_child_of(tmp_current_name)
             has_children = !services.nil?
 
-            #@logger.debug "#{container.name} #{next_step} #{size} #{has_children}"
+            # puts "#{container.name} #{next_step} #{size} #{has_children}"
 
             if next_step < size && has_children == true
               # get the children of the current node
@@ -641,6 +719,7 @@ module KUBETWIN
 
 
             s.pods[hpa.name].each do |pod|
+              pods += 1
               next if pod.container.served_request.zero?
               current_metric += pod.container.total_queue_processing_time / pod.container.served_request
               # @logger.debug "total queue time: #{pod.container.total_queue_time}"
@@ -649,7 +728,6 @@ module KUBETWIN
               # calculate them each time period
               pod.container.reset_metrics
               # @logger.debug "#{pod.container.current_processing_metric}"
-              pods += 1
             end
             current_metric /= pods.to_f
 
@@ -687,12 +765,13 @@ module KUBETWIN
                 # then create the replicas
                 to_scale.times do 
                   selector = rs.selector
+                  dependencies = rs.dependencies
                   sct = @microservice_types[selector]
                   reqs_c = sct[:resources_requirements_cpu]
                   reqs_m = sct[:resources_requirements_memory]
 
                   node_affinity = sct[:node_affinity]
-                  node = @kube_scheduler.get_node(reqs_c, node_affinity)
+                  node = @kube_scheduler.get_node(reqs_c, reqs_m, node_affinity, selector, dependencies)
 
                   break if node.nil? # check here --- what happens if no nodes are available
                   pod = Pod.new(pod_id, "#{selector}_#{pod_id}", node, selector, sct)
@@ -728,9 +807,9 @@ module KUBETWIN
                 #@logger.debug "node_id: #{n.node_id}: pods: #{n.pod_id_list.length}"
                end
                allocation_map[c.name] = {tier: c.tier, pods: pods}
-               #@logger.debug "Allocation -- #{c.name} Pods: #{pods}"
+               # puts "Allocation -- #{c.name} Pods: #{pods}"
             end
-            @logger.info "Allocation_map: #{allocation_map}\n"
+            # @logger.info "Allocation_map: #{allocation_map}\n"
 
 
             # schedule next control
@@ -753,9 +832,13 @@ module KUBETWIN
             @services.each do |k, s|
               pods_number = s.pods[s.selector].length
               pods_n += "#{k}: #{pods_number} "
+              min = @hpa_min_replicas[k]
+              max = @hpa_max_replicas[k]
               #@allocation_bench << "#{now},#{k},#{per_component_stats[k].received},#{per_component_stats[k].mean},#{pods_number}\n"
               #@logger.debug "#{now},#{k},#{per_component_stats[k].received},#{per_component_stats[k].mean},#{pods_number}\n"
               # just to print the allocation map
+              @allocation_bench << "#{now},#{k},#{per_component_stats[k].received},#{per_component_stats[k].n},#{per_component_stats[k].mean},#{per_component_stats[k].variance},#{per_component_stats[k].longer_than.to_s},#{per_component_stats[k].shorter_than.to_s},#{per_component_stats[k].q_mean},#{per_component_stats[k].q_variance},#{min},#{max},#{pods_number}\n"
+
             end
             #@logger.debug "++++++++++++++++\n"+
             #"#{now}\n" +
@@ -765,15 +848,15 @@ module KUBETWIN
             #ls"#{pods_n}"
 
             # reset also comoponent statistics
-            @logger.debug("Resetting statistics for all components!")
-            per_component_stats = Hash[
-              @microservice_types.keys.map do |m_id|
-                [
-                  m_id,
-                  ComponentStatistics.new()
-                ]
-              end
-            ]
+            #@logger.debug("Resetting statistics for all components!")
+            #per_component_stats = Hash[
+            #  @microservice_types.keys.map do |m_id|
+            #    [
+            #      m_id,
+            #      ComponentStatistics.new()
+            #    ]
+            #  end
+            #]
 
             next_event_time = @current_time + @stats_print_interval
 
@@ -803,28 +886,52 @@ module KUBETWIN
       #costs = @evaluator.evaluate_fixed_costs_cpu(vm_allocation)
 
      
-     #@logger.debug "\n\n"
-     #@sim_bench.close
-     #@logger.debug "Finished after #{now - @configuration.end_time}"
-
+      #@logger.debug "\n\n"
+      #@sim_bench.close
+      #@logger.debug "Finished after #{now - @configuration.end_time}"
+      costs = 0
       allocation_map = {}
       cluster_repository.each do |_,c|
          #@logger.info "Allocation -- #{c.name} Pods: #{pods}"
          pods = 0
+         node = 0
          c.nodes.values.each do |n|
-          pods += n.pod_id_list.length
+           if n.pod_id_list.length > 0
+             pods += n.pod_id_list.length
+             node += 1
+           end
           #@logger.info "node_id: #{n.node_id}: pods: #{n.pod_id_list.length}"
          end
          allocation_map[c.name] = {tier: c.tier, pods: pods}
          #@logger.info "Allocation -- #{c.name} Pods: #{pods}"
+         c.fixed_hourly_cost_cpu = 0.100 unless c.fixed_hourly_cost_cpu
+         costs += c.fixed_hourly_cost_cpu * node * 24
       end
+
+      # replicated to avoid messing up the previous loop
+      bmap = {}
+      @services.each do |k, s|
+        current_spreading = []
+        # puts "#{s.pods[k]}"
+        cluster_repository.each do |_, c|
+          pods_number = s.pods[k].select { |p| p.cluster_id == c.cluster_id }.length
+          current_spreading << pods_number
+          if bmap.key?(k)
+            bmap[k][c.name] = pods_number
+          else
+            bmap[k] = { c.name => pods_number }
+          end
+        end
+      end
+
       #@logger.info "#{stats.to_csv}"
-     puts "====== Evaluating new allocation ======\n" +
-           #"costs: #{costs}\n" +
+      puts "====== Evaluating new allocation ======\n" +
+           "costs: #{costs}\n" +
            "stats: #{stats.to_s}\n" +
            #"per_workflow_and_customer_stats: #{per_workflow_and_customer_stats.to_s}\n" +
            "component_stats: #{per_component_stats.to_s}\n" +
            "allocation_map: #{allocation_map}\n" +
+           "bmap: #{bmap}\n" +
            "=======================================\n"
       # debug info here
       # we want to minimize the cost, so we define fitness as the opposite of
@@ -856,7 +963,83 @@ module KUBETWIN
 
       # --- what to return here?
       # Filippo - just return 0 now for debugging purposes
-      return stats.to_csv 
+      # @logger.debug "Current spreading for #{k}: #{current_spreading} penalties: #{replication_penalties}"
+      # replication_penalties += 10 if current_spreading.include?(0)
+
+      # weighted_sum = stats.mean + replication_penalties
+      # per_component_stats.each do |k, v|
+      #   weighted_sum += v.longer_than.inject(0.0) do |sum, (key, value)|
+      #     puts "Component: #{k} Longer than #{key} ms: #{value} closed: #{v.closed}"
+      #     sum + (value / v.closed.to_f) if v.closed.to_f > 0
+          # sum + (value / v.closed.to_f) * @configuration.custom_stats.find { |x| x[:name] == key }[:weight]
+      #   end
+      # end
+      ## Add the availability policy
+      # if availability_policy
+      #   closed_percentage = stats.closed.to_f / stats.received.to_f
+      #   weighted_sum += closed_percentage if closed_percentage < availability_policy
+      # end
+      # puts "Weighted sum: #{weighted_sum}"
+      # -weighted_sum
+
+      # CSV file path
+      csv_file = "results.csv"
+      csv_bmap = "results_allocation.csv"
+
+      # Write CSV header if file does not exist
+      unless File.exist?(csv_file)
+        CSV.open(csv_file, "w") do |csv|
+          csv << ["strategy", "costs", "ttr_mean", "ttr_variance", "q_time_mean", "q_time_variance"]
+        end
+      end
+
+      ttr_mean = stats.mean
+      ttr_variance = stats.variance
+      q_time_mean = per_component_stats.values.map { |c| c.q_mean || 0.0 }.sum / per_component_stats.size
+      q_time_variance = per_component_stats.values.map { |c| c.q_variance || 0.0 }.sum / per_component_stats.size
+
+      # Append a new row for the current strategy
+      CSV.open(csv_file, "a") do |csv|
+        csv << [strategy_name, costs, ttr_mean, ttr_variance, q_time_mean, q_time_variance]
+      end
+
+      # --- Write per-component allocation map CSV ---
+      unless File.exist?(csv_bmap)
+        CSV.open(csv_bmap, "w") do |csv|
+          csv << ["strategy", "component", "eu-south-1", "eu-central-1", "eu-west-3", "eu-west-2", "eu-north-1", "ca-central-1", "us-east-1"]
+        end
+      end
+
+      # Map full cluster names to short names for CSV
+      cluster_name_map = {
+        "eu-south-1 - Local DC" => "eu-south-1",
+        "eu-central-1 Tier 1 Regional Edge" => "eu-central-1",
+        "eu-west-3 Tier 1" => "eu-west-3",
+        "eu-west-2 Tier 2" => "eu-west-2",
+        "eu-north-1 - Tier 2" => "eu-north-1",
+        "ca-central-1 - Remote DC" => "ca-central-1",
+        "us-east-1 - Remote DC" => "us-east-1"
+      }
+
+      # Fixed order of nodes for CSV
+      nodes = ["eu-south-1", "eu-central-1", "eu-west-3", "eu-west-2", "eu-north-1", "ca-central-1", "us-east-1"]
+
+      CSV.open(csv_bmap, "a") do |csv|
+        bmap.each do |component, node_map|
+          # Normalize cluster names and default to 0
+          normalized_map = {}
+          node_map.each do |full_name, count|
+            short_name = cluster_name_map[full_name]
+            normalized_map[short_name] = count if short_name
+          end
+
+          row = [strategy_name, component] + nodes.map { |n| normalized_map[n] || 0 }
+          csv << row
+        end
+        puts "Print Stats as return..."
+        return stats.to_csv
+      end
     end
   end
 end
+

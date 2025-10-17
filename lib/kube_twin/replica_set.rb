@@ -15,19 +15,21 @@ module KUBETWIN
     attr_reader :name,
                 :selector,
                 :replicas,
-                :service
+                :service,
+                :dependencies
 
     # name and selector have the same value here
     # the replica set creates the pods, which are 
     # associate to a service that provides naming,
     # discovery, and lookup capabilities
-    def initialize(name, selector, replicas, service)
+    def initialize(name, selector, replicas, service, dependencies)
       @name = name
       @selector = selector
       @replicas = replicas
       # do we need to keep a reference to the service
       # class?
       @service = service
+      @dependencies = dependencies
       # optional parameter to set the control loop?
     end
 

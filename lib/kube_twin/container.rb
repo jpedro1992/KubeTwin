@@ -3,6 +3,7 @@
 
 require_relative './logger'
 require_relative './event'
+require 'erv'
 require 'pycall'
 require 'pycall/import'
 include PyCall::Import

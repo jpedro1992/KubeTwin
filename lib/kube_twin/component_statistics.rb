@@ -5,7 +5,7 @@ require_relative './request'
 
 module KUBETWIN
   class ComponentStatistics
-    attr_reader :mean, :n, :received, :longer_than
+    attr_reader :mean, :n, :received, :longer_than, :m_2, :q_mean, :q_m_2, :shorter_than, :variance, :q_variance
     alias_method :closed, :n
 
     # see http://en.wikipedia.org/wiki/Algorithms_for_calculating_variance#Online_algorithm
