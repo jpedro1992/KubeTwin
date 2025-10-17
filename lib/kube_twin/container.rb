@@ -72,6 +72,7 @@ module KUBETWIN
       @last_request_time = nil
       @path = opts[:img_info][:mdn_file]
       @rps = opts[:img_info][:rps].to_i
+      @rps = 1 if @rps.nil? || @rps <= 0
       if @path.nil?
         @service_time = ERV::RandomVariable.new(st_distribution)
       else
@@ -122,7 +123,7 @@ module KUBETWIN
     def new_request(sim, r, time)
       # improve this code in the future
       r.arrival_at_container = time
-      rps = @rps
+      # rps = @rps
       # s_time = calculate_service_time(sim)
       # @service_time = sim.retrieve_mdn_model(@name, rps, @replica_set.replicas) unless @path.nil?
       @last_request_time = time
@@ -182,7 +183,7 @@ module KUBETWIN
       if @name == 'FE1'
         # @logger.debug "Retrieved RPS: #{rps} for container #{@name} containerId: #{@containerId} queue size: #{@request_queue.size}"
       end
-      @service_time = sim.retrieve_mdn_model(@name, @rps, @replica_set.replicas) unless @path.nil?
+      @service_time = sim.retrieve_mdn_model(@name, rps, @replica_set.replicas) unless @path.nil?
       while (st = @service_time.sample) <= 1E-5; end
       #       case @name
       #       when 'FE1'
@@ -215,6 +216,7 @@ module KUBETWIN
       req.update_queuing_time(time - req.arrival_at_container)
       s_time = calculate_service_time(sim)
       ri.service_time = s_time
+      raise "Service time invalid! #{ri.service_time} at time: #{time}" unless ri.service_time > 0.0
 
       req.step_completed(ri.service_time)
       next_step = req.next_step

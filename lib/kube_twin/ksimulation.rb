@@ -746,7 +746,7 @@ module KUBETWIN
           hpa_component_stats[component_name].record_request(req, now)
           per_component_stats[component_name].record_request(req, now)
 
-          req.ttr_step(@current_time, container.name)
+          req.ttr_step(@current_time, component_name)
           # check if there are other steps left to complete the workflow
           size = @workflows[workflow_id].size
           # next step info
