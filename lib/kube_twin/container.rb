@@ -2,6 +2,10 @@
 
 require_relative './logger'
 require_relative './event'
+require 'erv'
+require 'pycall'
+require 'pycall/import'
+include PyCall::Import
 
 module KUBETWIN
   class RequestInfo < Struct.new(:request, :service_time, :arrival_time)
@@ -30,6 +34,8 @@ module KUBETWIN
                 :request_queue,
                 :served_request,
                 :total_queue_time,
+                :containers_to_free,
+                :busy,
                 :total_queue_processing_time # endCode = 0 if all operations successfull, 0 if there's any kind of error
 
     Guaranteed = Struct.new(:cpu, :memory)
