@@ -44,7 +44,10 @@ module KUBETWIN
     DEFAULT_NUM_REQS = 5000
     CONNECT_TIME = 0.00148205
     DEFAULT_CPU_PER_NODE = 4000.0 # in mCPU
-    SEED = 123
+    # Check if there is an environment variable set for SEED
+    seed = ENV['KUBETWIN_SEED']
+    seed = seed.to_i unless seed.nil?
+    seed ? SEED = seed : 123
 
     def initialize(opts = {})
       @configuration = opts[:configuration]
@@ -928,8 +931,8 @@ module KUBETWIN
 
           raise 'Impossible to retrieve s' if s.nil?
 
-          #puts "Available pods: #{s.pods.keys}"
-          #puts "Current selector: #{s.selector}"
+          # puts "Available pods: #{s.pods.keys}"
+          # puts "Current selector: #{s.selector}"
 
           # improve this initialization
           # right now it is terrible (okay for MVP)
