@@ -502,8 +502,10 @@ module KUBETWIN
           # once we know where the pod is going to be allocated
           # we can retrieve also the service_time_distribution
           # depending on its cluster type
-
-          pod = Pod.new(pod_id, "#{selector}_#{pod_id}", node, selector, sct)
+          #
+          # Let's add a reference to the replicas set so the container
+          # knows how many replicas are present. This is useful when executing mdn_models
+          pod = Pod.new(pod_id, "#{selector}_#{pod_id}", node, selector, sct, rs)
           pod.startUpPod
 
           # assign resources for the pod
@@ -1009,7 +1011,7 @@ module KUBETWIN
 
                 break if node.nil? # check here --- what happens if no nodes are available
 
-                pod = Pod.new(pod_id, "#{selector}_#{pod_id}", node, selector, sct)
+                pod = Pod.new(pod_id, "#{selector}_#{pod_id}", node, selector, sct, rs)
                 pod.startUpPod
                 # assign resources for the pod
                 node.assign_resources(pod, reqs_c, reqs_m)

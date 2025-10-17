@@ -17,7 +17,7 @@ module KUBETWIN
     # here fix it
     # instead of nodeIP we could use a nodeID
     # pod name could not be important
-    def initialize(pod_id, podName, node, label, image_info)
+    def initialize(pod_id, podName, node, label, image_info, replica_set)
       @pod_id = pod_id
       @podName = podName
       @node = node
@@ -25,7 +25,8 @@ module KUBETWIN
       @node_affinity = image_info[:node_affinity].nil? ? nil : image_info[:node_affinity]
 
       @container = Container.new(0, 1, image_info[:service_time_distribution][node.type],
-                                 { blocking: image_info[:blocking], node: @node, label: label, img_info: image_info })
+                                 { blocking: image_info[:blocking], node: @node, label: label,
+                                   img_info: image_info, replica_set: replica_set })
 
       # image_info[:blocking]) #, opts[:port]) # @containers = {}
       # startup the container here -- we just need a MVP for now
@@ -37,6 +38,7 @@ module KUBETWIN
                         memory: image_info[:resources_requirements_memory] }
       # @namespace      = "default"
       # priority       = 0
+      @replica_set = replica_set
     end
 
     def startUpPod

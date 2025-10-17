@@ -50,6 +50,7 @@ module KUBETWIN
       @startedTime = Time.now
       @state = CONTAINER_WAITING
       @name = opts[:label]
+      @replica_set = opts[:replica_set]
 
       @blocking = opts[:blocking].nil? || opts[:blocking]
 
@@ -175,8 +176,8 @@ module KUBETWIN
       if @name == 'FE1'
         # @logger.debug "Retrieved RPS: #{rps} for container #{@name} containerId: #{@containerId} queue size: #{@request_queue.size}"
       end
-      @service_time = sim.retrieve_mdn_model(@name, @rps, @replica) unless @path.nil?
-      while (st = @service_time.sample) <= 1E-6; end
+      @service_time = sim.retrieve_mdn_model(@name, @rps, @replica_set.replicas) unless @path.nil?
+      while (st = @service_time.sample) <= 1E-5; end
       #       case @name
       #       when 'FE1'
       #         st *= 0.43
