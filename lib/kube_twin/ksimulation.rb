@@ -66,6 +66,7 @@ module KUBETWIN
     def retrieve_mdn_model(name, rps, replica = 2)
       # if not create mdn
       unless @microservice_mdn[name][:st].key?(rps)
+        @logger.info "MDN not loaded yet for #{name} at RPS #{rps}, creating model..."
         numpy = PyCall.import_module('numpy')
         # here rember to set replica to the correct value
         # @logger.info "RPS: #{rps}, Replica: #{replica}, Name: #{name}, MDN: #{@microservice_mdn[name][:model]}"
@@ -927,9 +928,13 @@ module KUBETWIN
 
           raise 'Impossible to retrieve s' if s.nil?
 
+          #puts "Available pods: #{s.pods.keys}"
+          #puts "Current selector: #{s.selector}"
+
           # improve this initialization
           # right now it is terrible (okay for MVP)
           service_time_rv = s.pods[s.selector].sample.container.service_time
+          raise "service_time_rv is nil for selector #{s.selector}" if service_time_rv.nil?
 
           # here need this hack to avoid taking value from tail
           # rejection sampling to implement (crudely) PDF truncation
