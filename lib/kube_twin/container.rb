@@ -122,7 +122,7 @@ module KUBETWIN
 
     def new_request(sim, r, time)
       # improve this code in the future
-      r.arrival_at_container = time
+      r.arrival_at_container[@name] = time
       # rps = @rps
       # s_time = calculate_service_time(sim)
       # @service_time = sim.retrieve_mdn_model(@name, rps, @replica_set.replicas) unless @path.nil?
@@ -178,7 +178,7 @@ module KUBETWIN
           end
         end
         # @logger.debug("Name: #{@name} Retrieved RPS: #{rps}")
-        rps = 34 if rps > 34
+        # rps = 34 if rps > 34
       end
       if @name == 'FE1'
         # @logger.debug "Retrieved RPS: #{rps} for container #{@name} containerId: #{@containerId} queue size: #{@request_queue.size}"
@@ -213,7 +213,7 @@ module KUBETWIN
       # update the request's working information
 
       # req.update_queuing_time(time - ri.arrival_time)
-      req.update_queuing_time(time - req.arrival_at_container)
+      req.update_queuing_time(time - req.arrival_at_container[@name])
       s_time = calculate_service_time(sim)
       ri.service_time = s_time
       raise "Service time invalid! #{ri.service_time} at time: #{time}" unless ri.service_time > 0.0

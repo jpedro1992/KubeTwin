@@ -51,7 +51,7 @@ module KUBETWIN
       @communication_latency = @arrival_time - @generation_time
 
       # set this to arrival time, then change it
-      @arrival_at_container = arrival_time
+      @arrival_at_container = {}
       @queuing_time = 0.0
       @working_time = 0.0
       @step_queue_time = 0.0
@@ -88,7 +88,7 @@ module KUBETWIN
     end
 
     def ttr_step(time, step_name)
-      ts = time - @arrival_at_container
+      ts = time - @arrival_at_container[step_name]
       @steps_ttr << ts # unless @steps_ttr.include? ts
       ts
     end

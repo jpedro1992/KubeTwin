@@ -743,8 +743,12 @@ module KUBETWIN
 
           # register step completion
           component_name = container.name
-          hpa_component_stats[component_name].record_request(req, now)
-          per_component_stats[component_name].record_request(req, now)
+          ttr_step = now - req.arrival_at_container[component_name]
+          if ttr_step > 1.0
+            warn "Component name: #{component_name} #{req.component} #{now - req.arrival_at_container[component_name]}"
+          end
+          hpa_component_stats[component_name].record_request(req, component_name, now)
+          per_component_stats[component_name].record_request(req, component_name, now)
 
           req.ttr_step(@current_time, component_name)
           # check if there are other steps left to complete the workflow
@@ -757,6 +761,7 @@ module KUBETWIN
 
           if next_step < size && has_children == true
             # get the children of the current node
+            # puts "Children #{services.children.map(&:name)}"
             services.children.each do |s|
               next_component_name = s.name
               req.component = req.next_component unless req.next_component.nil?

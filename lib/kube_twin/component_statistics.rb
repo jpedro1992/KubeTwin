@@ -30,9 +30,9 @@ module KUBETWIN
       @shorter_than.merge!(init_counters_for_shorter_than_stats(custom_kpis_config))
     end
 
-    def record_request(req, time)
+    def record_request(req, component_name, time)
       # get new sample
-      x = req.ttr(time)
+      x = req.ttr_step(time, component_name)
       raise "TTR #{x} for request #{req.rid} invalid! time: #{time} #{req.inspect}" unless x > 0.0
 
       qx = req.step_queue_time
