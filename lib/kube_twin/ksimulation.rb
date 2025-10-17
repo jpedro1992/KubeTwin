@@ -710,7 +710,7 @@ module KUBETWIN
           # increase count of received requests in hpa_component_stats
           workflow = workflow_type_repository[req.workflow_type_id]
           component_name = req.next_component.nil? ? req.component : req.next_component
-          puts "Component name: #{component_name}"
+          # puts "Component name: #{component_name}"
           # component_name = workflow[:component_sequence][req.next_step][:name]
           hpa_component_stats[component_name].request_received
           per_component_stats[component_name].request_received
