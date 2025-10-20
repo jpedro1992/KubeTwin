@@ -807,6 +807,7 @@ module KUBETWIN
 
           elsif next_step == size # workflow is finished
             # warn "Finally over #{container.name} #{container.containers_to_free.each { |c| c.name }}"
+            @logger.warn "End of processing for #{container.name} at time #{e.time}"
             oc = container.free_linked_container
             while true
               break if oc.nil?
@@ -835,68 +836,9 @@ module KUBETWIN
             req.update_transfer_time(transmission_time)
             # schedule request closure
             new_event(Event::ET_REQUEST_CLOSURE, req, e.time + transmission_time, nil)
+          else
+            @logger.warn "No children found for component #{tmp_current_name} in workflow #{workflow_id}"
           end
-
-        #           # check if there are other steps left to complete the workflow
-        #           if req.next_step < workflow[:component_sequence].size
-        #
-        #             # find next component name
-        #             next_component_name = workflow[:component_sequence][req.next_step][:name]
-        #
-        #             # resolve the next component name
-        #             service = @kube_dns.lookup(next_component_name)
-        #
-        #             # e.time should be equivalent to @current_time
-        #             forwarding_time = e.time
-        #
-        #             # get a pod from the one available
-        #             pod = service.get_pod(next_component_name) # same as selector
-        #
-        #             # we need to get a reference to the cluster where the pod is running
-        #             cluster_id = pod.node.cluster_id
-        #             cluster = @cluster_repository[cluster_id]
-        #
-        #             transmission_time =
-        #               latency_manager.sample_latency_between(current_cluster.location_id, cluster.location_id)
-        #             req.update_transfer_time(transmission_time)
-        #             forwarding_time += transmission_time
-        #
-        #             # update request's current data_center_id / cluster_id
-        #             req.data_center_id = cluster.cluster_id
-        #
-        #             # make sure we actually found a pod
-        #             unless pod
-        #               raise 'Cannot find a Pod running a component of type ' +
-        #                     "#{next_component_name} in any cluster!"
-        #             end
-        #
-        #             # schedule request forwarding to pod
-        #             @forwarded += 1
-        #
-        #             # http chained microservices
-        #             # if the current microservice is the one which the old was waiting, free the old container
-        #             pod.container.to_free(container) unless container.wait_for.empty?
-        #
-        #             new_event(Event::ET_REQUEST_FORWARDING, req, forwarding_time, pod)
-        #
-        #           else # workflow is finished
-        #             # calculate transmission time
-        #             transmission_time =
-        #               latency_manager.sample_latency_between(
-        #                 # data center location
-        #                 @cluster_repository[req.data_center_id].location_id,
-        #                 # customer location
-        #                 customer_repository.dig(req.customer_id, :location_id)
-        #               )
-        #
-        #             raise "Negative transmission time (#{transmission_time})!" unless transmission_time >= 0.0
-        #
-        #             # keep track of transmission time
-        #             req.update_transfer_time(transmission_time)
-        #
-        #             # schedule request closure
-        #             new_event(Event::ET_REQUEST_CLOSURE, req, e.time + transmission_time, nil)
-        #           end
 
         when Event::ET_REQUEST_CLOSURE
           # retrieve request and vm
@@ -976,7 +918,6 @@ module KUBETWIN
             # UNCOMMENT FOR RESULTS WHERE METRICS ARE PER TIME WINDOW
             # puts "#{pod.container.current_processing_metric}"
           end
-          warn "Current metric calculation #{current_metric} pods #{pods}"
           current_metric /= pods.to_f
 
           puts '**** Horizontal Pod Autoscaling ****'
