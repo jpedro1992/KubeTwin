@@ -971,9 +971,12 @@ module KUBETWIN
             # puts "served request: #{pod.container.served_request}"
             # reset container metric
             # calculate them each time period
-            pod.container.reset_metrics
+            # Commented reset operation to have cumulative metrics
+            # pod.container.reset_metrics
+            # UNCOMMENT FOR RESULTS WHERE METRICS ARE PER TIME WINDOW
             # puts "#{pod.container.current_processing_metric}"
           end
+          warn "Current metric calculation #{current_metric} pods #{pods}"
           current_metric /= pods.to_f
 
           puts '**** Horizontal Pod Autoscaling ****'
@@ -1051,7 +1054,13 @@ module KUBETWIN
         when Event::ET_END_OF_SIMULATION
           # FOR NOW KEEP PROCESSING REQUEST
           # puts "#{e.time}: end simulation"
-          e = @event_queue.shift until @event_queue.empty?
+          # e = @event_queue.shift until @event_queue.empty?
+          warn "End of simulation reached at time #{@current_time} queue length #{@event_queue.length}"
+          warn "Received: #{@arrived} Processed: #{@processed} Generated: #{@generated} Forwarded: #{@forwarded}"
+          until @event_queue.empty?
+            e = @event_queue.shift
+            warn "Discarding event #{e.type} scheduled at #{e.time}"
+          end
 
           # print some stats (useful to track simulation data)
         when Event::ET_STATS_PRINT
@@ -1242,18 +1251,22 @@ module KUBETWIN
       # Write CSV header if file does not exist
       unless File.exist?(csv_file)
         CSV.open(csv_file, 'w') do |csv|
-          csv << %w[strategy costs weighted_sum ttr_mean ttr_variance q_time_mean q_time_variance]
+          csv << %w[strategy costs weighted_sum ttr_mean ttr_variance q_time_mean q_time_variance closed
+                    closed_percentage]
         end
       end
 
       ttr_mean = stats.mean
       ttr_variance = stats.variance
+      closed = stats.closed
+      closed_percentage = closed.to_f / stats.received.to_f
       q_time_mean = per_component_stats.values.map { |c| c.q_mean || 0.0 }.sum / per_component_stats.size
       q_time_variance = per_component_stats.values.map { |c| c.q_variance || 0.0 }.sum / per_component_stats.size
 
       # Append a new row for the current strategy
       CSV.open(csv_file, 'a') do |csv|
-        csv << [strategy_name, costs, weighted_sum, ttr_mean, ttr_variance, q_time_mean, q_time_variance]
+        csv << [strategy_name, costs, weighted_sum, ttr_mean, ttr_variance, q_time_mean, q_time_variance, closed,
+                closed_percentage]
       end
 
       # --- Write per-component allocation map CSV ---
