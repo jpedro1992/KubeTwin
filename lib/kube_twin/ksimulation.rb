@@ -729,7 +729,7 @@ module KUBETWIN
           @processed += 1
 
           # unless next_ms
-          container.request_finished(self, e.time) if container.wait_for.empty?
+          container.request_finished(self, e.time) # if container.wait_for.empty?
 
           # tell the old container that it can start processing another request
           # if microservice should wait for one other
@@ -804,10 +804,9 @@ module KUBETWIN
               pod.container.to_free(container) if !pod.container.wait_for.empty? || (next_step == size - 1)
               new_event(Event::ET_REQUEST_FORWARDING, req, forwarding_time, pod)
             end
-
           elsif next_step == size # workflow is finished
             # warn "Finally over #{container.name} #{container.containers_to_free.each { |c| c.name }}"
-            @logger.warn "End of processing for #{container.name} at time #{e.time}"
+            # @logger.warn "End of processing for #{container.name} at time #{e.time} #{next_step} #{size}"
             oc = container.free_linked_container
             while true
               break if oc.nil?
@@ -837,7 +836,7 @@ module KUBETWIN
             # schedule request closure
             new_event(Event::ET_REQUEST_CLOSURE, req, e.time + transmission_time, nil)
           else
-            @logger.warn "No children found for component #{tmp_current_name} in workflow #{workflow_id}"
+            @logger.debug "No children #{container.name} #{next_step} #{size}"
           end
 
         when Event::ET_REQUEST_CLOSURE
@@ -996,11 +995,11 @@ module KUBETWIN
           # FOR NOW KEEP PROCESSING REQUEST
           # puts "#{e.time}: end simulation"
           # e = @event_queue.shift until @event_queue.empty?
-          warn "End of simulation reached at time #{@current_time} queue length #{@event_queue.length}"
-          warn "Received: #{@arrived} Processed: #{@processed} Generated: #{@generated} Forwarded: #{@forwarded}"
+          @logger.debug "End of simulation reached at time #{@current_time} queue length #{@event_queue.length}"
+          @logger.debug "Received: #{@arrived} Processed: #{@processed} Generated: #{@generated} Forwarded: #{@forwarded}"
           until @event_queue.empty?
             e = @event_queue.shift
-            warn "Discarding event #{e.type} scheduled at #{e.time}"
+            @logger.debug "Discarding event #{e.type} scheduled at #{e.time}"
           end
 
           # print some stats (useful to track simulation data)
