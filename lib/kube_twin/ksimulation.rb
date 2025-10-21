@@ -625,7 +625,7 @@ module KUBETWIN
             .dig(req_attrs[:customer_id], :location_id)
 
           # find first component name for requested workflow
-          workflow = workflow_type_repository[req_attrs[:workflow_type_id]]
+          # workflow = workflow_type_repository[req_attrs[:workflow_type_id]]
           first_component_name = @workflows[req_attrs[:workflow_type_id]].children.first.name
           # first_component_name = workflow[:component_sequence][0][:name]
 
@@ -811,7 +811,7 @@ module KUBETWIN
             while true
               break if oc.nil?
 
-              @logger.debug "Container: #{container.name} releasing container #{oc.name} #{oc.busy}"
+              # @logger.debug "Container: #{container.name} releasing container #{oc.name} #{oc.busy}"
               oc.request_finished(self, e.time) if oc.busy
               oc = oc.containers_to_free.shift
             end
@@ -1191,7 +1191,7 @@ module KUBETWIN
       # Write CSV header if file does not exist
       unless File.exist?(csv_file)
         CSV.open(csv_file, 'w') do |csv|
-          csv << %w[strategy costs weighted_sum ttr_mean ttr_variance q_time_mean q_time_variance closed
+          csv << %w[strategy costs weighted_sum ttr_mean ttr_variance q_time_mean q_time_variance received closed
                     closed_percentage]
         end
       end
@@ -1205,7 +1205,7 @@ module KUBETWIN
 
       # Append a new row for the current strategy
       CSV.open(csv_file, 'a') do |csv|
-        csv << [strategy_name, costs, weighted_sum, ttr_mean, ttr_variance, q_time_mean, q_time_variance, closed,
+        csv << [strategy_name, costs, weighted_sum, ttr_mean, ttr_variance, q_time_mean, q_time_variance, stats.received, closed,
                 closed_percentage]
       end
 

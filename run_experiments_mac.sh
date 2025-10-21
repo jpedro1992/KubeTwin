@@ -55,4 +55,6 @@ for test_case in "${TEST[@]}"; do
       rm -f "$WORKFILE"
     done
   done
+  mv results* $BASE_DIR/
+  mv allocation* $BASE_DIR/
 done
