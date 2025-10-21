@@ -279,9 +279,12 @@ module KUBETWIN
       # information regarding microservices
       @microservice_types = mtt.nil? ? @configuration.microservice_types : mtt
       @logger.debug "#{@microservice_types} #{@microservice_types.nil?}"
+      legacy_keras_set = false
       @microservice_types.each do |k, v|
         next if v[:mdn_file].nil?
 
+        ENV['TF_USE_LEGACY_KERAS'] = '1' unless legacy_keras_set
+        legacy_keras_set = true
         pyfrom 'tensorflow', import: :keras
         model = keras.models.load_model(v[:mdn_file])
         # @logger.debug "model: #{model}"
