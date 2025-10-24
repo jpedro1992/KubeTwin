@@ -1,13 +1,17 @@
 #!/env/bin/bash
 
-TEST=("cuttlefish_ramp_up_15min.conf" "cuttlefish_random_bursts_15min.conf" "cuttlefish_up_down_15min.conf")
+#TEST=("cuttlefish_ramp_up_15min.conf" "cuttlefish_random_bursts_15min.conf" "cuttlefish_up_down_15min.conf")
+#TEST=("cuttlefish_ramp_up_15min.conf") # "cuttlefish_random_bursts_15min.conf" "cuttlefish_up_down_15min.conf")
+#TEST=("test_img_rec_ramp_up_15min.conf" "test_img_rec_random_bursts_15min.conf" "test_img_rec_up_down_15min.conf")
+TEST=("test_img_rec_up_down_15min.conf")
 
 for test_case in "${TEST[@]}"; do
 
   echo "Running experiments for test case: $test_case"
   EXP_NAME=$(echo $test_case | cut -d'.' -f1)
 
-  BASE_DIR="experiments/cuttlefish/$EXP_NAME"
+  #  BASE_DIR="experiments/cuttlefish/$EXP_NAME"
+  BASE_DIR="experiments/img_rec/$EXP_NAME"
 
   #echo "Base directory for results: $BASE_DIR"
 
@@ -45,7 +49,7 @@ for test_case in "${TEST[@]}"; do
 
       # BSD sed in-place: note the '' after -i (no backup file created)
       sed -i '' "s/^strategy .*/strategy :$STRATEGY/" "$WORKFILE"
-
+      sed -i '' "s/seed 12345/seed $KUBETWIN_SEED/" "$WORKFILE"
       # Lowercase file name in a portable way
       out_name="$(printf '%s' "$STRATEGY" | tr '[:upper:]' '[:lower:]')"
 
