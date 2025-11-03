@@ -95,6 +95,53 @@ module KUBETWIN
       @microservice_mdn[name][:st][rps]
     end
 
+    def generate_bmap
+      # gather information of how many pods are running for each label in each node per cluster
+      bmap = {}
+      replication_penalties = 0
+      @services.each do |k, s|
+        current_spreading = []
+        # puts "#{s.pods[k]}"
+        @cluster_repository.each do |_, c|
+          pods_number = s.pods[k].select { |p| p.cluster_id == c.cluster_id }.length
+          # @logger.debug "pods_number #{pods_number} total pods #{s.pods[k].length}"
+          current_spreading << pods_number
+          if bmap.key?(k)
+            bmap[k][c.name] = pods_number
+          else
+            bmap[k] = { c.name => pods_number }
+          end
+        end
+        @logger.debug "Current spreading for #{k}: #{current_spreading} penalties: #{replication_penalties}"
+        replication_penalties += 10 if current_spreading.include?(0) # default value
+      end
+      [bmap, replication_penalties]
+    end
+
+    def calculate_costs
+      allocation_map = {}
+      costs = 0.0
+      node_utilization = {}
+      @cluster_repository.each do |_, c|
+        pods = 0
+        node = 0
+        c.nodes.values.each do |n|
+          if n.pod_id_list.length > 0
+            pods += n.pod_id_list.length
+            node += 1
+          end
+          # puts "node_id: #{n.node_id}: pods: #{n.pod_id_list.length}"
+        end
+        allocation_map[c.name] = { tier: c.tier, pods: pods }
+        node_utilization[c.name] = node
+        # Assume 24 hrs of operation
+        c.fixed_hourly_cost_cpu = 0.100 unless c.fixed_hourly_cost_cpu
+        costs += c.fixed_hourly_cost_cpu * node * 24
+        # puts "Allocation -- #{c.name} Pods: #{pods}"
+      end
+      [costs, allocation_map, node_utilization]
+    end
+
     def new_event(type, data, time, destination)
       e = Event.new(type, data, time, destination)
       @event_queue << e
@@ -1069,27 +1116,8 @@ module KUBETWIN
       # puts "Finished after #{now - @configuration.end_time}"
 
       # Keep track of the number of pods per component and where they are allocated
-      allocation_map = {}
       # Keep track of how many nodes per cluster we are using
-      node_utilization = {}
-      costs = 0
-      @cluster_repository.each do |_, c|
-        pods = 0
-        node = 0
-        c.nodes.values.each do |n|
-          if n.pod_id_list.length > 0
-            pods += n.pod_id_list.length
-            node += 1
-          end
-          # puts "node_id: #{n.node_id}: pods: #{n.pod_id_list.length}"
-        end
-        allocation_map[c.name] = { tier: c.tier, pods: pods }
-        node_utilization[c.name] = node
-        # Assume 24 hrs of operation
-        c.fixed_hourly_cost_cpu = 0.100 unless c.fixed_hourly_cost_cpu
-        costs += c.fixed_hourly_cost_cpu * node * 24
-        # puts "Allocation -- #{c.name} Pods: #{pods}"
-      end
+      costs, allocation_map, node_utilization = calculate_costs
 
       # TODO: -- IMPLEMENT COST EVALUATION HERE
       # costs = @evaluator.evaluate_fixed_costs_cpu(vm_allocation)
@@ -1104,46 +1132,7 @@ module KUBETWIN
            "=======================================\n"
 
       # gather information of how many pods are running for each label in each node per cluster
-      bmap = {}
-      replication_penalties = 0
-      @services.each do |k, s|
-        current_spreading = []
-        # puts "#{s.pods[k]}"
-        @cluster_repository.each do |_, c|
-          pods_number = s.pods[k].select { |p| p.cluster_id == c.cluster_id }.length
-          # @logger.debug "pods_number #{pods_number} total pods #{s.pods[k].length}"
-          current_spreading << pods_number
-          if bmap.key?(k)
-            bmap[k][c.name] = pods_number
-          else
-            bmap[k] = { c.name => pods_number }
-          end
-        end
-        # @cluster_repository.each do |_, c|
-        #  pods_number = 0
-        #  s.pods[k].each do |p|
-        #    @logger.debug "pods_cluster_id #{p.node.cluster_id}"
-        #    pods_number += 1 if p.node.cluster_id.to_sym == c.cluster_id.to_sym
-        #  end
-
-        #  @logger.debug "Counting pods #{k} #{pods_number} #{c.cluster_id}"
-        #  # c.nodes.values.each do |_n|
-        #  #  pods_number += s.pods[k].count { |p| p.cluster_id == c.cl }
-        #  # end
-        #  current_spreading << pods_number
-        #  if bmap.key?(k)
-        #    bmap[k][c.name] = pods_number
-        #  else
-        #    bmap[k] = { c.name => pods_number }
-        #  end
-        # end
-        # replication_penalties += (current_spreading.count { |x| x > 0 } - 1) * REPLICATION_PENALTY if current_spreading.count { |x| x > 0 } > 1
-        @logger.debug "Current spreading for #{k}: #{current_spreading} penalties: #{replication_penalties}"
-        replication_penalties += 10 if current_spreading.include?(0) # default value
-        # else
-        #  replication_penalties -= 10
-        # end
-      end
+      bmap, replication_penalties = generate_bmap
       puts "BMAP: #{bmap}"
       # Produce txt and JSON file with the bmap information
       File.open('final_allocation.txt', 'w') do |f|
@@ -1154,24 +1143,6 @@ module KUBETWIN
         f.write(JSON.pretty_generate(bmap))
       end
 
-      # debug info here
-      # we want to minimize the cost, so we define fitness as the opposite of
-      # the sum of all costs incurred
-      # -costs.values.inject(0.0){|s,x| s += x }
-      # 99-th percentile ttr + closed_request +
-      # (- 0.99 )
-      # -stats.mean
-      # res = -per_workflow_and_customer_stats[1][1].longer_than[0.51] /
-      #    per_workflow_and_customer_stats[1][1].closed.to_f
-      # puts "Res: #{res}"
-      # res
-
-      # puts "Percentage of requests within ms"
-      # per_workflow_and_customer_stats[1][1].shorter_than.each_key do |t|
-      #  puts "#{(per_workflow_and_customer_stats[1][1].shorter_than[t] / per_workflow_and_customer_stats[1][1].closed.to_f) * 100}% #{t}s"
-      # end
-      # return 0
-      # return the fitness value
       weighted_sum = stats.mean + replication_penalties
       per_component_stats.each do |k, v|
         weighted_sum += v.longer_than.inject(0.0) do |sum, (key, value)|
