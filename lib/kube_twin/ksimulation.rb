@@ -640,7 +640,7 @@ module KUBETWIN
       # Pods: number of pods used to process the request
       # Component: component name
       # Request: request id
-      @allocation_bench << "timestamp,component,number_requests,number_closed,ttp_mean,ttp_variance,ttp_longer_than,ttp_shorter_than,qtime_mean,qtime_variance,hpa_min_replicas,hpa_max_replicas,number_pods\n"
+      @allocation_bench << "timestamp,component,number_requests,number_closed,ttp_mean,ttp_variance,ttp_longer_than,ttp_shorter_than,qtime_mean,qtime_variance,hpa_min_replicas,hpa_max_replicas,number_pods,costs\n"
 
       # launch simulation
       until @event_queue.empty?
@@ -730,7 +730,7 @@ module KUBETWIN
             reqs_received_per_workflow_and_customer[req.workflow_type_id][req.customer_id] += 1
 
             # find next component name
-            workflow = workflow_type_repository[req.workflow_type_id]
+            workflow_type_repository[req.workflow_type_id]
             # puts "next_component_name #{next_component_name}, pod.label #{pod.label}"
 
             # schedule request forwarding to pod
@@ -761,7 +761,7 @@ module KUBETWIN
           pod = e.destination
 
           # increase count of received requests in hpa_component_stats
-          workflow = workflow_type_repository[req.workflow_type_id]
+          workflow_type_repository[req.workflow_type_id]
           component_name = req.next_component.nil? ? req.component : req.next_component
           # puts "Component name: #{component_name}"
           # component_name = workflow[:component_sequence][req.next_step][:name]
@@ -791,7 +791,7 @@ module KUBETWIN
           current_cluster = @cluster_repository[req.data_center_id]
           # find the next workflow
           workflow_id = req.workflow_type_id
-          workflow = workflow_type_repository[req.workflow_type_id]
+          workflow_type_repository[req.workflow_type_id]
 
           # register step completion
           component_name = container.name
@@ -1063,9 +1063,10 @@ module KUBETWIN
             min = @hpa_min_replicas[k]
             max = @hpa_max_replicas[k]
 
+            costs, = calculate_costs
             # allocation_bench header:
             # timestamp,component,number_requests,number_closed,ttp_mean,ttp_variance,ttp_longer_than,ttp_shorter_than,qtime_mean,qtime_variance,hpa_min_replicas,hpa_max_replicas,number_pods
-            @allocation_bench << "#{now},#{k},#{hpa_component_stats[k].received},#{hpa_component_stats[k].n},#{hpa_component_stats[k].mean},#{hpa_component_stats[k].variance},#{hpa_component_stats[k].longer_than},#{hpa_component_stats[k].shorter_than},#{hpa_component_stats[k].q_mean},#{hpa_component_stats[k].q_variance},#{min},#{max},#{pods_number}\n"
+            @allocation_bench << "#{now},#{k},#{hpa_component_stats[k].received},#{hpa_component_stats[k].n},#{hpa_component_stats[k].mean},#{hpa_component_stats[k].variance},#{hpa_component_stats[k].longer_than},#{hpa_component_stats[k].shorter_than},#{hpa_component_stats[k].q_mean},#{hpa_component_stats[k].q_variance},#{min},#{max},#{pods_number},#{costs}\n"
 
             # puts "#{now},#{k},#{hpa_component_stats[k].received},#{hpa_component_stats[k].mean},
             # {hpa_component_stats[k].variance},#{hpa_component_stats[k].longer_than},#{hpa_component_stats[k].qmean},#{hpa_component_stats[k].qvariance},
