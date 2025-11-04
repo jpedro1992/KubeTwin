@@ -136,7 +136,8 @@ module KUBETWIN
         node_utilization[c.name] = node
         # Assume 24 hrs of operation
         c.fixed_hourly_cost_cpu = 0.100 unless c.fixed_hourly_cost_cpu
-        costs += c.fixed_hourly_cost_cpu * node * 24
+        c.fixed_hourly_cost_memory = 0.100 unless c.fixed_hourly_cost_memory
+        costs += 0.5 * (c.fixed_hourly_cost_cpu * node * 24) + 0.5 * (c.fixed_hourly_cost_memory * node * 24)
         # puts "Allocation -- #{c.name} Pods: #{pods}"
       end
       [costs, allocation_map, node_utilization]
@@ -886,7 +887,7 @@ module KUBETWIN
             # schedule request closure
             new_event(Event::ET_REQUEST_CLOSURE, req, e.time + transmission_time, nil)
           else
-            @logger.debug "No children #{container.name} #{next_step} #{size}"
+            # @logger.debug "No children #{container.name} #{next_step} #{size}"
           end
 
         when Event::ET_REQUEST_CLOSURE
