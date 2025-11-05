@@ -3,7 +3,12 @@
 #TEST=("cuttlefish_ramp_up_15min.conf" "cuttlefish_random_bursts_15min.conf" "cuttlefish_up_down_15min.conf")
 #TEST=("cuttlefish_ramp_up_15min.conf") # "cuttlefish_random_bursts_15min.conf" "cuttlefish_up_down_15min.conf")
 #TEST=("test_img_rec_ramp_up_15min.conf" "test_img_rec_random_bursts_15min.conf" "test_img_rec_up_down_15min.conf")
-TEST=("test_img_rec_up_down_15min.conf")
+TEST=("ec_cuttlefish_ramp_up_15min.conf" "ec_cuttlefish_random_bursts_15min.conf" "ec_cuttlefish_up_down_15min.conf"
+  "ec_img_rec_ramp_up_15min.conf" "ec_img_rec_random_bursts_15min.conf" "ec_img_rec_up_down_15min.conf"
+  "efc_cuttlefish_ramp_up_15min.conf" "efc_cuttlefish_random_bursts_15min.conf" "efc_cuttlefish_up_down_15min.conf"
+  "efc_img_rec_ramp_up_15min.conf" "efc_img_rec_random_bursts_15min.conf" "efc_img_rec_up_down_15min.conf"
+  fc_cuttlefish_ramp_up_15min.conf" "fc_cuttlefish_random_bursts_15min.conf" "fc_cuttlefish_up_down_15min.conf"
+   fc_img_rec_ramp_up_15min.conf" "fc_img_rec_random_bursts_15min.conf" "fc_img_rec_up_down_15min.conf")
 
 for test_case in "${TEST[@]}"; do
 
@@ -49,7 +54,8 @@ for test_case in "${TEST[@]}"; do
 
       # BSD sed in-place: note the '' after -i (no backup file created)
       sed -i '' "s/^strategy .*/strategy :$STRATEGY/" "$WORKFILE"
-      sed -i '' "s/seed 12345/seed $KUBETWIN_SEED/" "$WORKFILE"
+      sed -i '' "s/seed[[:space:]]\+[0-9]\+/seed $KUBETWIN_SEED/" "$WORKFILE"
+      #sed -i '' "s/seed 12345/seed $KUBETWIN_SEED/" "$WORKFILE"
       # Lowercase file name in a portable way
       out_name="$(printf '%s' "$STRATEGY" | tr '[:upper:]' '[:lower:]')"
 

@@ -45,11 +45,12 @@ module KUBETWIN
     CONNECT_TIME = 0.00148205
     DEFAULT_CPU_PER_NODE = 4000.0 # in mCPU
     # Check if there is an environment variable set for SEED
-    seed = ENV['KUBETWIN_SEED']
-    seed = seed.to_i unless seed.nil?
-    seed ? SEED = seed : 123
-
     def initialize(opts = {})
+      @seed = ENV['KUBETWIN_SEED']
+      @seed = @seed.to_i unless @seed.nil?
+      # seed ? SEED = seed : 123
+      puts "Using Seed: #{@seed}"
+
       @configuration = opts[:configuration]
       @evaluator     = opts[:evaluator]
       @results_dir   = opts[:results_dir]
@@ -195,7 +196,9 @@ module KUBETWIN
     # css is service configuration
     def evaluate_allocation(rss = nil, css = nil, mtt = nil, lm = nil, mapping = nil)
       # seeds
-      latency_seed = @configuration.seeds[:communication_latencies]
+      # latency_seed = @configuration.seeds[:communication_latencies]
+      # Use the global SEED instead
+      latency_seed = @seed
       @configuration.seeds[:service_times]
       if @configuration.seeds[:next_component_selection]
         Random.new(@configuration.seeds[:next_component_selection])
