@@ -90,7 +90,7 @@ module KUBETWIN
           gamma_mix << scs[0][i].to_f
         end
         @microservice_mdn[name][:st][rps] = ERV::MixtureDistribution.new(
-          ERV::WeibullMixtureHelper.RawParametersToMixtureArgsSeed(*gamma_mix, SEED)
+          ERV::WeibullMixtureHelper.RawParametersToMixtureArgsSeed(*gamma_mix, @seed)
         )
       end
       @microservice_mdn[name][:st][rps]
