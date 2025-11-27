@@ -17,7 +17,7 @@ FILES=("fc_cuttlefish_ramp_up_15min.conf" "fc_cuttlefish_random_bursts_15min.con
        "ec_img_rec_ramp_up_15min.conf" "ec_img_rec_random_bursts_15min.conf" "ec_img_rec_up_down_15min.conf"
        "efc_img_rec_ramp_up_15min.conf" "efc_img_rec_random_bursts_15min.conf" "efc_img_rec_up_down_15min.conf")
 
-TEST_NAME="one"
+TEST_NAME="two"
 
 for FILE in "${FILES[@]}"; do
 
@@ -84,11 +84,11 @@ for FILE in "${FILES[@]}"; do
           sed -i "s/^strategy .*/strategy :$STRATEGY/" examples/$FILE
 
           # Update the directories in the in the config file
-          sed -i "s|^results_dir .*|results_csv_dir \"$BASE_DIR\"|" examples/$FILE
+          sed -i "s|^results_csv_dir .*|results_csv_dir \"$BASE_DIR\"|" examples/$FILE
           sed -i "s|^bench_dir .*|bench_dir \"$BENCH_DIR\"|" examples/$FILE
 
           # Update the seed in the config file
-          sed -i "s/seed 12345/seed $KUBETWIN_SEED/" examples/$FILE
+          sed -i "s/seed[[:space:]]\+[0-9]\+/seed $KUBETWIN_SEED/" examples/$FILE
 
           OUT_FILE="$TEST_DIR/$STRATEGY_LOWER_CASE.txt"
           # ensure file exists before redirect
