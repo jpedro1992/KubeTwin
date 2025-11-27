@@ -97,7 +97,9 @@ module KUBETWIN
                  :workflow_types,
                  :seed,
                  :policies,
-                 :strategy
+                 :strategy,
+                 :results_csv_dir,
+                 :bench_dir
   end
 
   class Configuration

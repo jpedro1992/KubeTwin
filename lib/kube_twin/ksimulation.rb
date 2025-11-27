@@ -63,6 +63,8 @@ module KUBETWIN
       @mapping = nil
       @hpa_min_replicas = {}
       @hpa_max_replicas = {}
+      @results_csv_dir = @configuration.results_csv_dir
+      @bench_dir = @configuration.bench_dir
       @logger = opts[:logger] || Logger.new(STDOUT)
       @logger.level = opts[:log_level] || Logger::DEBUG
     end
@@ -633,7 +635,8 @@ module KUBETWIN
       # benchmark file
       Time.now.strftime('%Y%m%d%H%M%S')
       # @sim_bench = File.open("csv_bench_#{time}.csv", 'w')
-      @allocation_bench = File.open("allocation_bench_#{strategy_name}.csv", 'w')
+
+      @allocation_bench = File.open(@bench_dir + '/' + "allocation_bench_#{strategy_name}.csv", 'w')
       # @request_profile = File.open("request_profile_#{time}.csv", 'w')
       # @request_profile << "Time,CRequests\n"
       @last_second = @current_time.to_i
@@ -1167,9 +1170,12 @@ module KUBETWIN
       csv_file = 'results.csv'
       csv_bmap = 'results_allocation.csv'
 
+      @results_csv = @results_csv_dir + '/' + csv_file
+      @results_csv_bmap = @results_csv_dir + '/' + csv_bmap
+
       # Write CSV header if file does not exist
-      unless File.exist?(csv_file)
-        CSV.open(csv_file, 'w') do |csv|
+      unless File.exist?(@results_csv)
+        CSV.open(@results_csv, 'w') do |csv|
           csv << %w[strategy costs weighted_sum ttr_mean ttr_variance q_time_mean q_time_variance received closed
                     closed_percentage]
         end
@@ -1183,14 +1189,14 @@ module KUBETWIN
       q_time_variance = per_component_stats.values.map { |c| c.q_variance || 0.0 }.sum / per_component_stats.size
 
       # Append a new row for the current strategy
-      CSV.open(csv_file, 'a') do |csv|
+      CSV.open(@results_csv, 'a') do |csv|
         csv << [strategy_name, costs, weighted_sum, ttr_mean, ttr_variance, q_time_mean, q_time_variance, stats.received, closed,
                 closed_percentage]
       end
 
       # --- Write per-component allocation map CSV ---
-      unless File.exist?(csv_bmap)
-        CSV.open(csv_bmap, 'w') do |csv|
+      unless File.exist?(@results_csv_bmap)
+        CSV.open(@results_csv_bmap, 'w') do |csv|
           csv << %w[strategy component eu-south-1 eu-central-1 eu-west-3 eu-west-2 eu-north-1
                     ca-central-1 us-east-1]
         end
@@ -1210,7 +1216,7 @@ module KUBETWIN
       # Fixed order of nodes for CSV
       nodes = %w[eu-south-1 eu-central-1 eu-west-3 eu-west-2 eu-north-1 ca-central-1 us-east-1]
 
-      CSV.open(csv_bmap, 'a') do |csv|
+      CSV.open(@results_csv_bmap, 'a') do |csv|
         bmap.each do |component, node_map|
           # Normalize cluster names and default to 0
           normalized_map = {}
